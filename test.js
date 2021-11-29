@@ -6,7 +6,7 @@
 
 "use strict";
 
-import {CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton} from './src/bfe_lib.js';
+import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton } from './src/bfe_lib.js';
 
 // await CheckSuitabilityCanton(2655805, 1258983, 'AG');
 
@@ -30,7 +30,7 @@ import {CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton} from './src/bf
 // await CheckSuitabilityCanton(2609841,1125573, 'VS');      //3/200
 // await CheckSuitabilityCanton(2609846,1125808, 'VS');      //3/50
 
-//await CheckSuitabilityCanton(2510785,1121097, 'GE');   //Sondes géothermiques verticales (système fermé)
+await CheckSuitabilityCanton(2510785, 1121097, 'GE');   //Sondes géothermiques verticales (système fermé)
 // await CheckSuitabilityCanton(2506500,1118148, 'GE');      //Demande de renseignement
 // await CheckSuitabilityCanton(2502640,1113946, 'GE');      //Interdiction de géothermie
 // await CheckSuitabilityCanton(2494984,1116373, 'GE');      //Géothermie sur nappe (système ouvert)
@@ -41,7 +41,7 @@ import {CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton} from './src/bf
 let wms = await GetWMSCanton('TG');
 console.log(wms);
 
-let legends = await GetWMSLegendCanton('TG');
+let legends = await GetWMSLegendCanton('VD');
 console.log(legends);
 
 
