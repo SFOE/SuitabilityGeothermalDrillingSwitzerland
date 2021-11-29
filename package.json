@@ -5,7 +5,7 @@
         "proj4": "^2.7.5",
         "underscore": "^1.13.1"
     },
-    "name": "my-webpack-project",
+    "name": "suitability_geothermal_drilling_switzerland",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {

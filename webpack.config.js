@@ -46,6 +46,10 @@ module.exports = {
   experiments: {
     topLevelAwait: true
   },
+  output: {
+    filename: 'bfe-lib.js',
+    chunkFilename: 'bfe-lib.js',
+  },
   devServer: {
     static: {
       directory: path.join(__dirname, 'public'),
