@@ -28,7 +28,7 @@ To run the code in Node.js, you have to add the line
 ```
 "type": "module"
 ```
-to your 'package.json' file. In 'bfe_lib.js' uncomment the three lines 11-13. 
+to your `package.json` file. In `bfe_lib.js` uncomment the three lines 11-13. 
 Then run 
 ```
 node .\test.js
