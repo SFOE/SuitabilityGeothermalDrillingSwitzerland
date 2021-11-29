@@ -18,9 +18,9 @@
         "servedev": "webpack serve --mode=development"
     },
     "keywords": [],
-    "author": "",
+    "author": "GEOTEST, SFOE",
     "license": "ISC",
-    "description": "My webpack project",
+    "description": "SuitabilityGeothermalDrillingSwitzerland",
     "devDependencies": {
         "@babel/core": "^7.16.0",
         "@babel/plugin-transform-runtime": "^7.16.4",

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>BFE Erdwärmensondentool</title>
+    <script defer src="bfe-lib.js"></script>
+</head>
+</head>
+
+<body>
+    <h1>Hallo Erdwärmensonden-Welt</h1>
+    <h2>Tip: Check your console</h2>
+
+    <form id="theForm">
+        <p>
+            <label for="easting">Easting: </label>
+            <input id="easting" name="easting" value="2684890" type="number">
+        </p>
+        <p>
+            <label for="northing">Northing: </label>
+            <input id="northing" name="northing" value="1182492" type="number">
+        </p>
+        <p>
+            <label for="canton">Canton: </label>
+            <input id="canton" name="canton" value="UR" type="text">
+        </p>
+        <button>Erwärme mich</button>
+    </form>
+
+    <script>
+        window.addEventListener("load", function () {
+            var form = document.forms[0];
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                const northing = document.getElementById("northing").value;
+                const easting = document.getElementById("easting").value;
+                const canton = document.getElementById("canton").value;
+
+                BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton).then(harmonisedValue => { 
+                    alert("Hamonisierter Wert: " + harmonisedValue);
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

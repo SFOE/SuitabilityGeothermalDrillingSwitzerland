@@ -1,5 +1,6 @@
 # SuitabilityGeothermalDrillingSwitzerland
 
+## First steps
 On first check out run
 ```
 npm install
@@ -7,7 +8,7 @@ npm install
 to load all node_modules.
 
 
-
+## Building the application
 This project has been created using **webpack-cli**, you can then run
 
 ```
