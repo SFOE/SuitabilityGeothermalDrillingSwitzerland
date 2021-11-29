@@ -39,7 +39,7 @@
                 const easting = document.getElementById("easting").value;
                 const canton = document.getElementById("canton").value;
 
-                CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton).then(harmonisedValue => { 
+                BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton).then(harmonisedValue => { 
                     alert("Hamonisierter Wert: " + harmonisedValue);
                 });
             });

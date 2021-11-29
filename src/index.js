@@ -1,6 +1,6 @@
-import CheckSuitabilityCanton from './bfe_lib.js';
+import BfeLib from './bfe_lib.js';
 
-window.CheckSuitabilityCanton = CheckSuitabilityCanton;
+window.BfeLib = BfeLib;
 
 
 

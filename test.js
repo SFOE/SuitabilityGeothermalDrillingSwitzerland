@@ -6,7 +6,7 @@
 
 "use strict";
 
-import CheckSuitabilityCanton, {GetWMSCanton, GetWMSLegendCanton} from './src/bfe_lib.js';
+import {CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton} from './src/bfe_lib.js';
 
 // await CheckSuitabilityCanton(2655805, 1258983, 'AG');
 

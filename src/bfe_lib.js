@@ -27,13 +27,22 @@ register(proj4);
 const proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/';
 //const proxyServer = 'http://www.whateverorigin.org/get?url=';
 
-
+/**
+ * async_fetch
+ * @param {string} url 
+ * @returns {string} json
+ */
 export async function async_fetch(url) {
     let response = await fetch(url)
-    if (response.ok) return await response.json()
+    if (response.ok)
+        return await response.json()
     throw new Error(response.status)
 }
 
+/**
+ * getAllCantonsJson
+ * @returns {object} all canton definitions from json
+ */
 async function getAllCantonsJson() {
     let cantonsJson;
 
@@ -51,6 +60,11 @@ async function getAllCantonsJson() {
     return cantonsJson;
 }
 
+/**
+ * getCantonJson
+ * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
+ * @returns {object} canton definition from json
+ */
 async function getCantonJson(cantonAbbrev) {
     //get cantons
     const cantonsJson = await getAllCantonsJson();
@@ -63,7 +77,11 @@ async function getCantonJson(cantonAbbrev) {
 
     return canton;
 }
-
+/**
+ * getWMSList
+ * @param {object} canton canton defintion from json
+ * @returns {object[]} list with wms defintions
+ */
 async function getWMSList(canton) {
     let wmsList = [];
 
@@ -86,6 +104,13 @@ async function getWMSList(canton) {
 
     return wmsList;
 }
+
+/**
+ * imageWMSFactory
+ * @param {object} wmsItem url and layer definition
+ * @param {string} wmsVersion (optional) default='1.3.0'
+ * @returns {ImageWMS} ol imageWMS object
+ */
 async function imageWMSFactory(wmsItem, wmsVersion = '1.3.0') {
     let layerNames = _.pluck(wmsItem.layers, 'name');   //get wms layer names
 
@@ -102,6 +127,14 @@ async function imageWMSFactory(wmsItem, wmsVersion = '1.3.0') {
 
     return imageWms;
 }
+
+/**
+ * esriRestFeatureFactory
+ * @param {string} featureServerUrl base url for esri REST feature server
+ * @param {number} easting LV95 Easting
+ * @param {number} northing LV95 Northing
+ * @returns {string} feature server url at position E/N
+ */
 async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
     const delta = 0.01;     //variation for bbox
     const url = featureServerUrl +
@@ -121,7 +154,11 @@ async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
     return url;
 }
 
-//returns: ImageWMS[] for open layers wms, not defined for esri yet
+/**
+ * GetWMSCanton
+ * @param  {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
+ * @return {ImageWMS[]} for open layers wms, not defined for esri yet
+ */
 export async function GetWMSCanton(cantonAbbrev) {
     const canton = await getCantonJson(cantonAbbrev);
     const wmsList = await getWMSList(canton);
@@ -146,19 +183,31 @@ export async function GetWMSCanton(cantonAbbrev) {
     return imageWmsList;
 }
 
+/**
+ * GetWMSLegendCanton
+ * @param  {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
+ * @return {string[]} legend urls
+ */
 export async function GetWMSLegendCanton(cantonAbbrev) {
     const imageWmsList = await GetWMSCanton(cantonAbbrev);
 
     let legendUrlList = [];
     for (const imageWmsItem of imageWmsList) {
-        const legendItem  = imageWmsItem.getLegendUrl();
+        const legendItem = imageWmsItem.getLegendUrl();
         legendUrlList.push(legendItem);
     }
 
     return legendUrlList;
 }
 
-export default async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
+/**
+ * CheckSuitabilityCanton
+ * @param {number} easting LV95 Easting in (m)
+ * @param {number} northing  LV95 Northing in (m)
+ * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
+ * @returns {number} harmonised suitability value
+ */
+export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
 
     //Check perimeter
     const lowerleft = [2458000, 1076375];
@@ -333,3 +382,4 @@ export default async function CheckSuitabilityCanton(easting, northing, cantonAb
 
 }
 
+export default { GetWMSCanton, GetWMSLegendCanton, CheckSuitabilityCanton };
