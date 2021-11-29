@@ -28,6 +28,14 @@
         <button>Erwärme mich</button>
     </form>
 
+<hr>
+<h1>GetWMSLegend</h1>
+<div id="GetWMSLegend"></div>
+
+<hr>
+<h1>GetWMSURL</h1>
+<div id="GetWMSURL"></div>
+
     <script>
         window.addEventListener("load", function () {
             var form = document.forms[0];
@@ -43,6 +51,30 @@
                     alert("Hamonisierter Wert: " + harmonisedValue);
                 });
             });
+
+            var wmsLegendCanton = document.getElementById("GetWMSLegend");
+            var wmsCanton = document.getElementById("GetWMSURL");
+
+            BfeLib.GetWMSLegendCanton('UR').then(legendUrl => {
+                var URLLists = '';
+
+                legendUrl.forEach(element => {
+                    URLLists += "<img src='"+element+"' /><br>";
+                });
+                wmsLegendCanton.innerHTML = URLLists;
+            });
+
+            BfeLib.GetWMSCanton('UR').then(url => {
+                var URLLists = '';
+
+                url.forEach(element => {
+                    URLLists += element.url_+"<br>";
+                });
+                wmsCanton.innerHTML = URLLists;
+            });
+
+            
+
         });
     </script>
 
