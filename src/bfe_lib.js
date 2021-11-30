@@ -2,8 +2,8 @@
 //  SuitabilityGeothermalDrillingSwitzerland
 //
 //  TODO:   - license?
-//          - add verbose/console.log switch
 //          - uniform error handling 
+//
 //
 
 'use strict';
@@ -69,11 +69,11 @@ async function getCantonJson(cantonAbbrev) {
     //get cantons
     const cantonsJson = await getAllCantonsJson();
     let cantons_array = cantonsJson.cantonsList;
-    console.log(cantons_array);
+    // console.log(cantons_array);
 
     //get canton by abbreviation
     let canton = _.find(cantons_array, i => i.name === cantonAbbrev);
-    console.log(canton);
+    // console.log(canton);
 
     return canton;
 }
@@ -87,7 +87,7 @@ async function getWMSList(canton) {
 
     const hasMultiWMS = typeof canton.wmsMulti !== 'undefined';
     if (hasMultiWMS) {  //handle mutliple wms sources
-        console.log('Multiple WMS defined: ', canton.wmsMulti);
+        // console.log('Multiple WMS defined: ', canton.wmsMulti);
 
         for (let index = 0; index < canton.wmsMulti.length; index++) {
             const wmsItem = canton.wmsMulti[index];
@@ -205,25 +205,26 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
  * @param {number} easting LV95 Easting in (m)
  * @param {number} northing  LV95 Northing in (m)
  * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
+ * @param {boolean} verbose (optional) activate console log
  * @returns {number} harmonised suitability value
  */
-export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
+export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose = true) {
 
     //Check perimeter
-    const lowerleft = [2458000, 1076375];
-    const upperright = [2862500, 1289125];
+    const lowerleft = [2480000, 1070000];
+    const upperright = [2840000, 1300000];
     if (easting < lowerleft[0] || easting > upperright[0] ||
         northing < lowerleft[1] || northing > upperright[1]) {
         throw new Error('Not in the ESPG 2056 perimeter: ' + lowerleft + '  ' + upperright);
     }
 
     const style = 'color:red; font-size:20px; font-weight: bold; -webkit-text-stroke: 1px black;'
-    console.log("%c CheckSuitabilityCanton ", style);
+    if (verbose) console.log("%c CheckSuitabilityCanton ", style);
 
     // //get canton by abbreviation
     const canton = await getCantonJson(cantonAbbrev);
     if (!canton) {
-        console.log('canton abbreviation not supported: ' + cantonAbbrev);
+        if (verbose) console.log('canton abbreviation not supported: ' + cantonAbbrev);
         return 5;        //kategorie weiss=5
     }
 
@@ -254,23 +255,22 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
             url = await esriRestFeatureFactory(wmsItem.wmsUrl, easting, northing);
         }
 
-        console.log(url);
+        if (verbose) console.log(url);
 
         if (url) {
             try {
                 //fetch wms url
                 url = proxyServer + url;
-                console.log(url);
+                if (verbose) console.log(url);
                 const response = await fetch(url);
                 const dataraw = await response.text();
 
-                console.log(dataraw);
+                if (verbose) console.log(dataraw);
 
                 //handle response
                 for (let layer of wmsItem.layers) {
-                    console.log('\nlayer name: \t', layer.name);
-                    console.log('property name: \t', layer.propertyName);
-
+                    if (verbose) console.log('\nlayer name: \t', layer.name);
+                    
                     let value;
 
                     //handle different text formats
@@ -281,26 +281,31 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
                     }
                     else if (wmsItem.infoFormat === 'application/geojson' ||
                         wmsItem.infoFormat === 'application/geo+json' ||
-                        wmsItem.infoFormat === 'application/json') {
+                        wmsItem.infoFormat === 'application/json' ||
+                        wmsItem.infoFormat === 'arcgis/json') {
+
+                        let nodeName;
+                        if (wmsItem.infoFormat !== 'arcgis/json') {
+                            nodeName = 'properties';
+                        }
+                        else {
+                            nodeName = layer.nodeName;
+                        }
+                        if (verbose) console.log('node name: \t', nodeName);
 
                         let data = JSON.parse(dataraw)
                         if (_.has(data, 'features') && data.features.length > 0) {
-                            value = data.features[0].properties[layer.propertyName];
+                            value = data.features[0][nodeName][layer.propertyName];
                         }
                         else {
                             value = undefined;
                         }
                     }
-                    else if (wmsItem.infoFormat === 'arcgis/json') {
-                        let data = JSON.parse(dataraw)
-                        if (data.features.length > 0)
-                            value = data.features[0].attributes[layer.propertyName];
-                        else
-                            value = undefined;
-                    }
                     else {
                         throw new Error('infoFormat not implemented: ' + wmsItem.infoFormat);
                     }
+
+                    if (verbose) console.log('property name: \t', layer.propertyName);
 
                     //assign summand
                     if (_.has(layer, 'propertyValues')) {   //evaluate multiple return values
@@ -315,12 +320,12 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
                             if (_.contains(propertyValueNames, value)) {
 
                                 let propertyValue = _.find(layer.propertyValues, i => i.name === value);
-                                console.log('\t list match exact: \t', propertyValue.name);
-                                console.log('\t summand:          \t', propertyValue.summand);
+                                if (verbose) console.log('\t list match exact: \t', propertyValue.name);
+                                if (verbose) console.log('\t summand:          \t', propertyValue.summand);
                                 mappingSum += propertyValue.summand;
                             }
                             else {
-                                console.log('\t NO match: \t', value);
+                                if (verbose) console.log('\t NO match: \t', value);
                             }
                         }
                         else {                              //search for contains text
@@ -329,19 +334,19 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
                                     return value.includes(text);
                                 })) {
                                 let propertyValue = _.find(layer.propertyValues, i => value.includes(i.name));
-                                console.log('\t list match contains: \t', propertyValue.name);
-                                console.log('\t summand:             \t', propertyValue.summand);
+                                if (verbose) console.log('\t list match contains: \t', propertyValue.name);
+                                if (verbose) console.log('\t summand:             \t', propertyValue.summand);
                                 mappingSum += propertyValue.summand;
                             }
                             else {
-                                console.log('\t NO match: \t', value);
+                                if (verbose) console.log('\t NO match: \t', value);
                             }
                         }
                     }
                     else {      //evaluate presence of property value
                         if (value) {
-                            console.log('\t presence match: \t', value);
-                            console.log('\t summand:        \t', layer.summand);
+                            if (verbose) console.log('\t presence match: \t', value);
+                            if (verbose) console.log('\t summand:        \t', layer.summand);
                             mappingSum += layer.summand;
                         }
                         // else {
@@ -350,33 +355,34 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev) {
 
                     }
                 }
-                console.log('\n---------------------------------------------');
+                if (verbose) console.log('\n---------------------------------------------');
             }
             catch (err) {
-                console.log('Error', err);
+                if (verbose) console.log('Error', err);
             }
         }
     }
 
     // Harmonisation: mappping the response
     if (canton.harmonyMap) {
-        let mappingValue = _.find(canton.harmonyMap, i => i.sum === mappingSum);
-        if (!mappingValue) {
+        let mappingItem = _.find(canton.harmonyMap, i => i.sum === mappingSum);
+        let mappingValue;
+        if (!mappingItem) {
             if (mappingSum === 0)
                 mappingValue = 4;               //Fallback
             else
                 mappingValue = undefined;       //TODO: should not happen! --> handle this!
         }
         else {
-            mappingValue = mappingValue.value;
+            mappingValue = mappingItem.value;
         }
-        console.log('Mapping Sum:     \t', mappingSum);
-        console.log('Harmonised value:\t', mappingValue);
+        if (verbose) console.log('Mapping Sum:     \t', mappingSum);
+        if (verbose) console.log('Harmonised value:\t', mappingValue);
         return mappingValue;
     }
     else {
-        console.log('Mapping Sum:     \t', mappingSum);
-        console.log('Harmonised value:\t', 'no harmony map found');
+        if (verbose) console.log('Mapping Sum:     \t', mappingSum);
+        if (verbose) console.log('Harmonised value:\t', 'no harmony map found');
         throw new Error('no harmony found for canton ' + canton.name);
     }
 
