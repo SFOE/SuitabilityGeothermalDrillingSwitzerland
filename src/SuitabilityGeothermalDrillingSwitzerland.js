@@ -8,9 +8,9 @@
 
 'use strict';
 
-import fetch from "node-fetch"; //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
-import jsdom from "jsdom";      //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
-import fs from 'fs';            //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
+// import fetch from "node-fetch"; //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
+// import jsdom from "jsdom";      //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
+// import fs from 'fs';            //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
 
 import _, { constant } from 'underscore';
 import ImageWMS from 'ol/source/ImageWMS.js';
