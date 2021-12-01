@@ -8,9 +8,9 @@
 
 'use strict';
 
-// import fetch from "node-fetch"; //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
-// import jsdom from "jsdom";      //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
-// import fs from 'fs';            //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
+import fetch from "node-fetch"; //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
+import jsdom from "jsdom";      //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
+import fs from 'fs';            //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
 
 import _, { constant } from 'underscore';
 import ImageWMS from 'ol/source/ImageWMS.js';
@@ -210,6 +210,11 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
  * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
  * @param {boolean} verbose (optional) activate console log
  * @returns {number} harmonised suitability value, 999 on error -> check error object
+ * @returns 1 = Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig
+ * @returns 2 = Kat 2: Grundsätzlich mit speziellen Auflagen zulässig
+ * @returns 3 = Kat 3: Grundsätzlich nicht zulässig
+ * @returns 4 = Kat 4: Aussage zur Eignung zurzeit nicht möglich
+ * @returns 5 = Kat 5: Keine Daten vorhanden
  */
 export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose = true) {
 
