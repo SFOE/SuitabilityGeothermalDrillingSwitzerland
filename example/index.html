@@ -25,20 +25,22 @@
             <label for="canton">Canton: </label>
             <input id="canton" name="canton" value="UR" type="text">
         </p>
-        <button>Erwärme mich</button>
+        <button>Heizung starten</button>
     </form>
 
-<hr>
-<h1>GetWMSLegend</h1>
-<div id="GetWMSLegend"></div>
+    <hr>
+    <h1>GetWMSLegend</h1>
+    <div id="GetWMSLegend"></div>
 
-<hr>
-<h1>GetWMSURL</h1>
-<div id="GetWMSURL"></div>
+    <hr>
+    <h1>GetWMSURL</h1>
+    <div id="GetWMSURL"></div>
 
     <script>
         window.addEventListener("load", function () {
             var form = document.forms[0];
+            var wmsLegendCanton = document.getElementById("GetWMSLegend");
+            var wmsCanton = document.getElementById("GetWMSURL");
 
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
@@ -47,33 +49,30 @@
                 const easting = document.getElementById("easting").value;
                 const canton = document.getElementById("canton").value;
 
-                BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton).then(harmonisedValue => { 
+                BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton).then(harmonisedValue => {
                     alert("Hamonisierter Wert: " + harmonisedValue);
                 });
-            });
 
-            var wmsLegendCanton = document.getElementById("GetWMSLegend");
-            var wmsCanton = document.getElementById("GetWMSURL");
+                wmsLegendCanton.innerHTML = '';
+                BfeLib.GetWMSLegendCanton(canton).then(legendUrl => {
+                    var URLLists = '';
 
-            BfeLib.GetWMSLegendCanton('UR').then(legendUrl => {
-                var URLLists = '';
-
-                legendUrl.forEach(element => {
-                    URLLists += "<img src='"+element+"' /><br>";
+                    legendUrl.forEach(element => {
+                        URLLists += "<img src='" + element + "' /><br>";
+                    });
+                    wmsLegendCanton.innerHTML = URLLists;
                 });
-                wmsLegendCanton.innerHTML = URLLists;
-            });
 
-            BfeLib.GetWMSCanton('UR').then(url => {
-                var URLLists = '';
+                wmsCanton.innerHTML = '';                    
+                BfeLib.GetWMSCanton(canton).then(url => {
+                    var URLLists = '';
 
-                url.forEach(element => {
-                    URLLists += element.url_+"<br>";
+                    url.forEach(element => {
+                        URLLists += element.url_ + "<br>";
+                    });
+                    wmsCanton.innerHTML = URLLists;
                 });
-                wmsCanton.innerHTML = URLLists;
             });
-
-            
 
         });
     </script>
