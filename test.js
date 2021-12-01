@@ -6,7 +6,7 @@
 
 "use strict";
 
-import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton } from './src/bfe_lib.js';
+import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
 
 //  await CheckSuitabilityCanton(2655805, 1258983, 'AG');
 // await CheckSuitabilityCanton(2653716, 1269536, 'AG');
@@ -32,7 +32,9 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton } from './src/
 
 // await CheckSuitabilityCanton(2679004, 1247702, 'ZH');
 // await CheckSuitabilityCanton(2684200, 1244025, 'ZH');
-await CheckSuitabilityCanton(2689003, 1274084, 'ZH');
+let response = await CheckSuitabilityCanton(2689003, 1274084, 'ZH');
+if (response === 999)
+    console.log(error);
 
 // await CheckSuitabilityCanton(2599516, 1200212, 'BE');
 // await CheckSuitabilityCanton(2599525, 1201544, 'BE');

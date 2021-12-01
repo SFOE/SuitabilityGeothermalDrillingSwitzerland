@@ -47,8 +47,8 @@ module.exports = {
     topLevelAwait: true
   },
   output: {
-    filename: 'bfe-lib.js',
-    chunkFilename: 'bfe-lib.js',
+    filename: 'SuitabilityGeothermalDrillingSwitzerland.min.js'
+    // chunkFilename: 'bfe-lib.js',
   },
   devServer: {
     static: {
