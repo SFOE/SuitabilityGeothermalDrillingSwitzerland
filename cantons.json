@@ -252,6 +252,7 @@
             "layers": [
                 {
                     "name": "sonde_geothermique",
+                    "rootName": "features",
                     "nodeName": "attributes",
                     "propertyName": "prof",
                     "propertyValues": [
@@ -620,6 +621,95 @@
             ]
         },
         {
+            "name": "LU",
+            "exampleLocation": [
+                [
+                    2665393,
+                    1217714,
+                    "ews_zulaessig"
+                ],
+                [
+                    2652462,
+                    1196901,
+                    "ews_zulaessig & ews_zulaessig_auflagen"
+                ],
+                [
+                    2645371,
+                    1200735,
+                    "ews_vorabklaeren"
+                ],
+                [
+                    2645598,
+                    1202446,
+                    "ews_nicht_zulaessig"
+                ]
+            ],
+            "wmsUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer/identify",
+            "mapServerUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer",
+            "mapServerUrlLegendUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer/legend",
+            "infoFormat": "arcgis/json",
+            "layers": [
+                {
+                    "name": "all:80",
+                    "desc": "ews_zulaessig",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 1
+                },
+                {
+                    "name": "all:78",
+                    "desc": "ews_vorabklaeren",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 2
+                },
+                {
+                    "name": "all:51",
+                    "desc": "ews_zulaessig_auflagen",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 10
+                },
+                {
+                    "name": "all:79",
+                    "desc": "ews_nicht_zulaessig",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 3
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 11,
+                    "value": 2
+                },
+                {
+                    "sum": 12,
+                    "value": 2
+                },
+                {
+                    "sum": 13,
+                    "value": 3
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
             "name": "GR",
             "exampleLocation": [
                 [
@@ -749,6 +839,7 @@
             "layers": [
                 {
                     "name": "sonde_geothermique",
+                    "rootName": "features",
                     "nodeName": "attributes",
                     "propertyName": "SECTEUR",
                     "propertyValues": [
@@ -766,7 +857,7 @@
                         },
                         {
                             "name": "Géothermie sur nappe (système ouvert)",
-                            "summand": 1
+                            "summand": 3
                         }
                     ]
                 }

@@ -18,8 +18,8 @@
         "servedev": "webpack serve --mode=development"
     },
     "keywords": [],
-    "author": "GEOTEST, SFOE",
-    "license": "ISC",
+    "author": "Swiss Federal Office of Energy SFOE",
+    "license": "MIT",
     "description": "SuitabilityGeothermalDrillingSwitzerland",
     "devDependencies": {
         "@babel/core": "^7.16.0",

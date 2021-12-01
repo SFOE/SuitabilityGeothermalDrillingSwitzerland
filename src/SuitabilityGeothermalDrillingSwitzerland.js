@@ -140,9 +140,19 @@ async function imageWMSFactory(wmsItem, wmsVersion = '1.3.0') {
  */
 async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
     const delta = 0.01;     //variation for bbox
-    const url = featureServerUrl +
+    let url = featureServerUrl +
         '/query/?f=json&' +
-        'returnGeometry=false&spatialRel=esriSpatialRelIntersects&geometry=' +
+        'imageDisplay=1,1,1&' +
+        'tolerance=1&' +
+        // 'returnGeometry=false&spatialRel=esriSpatialRelIntersects&geometry=' +
+        'geometry={%22x%22%3A' +
+        `${(easting).toFixed(3)}` +
+        '%2C%22y%22%3A' +
+        `${(northing).toFixed(3)}` +
+        '}&' +
+        'returnGeometry=false&' +
+        // 'spatialRel=esriSpatialRelIntersects&' +
+        'mapExtent=' +
         `${(easting - delta).toFixed(3)}` +
         ',' +
         `${(northing - delta).toFixed(3)}` +
@@ -150,9 +160,11 @@ async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
         `${(easting + delta).toFixed(3)}` +
         ',' +
         `${(northing + delta).toFixed(3)}` +
-        '&geometryType=esriGeometryEnvelope&' +
-        'inSR=2056&' +
-        '&outSR=2056';
+        // '&geometryType=esriGeometryEnvelope&' +
+        '&geometryType=esriGeometryPoint&' +
+        // 'inSR=2056&' +
+        // '&outSR=2056' +
+        '&sr=2056';
 
     return url;
 }
@@ -272,8 +284,8 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                     //fetch wms url
                     url = proxyServer + url;
                     if (verbose) console.log(url);
-                    const response = await fetch(url);
-                    const dataraw = await response.text();
+                    let response = await fetch(url);
+                    let dataraw = await response.text();
 
                     if (verbose) console.log(dataraw);
 
@@ -294,18 +306,27 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                             wmsItem.infoFormat === 'application/json' ||
                             wmsItem.infoFormat === 'arcgis/json') {
 
+                            let rootName;
                             let nodeName;
                             if (wmsItem.infoFormat !== 'arcgis/json') {
+                                rootName = 'features';
                                 nodeName = 'properties';
                             }
                             else {
+
+                                let urlLayer = url + '&layers=' + layer.name;
+                                if (verbose) console.log(urlLayer);
+                                response = await fetch(urlLayer);
+                                dataraw = await response.text();
+
+                                rootName = layer.rootName;
                                 nodeName = layer.nodeName;
                             }
                             if (verbose) console.log('node name: \t', nodeName);
 
                             let data = JSON.parse(dataraw)
-                            if (_.has(data, 'features') && data.features.length > 0) {
-                                value = data.features[0][nodeName][layer.propertyName];
+                            if (_.has(data, rootName) && data[rootName].length > 0) {
+                                value = data[rootName][0][nodeName][layer.propertyName];
                             }
                             else {
                                 value = undefined;
@@ -382,8 +403,11 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
             if (!mappingItem) {
                 if (mappingSum === 0)
                     mappingValue = 4;               //Fallback
-                else
-                    mappingValue = undefined;       //TODO: should not happen! --> handle this!
+                else {
+                    mappingValue = undefined;       
+                    error = new Error('no harmonised value found for sum = ' + mappingSum);
+                    return 999;
+                }
             }
             else {
                 mappingValue = mappingItem.value;

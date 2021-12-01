@@ -32,9 +32,18 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error } from 
 
 // await CheckSuitabilityCanton(2679004, 1247702, 'ZH');
 // await CheckSuitabilityCanton(2684200, 1244025, 'ZH');
-let response = await CheckSuitabilityCanton(2689003, 1274084, 'ZH');
-if (response === 999)
-    console.log(error);
+// let response = await CheckSuitabilityCanton(2689003, 1274084, 'ZH');
+// if (response === 999)
+//     console.log(error);
+
+// await CheckSuitabilityCanton(2665393, 1217714, 'LU');
+// let ans = await CheckSuitabilityCanton(2652462, 1196901, 'LU');
+// let ans = await CheckSuitabilityCanton(2645598, 1202446, 'LU');
+
+let ans = await CheckSuitabilityCanton(2645371, 1200735, 'LU');
+console.log(ans);
+console.log(error);
+
 
 // await CheckSuitabilityCanton(2599516, 1200212, 'BE');
 // await CheckSuitabilityCanton(2599525, 1201544, 'BE');
