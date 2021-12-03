@@ -2,7 +2,7 @@
 //  SuitabilityGeothermalDrillingSwitzerland
 //
 //  TODO:   - uniform error handling 
-//
+//          - testing functions
 //
 //
 
@@ -29,8 +29,20 @@ register(proj4);
  */
 export let error;
 
-const proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/';
+/**
+ * Proxy server URL
+ */
+export let proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/';
 //const proxyServer = 'http://www.whateverorigin.org/get?url=';
+
+/**
+ * Setter for proxyServer
+ * @param {string} url proxy server url, e.g. 'https://bfe-cors-anywhere.herokuapp.com/'
+ */
+export function SetProxyServer(url) {
+    if (url)
+        proxyServer = url;
+}
 
 /**
  * async_fetch
@@ -204,6 +216,9 @@ export async function GetWMSCanton(cantonAbbrev) {
  * @return {string[]} legend urls
  */
 export async function GetWMSLegendCanton(cantonAbbrev) {
+
+    //TODO: for ESRI case
+
     const imageWmsList = await GetWMSCanton(cantonAbbrev);
 
     let legendUrlList = [];
@@ -221,7 +236,7 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
  * @param {number} northing  LV95 Northing in (m)
  * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
  * @param {boolean} verbose (optional) activate console log
- * @returns {number} harmonised suitability value, 999 on error -> check error object
+ * @returns {number} harmonised suitability value, 999 on error -> check 'error' object
  * @returns 1 = Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig
  * @returns 2 = Kat 2: Grundsätzlich mit speziellen Auflagen zulässig
  * @returns 3 = Kat 3: Grundsätzlich nicht zulässig
@@ -229,8 +244,10 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
  * @returns 5 = Kat 5: Keine Daten vorhanden
  */
 export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose = true) {
-
     try {
+
+        error = undefined;  //reset error object
+
         //Check perimeter
         const lowerleft = [2480000, 1070000];
         const upperright = [2840000, 1300000];
@@ -404,7 +421,7 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                 if (mappingSum === 0)
                     mappingValue = 4;               //Fallback
                 else {
-                    mappingValue = undefined;       
+                    mappingValue = undefined;
                     error = new Error('no harmonised value found for sum = ' + mappingSum);
                     return 999;
                 }
@@ -429,4 +446,4 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
     }
 }
 
-export default { GetWMSCanton, GetWMSLegendCanton, CheckSuitabilityCanton, error };
+export default { GetWMSCanton, GetWMSLegendCanton, CheckSuitabilityCanton, error, proxyServer, SetProxyServer };

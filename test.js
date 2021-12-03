@@ -6,7 +6,7 @@
 
 "use strict";
 
-import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
+import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyServer, SetProxyServer } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
 
 //  await CheckSuitabilityCanton(2655805, 1258983, 'AG');
 // await CheckSuitabilityCanton(2653716, 1269536, 'AG');
@@ -40,16 +40,21 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error } from 
 // let ans = await CheckSuitabilityCanton(2652462, 1196901, 'LU');
 // let ans = await CheckSuitabilityCanton(2645598, 1202446, 'LU');
 
-let ans = await CheckSuitabilityCanton(2645371, 1200735, 'LU');
-console.log(ans);
-console.log(error);
+// let ans = await CheckSuitabilityCanton(2645371, 1200735, 'LU');
+// console.log(ans);
+// console.log(error);
 
 
 // await CheckSuitabilityCanton(2599516, 1200212, 'BE');
 // await CheckSuitabilityCanton(2599525, 1201544, 'BE');
 // await CheckSuitabilityCanton(2600318, 1199065, 'BE');
-// await CheckSuitabilityCanton(2597320, 1198900, 'BE');
+console.log(proxyServer);
+// SetProxyServer('');
+
+await CheckSuitabilityCanton(2597320, 1198900, 'BE');
 // await CheckSuitabilityCanton(2621040, 1171911, 'BE');
+// await CheckSuitabilityCanton(2690343, 1289821, 'BE');
+
 
 // await CheckSuitabilityCanton(2745188, 1187042, 'GR');
 // await CheckSuitabilityCanton(2747613, 1190056, 'GR');
