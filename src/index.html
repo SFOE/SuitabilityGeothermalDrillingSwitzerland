@@ -5,13 +5,39 @@
     <meta charset="utf-8" />
     <title>BFE Erdwärmensondentool</title>
     <script defer src="SuitabilityGeothermalDrillingSwitzerland.min.js"></script>
-</head>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/css/ol.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.14/proj4.js"></script>
+    <style>
+        .map {
+            width: 800px;
+            height: 400px;
+        }
+
+        .flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px sold lightgray;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+    </style>
+
 </head>
 
 <body>
     <h1>Hallo Erdwärmensonden-Welt</h1>
-    <h2>Tip: Check your console</h2>
+    <h2>Tip: Klick auf Karte</h2>
 
+    <div class="flex-container" >
+        <div class="flex-child">
     <form id="theForm">
         <p>
             <label for="easting">Easting: </label>
@@ -27,6 +53,19 @@
         </p>
         <button>Heizung starten</button>
     </form>
+</div>
+<div class="flex-child">
+    <div id="map" class="map"></div>
+</div>
+
+    
+
+    
+</div>
+<div>
+    <h3 style="margin-top:20px;">Result:</h3>
+    <div id="result" style="font-weight: bold; font-size: larger; width: 100%; border: 2px solid #ccc; text-align: center;"></div>
+</div>
 
     <hr>
     <h1>GetWMSLegend</h1>
@@ -36,25 +75,56 @@
     <h1>GetWMSURL</h1>
     <div id="GetWMSURL"></div>
 
+    
+
     <script>
-        window.addEventListener("load", function () {
-            var form = document.forms[0];
-            var wmsLegendCanton = document.getElementById("GetWMSLegend");
-            var wmsCanton = document.getElementById("GetWMSURL");
+        var northing;
+        var easting;
+        var canton_field;
 
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
+        var form;
+        var wmsLegendCanton;
+        var wmsCanton;
 
-                const northing = document.getElementById("northing").value;
-                const easting = document.getElementById("easting").value;
-                const canton = document.getElementById("canton").value;
 
-                BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton).then(harmonisedValue => {
-                    alert("Hamonisierter Wert: " + harmonisedValue);
+        // when form is submitted, update map, get harmonized value and update wmslegend and wmsurl
+        var submitEvent = function () {
+                northing = document.getElementById("northing").value;
+                easting = document.getElementById("easting").value;
+                canton_field = document.getElementById("canton").value;
+
+                
+                wmsLegendCanton = document.getElementById("GetWMSLegend");
+                wmsCanton = document.getElementById("GetWMSURL");
+                
+
+                // remove all layers in map
+                map.getLayers().forEach(layer => {
+                    console.log("Layers");
+                    console.log(layer);
+                    if (layer && layer.get('name') != 'background-layer' && layer.get('name') != 'markerLayer') {
+                        map.removeLayer(layer);
+                    }
                 });
 
+
+
+                BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton_field).then(harmonisedValue => {
+
+                    var result = document.getElementById("result");
+                    if (harmonisedValue == 1) result.innerHTML = 'Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig';
+                    else if (harmonisedValue == 2) result.innerHTML = 'Kat 2: Grundsätzlich mit speziellen Auflagen zulässig';
+                    else if (harmonisedValue == 3) result.innerHTML = 'Kat 3: Grundsätzlich nicht zulässig';
+                    else if (harmonisedValue == 4) result.innerHTML = 'Kat 4: Aussage zur Eignung zurzeit nicht möglich';
+                    else if (harmonisedValue == 5) result.innerHTML = 'Kat 5: Keine Daten vorhanden';
+                    else if (harmonisedValue == 999) result.innerHTML = 'Allgemeiner Fehler';
+                });
+
+
+
+                // Show legend
                 wmsLegendCanton.innerHTML = '';
-                BfeLib.GetWMSLegendCanton(canton).then(legendUrl => {
+                BfeLib.GetWMSLegendCanton(canton_field).then(legendUrl => {
                     var URLLists = '';
 
                     legendUrl.forEach(element => {
@@ -63,8 +133,9 @@
                     wmsLegendCanton.innerHTML = URLLists;
                 });
 
-                wmsCanton.innerHTML = '';                    
-                BfeLib.GetWMSCanton(canton).then(url => {
+                // Show WMS
+                wmsCanton.innerHTML = '';
+                BfeLib.GetWMSCanton(canton_field).then(url => {
                     var URLLists = '';
 
                     url.forEach(element => {
@@ -72,9 +143,101 @@
                     });
                     wmsCanton.innerHTML = URLLists;
                 });
+
+                // Sample for Openlayers WMS
+                BfeLib.GetWMSCanton(canton_field).then(url => {
+                    url.forEach(element => {
+                        console.log(element);
+
+                        var newLayer = new ol.layer.Image({
+                            source: element,
+                            opacity: 0.5
+                        });
+
+                        map.addLayer(newLayer);
+                    });
+                });
+
+                // Add marker at current location to map
+                var firstproj = "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs  ";
+                var secondproj = "+proj=longlat +datum=WGS84 +no_defs";
+
+                let [lon, lat] = proj4(firstproj, secondproj, [easting, northing]);
+                const iconFeature = new ol.Feature({
+                    geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat]))
+                });
+                map.getView().setCenter(ol.proj.fromLonLat([lon, lat]));
+                map.getView().setZoom(14);
+                markerLayer.getSource().clear();
+                markerLayer.getSource().addFeature(iconFeature);
+            };
+
+        window.addEventListener("load", function () {
+            form = document.forms[0];
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                submitEvent();
             });
 
         });
+    </script>
+
+    <script>
+        // Openlayers Sample
+
+        const backgroundLayer = new ol.layer.Tile({
+            id: "background-layer",
+            name: "background-layer",
+            source: new ol.source.XYZ({
+                url: `https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg`
+            })
+        });
+
+
+        const markerLayer = new ol.layer.Vector({
+            zIndex: 100,
+            name: "markerLayer",
+            source: new ol.source.Vector(),
+            style: new ol.style.Style({
+                image: new ol.style.Icon({
+                    anchor: [0.5, 46],
+                    anchorXUnits: 'fraction',
+                    anchorYUnits: 'pixels',
+                    src: 'https://openlayers.org/en/latest/examples/data/icon.png'
+                })
+            })
+        })
+
+        const map = new ol.Map({
+            layers: [
+                backgroundLayer, markerLayer
+            ],
+            target: 'map',
+            view: new ol.View({
+                projection: "EPSG:3857",
+                center: [900000, 5900000],
+                zoom: 7
+            }),
+        });
+
+       
+        // Handle map click: fill out form and submit
+        map.on('click', function(evt) {
+            console.log(evt.coordinate);
+
+            var secondproj = "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs ";
+            var firstproj = "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs";
+
+            let [lon, lat] = proj4(firstproj, secondproj, evt.coordinate);
+            document.getElementById("easting").value = Math.round(lon);
+            document.getElementById("northing").value = Math.round(lat);
+
+            getCantonForCoordinate(Math.round(lon), Math.round(lat)).then(cantonValue => {document.getElementById("canton").value = cantonValue;
+            submitEvent();
+            }
+            );
+        });
+
     </script>
 
 
