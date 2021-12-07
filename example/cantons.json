@@ -621,6 +621,65 @@
             ]
         },
         {
+            "name": "SG",
+            "exampleLocation": [
+                [
+                    2733447,
+                    1241435,
+                    "1"
+                ],
+                [
+                    2735185,
+                    1244058,
+                    "3"
+                ],
+                [
+                    2742740,
+                    1233995,
+                    "2"
+                ]
+            ],
+            "wmsUrl": "https://services.geo.sg.ch/wss/service/SG00025_WMS/guest?",
+            "infoFormat": "application/geojson",
+            "layers": [
+                {
+                    "name": "Zulaessigkeitsbereich",
+                    "propertyName": "OBJECTID",
+                    "propertyValues": [
+                        {
+                            "name": "2",
+                            "desc": "nicht zulässig (siehe Erläuterungen)",
+                            "summand": 3
+                        },
+                        {
+                            "name": "3",
+                            "desc": "zulässig (siehe Erläuterungen)",
+                            "summand": 1
+                        },
+                        {
+                            "name": "1",
+                            "desc": "bedingt zulässig (siehe Erläuterungen)",
+                            "summand": 2
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
             "name": "LU",
             "exampleLocation": [
                 [

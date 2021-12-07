@@ -48,10 +48,10 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // await CheckSuitabilityCanton(2599516, 1200212, 'BE');
 // await CheckSuitabilityCanton(2599525, 1201544, 'BE');
 // await CheckSuitabilityCanton(2600318, 1199065, 'BE');
-console.log(proxyServer);
+//console.log(proxyServer);
 // SetProxyServer('');
 
-await CheckSuitabilityCanton(2597320, 1198900, 'BE');
+// await CheckSuitabilityCanton(2597320, 1198900, 'BE');
 // await CheckSuitabilityCanton(2621040, 1171911, 'BE');
 // await CheckSuitabilityCanton(2690343, 1289821, 'BE');
 
@@ -105,6 +105,11 @@ await CheckSuitabilityCanton(2597320, 1198900, 'BE');
 // let legends = await GetWMSLegendCanton('VD');
 // console.log(legends);
 
+
+// await CheckSuitabilityCanton(2733447, 1241435, 'SG');
+// await CheckSuitabilityCanton(2735185, 1244058, 'SG');
+// await CheckSuitabilityCanton(2742740, 1233995, 'SG');
+// await CheckSuitabilityCanton(2502359,1110025, 'SG');
 
 
 
