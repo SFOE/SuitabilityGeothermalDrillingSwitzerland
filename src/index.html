@@ -93,10 +93,9 @@
                 easting = document.getElementById("easting").value;
                 canton_field = document.getElementById("canton").value;
 
-                
                 wmsLegendCanton = document.getElementById("GetWMSLegend");
                 wmsCanton = document.getElementById("GetWMSURL");
-                
+                var result = document.getElementById("result");
 
                 // remove all layers in map
                 map.getLayers().forEach(layer => {
@@ -107,11 +106,9 @@
                     }
                 });
 
-
-
+                // GET Suitability
+                result.innerHTML = 'Loading...';
                 BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton_field).then(harmonisedValue => {
-
-                    var result = document.getElementById("result");
                     if (harmonisedValue == 1) result.innerHTML = 'Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig';
                     else if (harmonisedValue == 2) result.innerHTML = 'Kat 2: Grundsätzlich mit speziellen Auflagen zulässig';
                     else if (harmonisedValue == 3) result.innerHTML = 'Kat 3: Grundsätzlich nicht zulässig';
@@ -119,8 +116,6 @@
                     else if (harmonisedValue == 5) result.innerHTML = 'Kat 5: Keine Daten vorhanden';
                     else if (harmonisedValue == 999) result.innerHTML = 'Allgemeiner Fehler';
                 });
-
-
 
                 // Show legend
                 wmsLegendCanton.innerHTML = '';

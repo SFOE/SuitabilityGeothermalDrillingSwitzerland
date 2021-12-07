@@ -446,4 +446,6 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
     }
 }
 
+
+
 export default { GetWMSCanton, GetWMSLegendCanton, CheckSuitabilityCanton, error, proxyServer, SetProxyServer };
