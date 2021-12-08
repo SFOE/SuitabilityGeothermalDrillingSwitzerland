@@ -86,6 +86,9 @@
         var wmsLegendCanton;
         var wmsCanton;
 
+        
+        const proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/';
+
 
         // when form is submitted, update map, get harmonized value and update wmslegend and wmsurl
         var submitEvent = function () {
@@ -140,10 +143,9 @@
                 });
 
                 // Sample for Openlayers WMS
-                BfeLib.GetWMSCanton(canton_field).then(url => {
+                BfeLib.GetWMSCanton(canton_field, true).then(url => {
                     url.forEach(element => {
                         console.log(element);
-
                         var newLayer = new ol.layer.Image({
                             source: element,
                             opacity: 0.5
@@ -168,6 +170,9 @@
             };
 
         window.addEventListener("load", function () {
+            
+            BfeLib.proxyServer = proxyServer;
+
             form = document.forms[0];
             form.addEventListener("submit", function(event) {
                 event.preventDefault();

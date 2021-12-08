@@ -123,14 +123,18 @@ async function getWMSList(canton) {
 /**
  * imageWMSFactory
  * @param {object} wmsItem url and layer definition
+ * @param {boolean} withProxy add proxy server to url. default = false
  * @param {string} wmsVersion (optional) default='1.3.0'
  * @returns {ImageWMS} ol imageWMS object
  */
-async function imageWMSFactory(wmsItem, wmsVersion = '1.3.0') {
+async function imageWMSFactory(wmsItem, withProxy = false, wmsVersion = '1.3.0') {
     let layerNames = _.pluck(wmsItem.layers, 'name');   //get wms layer names
 
+    let url = wmsItem.wmsUrl;
+    if (withProxy) url = proxyServer + wmsItem.wmsUrl;
+
     const imageWms = new ImageWMS({
-        url: wmsItem.wmsUrl,
+        url: url,
         params: {
             'LAYERS': [...layerNames],
             'VERSION': wmsVersion,
@@ -184,9 +188,10 @@ async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
 /**
  * GetWMSCanton
  * @param  {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
+ * @param {boolean} withProxy add proxy server to url. default = false
  * @return {ImageWMS[]} for open layers wms, not defined for esri yet
  */
-export async function GetWMSCanton(cantonAbbrev) {
+export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
     const canton = await getCantonJson(cantonAbbrev);
     const wmsList = await getWMSList(canton);
 
@@ -194,7 +199,7 @@ export async function GetWMSCanton(cantonAbbrev) {
     //multiple wms possible
     for (const wmsItem of wmsList) {
         if (wmsItem.infoFormat !== 'arcgis/json') {     //openlayers WMS
-            const imageWms = await imageWMSFactory(wmsItem);
+            const imageWms = await imageWMSFactory(wmsItem, withProxy);
             imageWmsList.push(imageWms);
         }
         else {                                          //Esri ArcGIS REST 
