@@ -6,7 +6,7 @@
 
 "use strict";
 
-import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyServer, SetProxyServer } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
+import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyServer, SetProxyServer, TestAllCantons } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
 
 //  await CheckSuitabilityCanton(2655805, 1258983, 'AG');
 // await CheckSuitabilityCanton(2653716, 1269536, 'AG');
@@ -111,7 +111,8 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // await CheckSuitabilityCanton(2742740, 1233995, 'SG');
 // await CheckSuitabilityCanton(2502359,1110025, 'SG');
 
-
+let result = await TestAllCantons();
+console.log(result);
 
 
 

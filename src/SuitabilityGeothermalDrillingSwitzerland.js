@@ -12,7 +12,7 @@
 // import jsdom from "jsdom";      //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
 // import fs from 'fs';            //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
 
-import _, { constant } from 'underscore';
+import _ from 'underscore';
 import ImageWMS from 'ol/source/ImageWMS.js';
 import WMSGetFeatureInfo from 'ol/format/WMSGetFeatureInfo.js';
 import proj4 from 'proj4';
@@ -188,7 +188,7 @@ async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
 /**
  * GetWMSCanton
  * @param  {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
- * @param {boolean} withProxy add proxy server to url. default = false
+ * @param {boolean} withProxy (optional) add proxy server to url. default = false
  * @return {ImageWMS[]} for open layers wms, not defined for esri yet
  */
 export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
@@ -208,7 +208,7 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
 
             //TODO:
 
-            throw new Error('not implemented yet');
+            throw new Error('Esri ArcGIS REST not implemented yet');
         }
     }
 
@@ -451,6 +451,150 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
     }
 }
 
+/**
+ * Check url for status ok
+ * @param {string} url 
+ * @returns {boolean} status=ok
+ */
+async function checkLinkOk(url) {
+    if (url)
+        return (await fetch(url)).ok;
+    else
+        return false;
+}
+
+export async function TestAllCantons() {
+
+    let cantonsDict = [];
+
+    const cantons = await getAllCantonsJson();
+    const cantonsList = cantons.cantonsList;
+    const cantonNames = _.pluck(cantonsList, 'name').sort();
+    // console.log(cantonNames;
+
+    for (const cantonAbbrev of cantonAbbrevList) {
+        const configured = _.contains(cantonNames, cantonAbbrev);
+        let wmsAlive = [];
+
+        if (configured) {
+            let imageWmsList;
+
+            try {
+                imageWmsList = await GetWMSCanton(cantonAbbrev, true);
+            }
+            catch (err) {
+
+                let wmsAlive = [];
+                wmsAlive.push({
+                    wms: 'none',
+                    aliveGetCap: false,
+                    aliveGetFeat: false,
+                    expectedResult: false
+                });
+
+                let item = {
+                    canton: cantonAbbrev,
+                    configured: configured,
+                    wmsAlive: wmsAlive
+                }
+
+                cantonsDict.push(item);
+                // console.log(cantonAbbrev, item);
+                console.log(cantonAbbrev);
+                continue;
+            }
+
+            for (const imageWmsItem of imageWmsList) {
+                try {
+                    const wmsUrl = imageWmsItem.getUrl();
+
+                    const wmsGetCapabilitiesUrl = wmsUrl + '?version=1.3.0&request=GetCapabilities&service=WMS';
+                    const wmsGetCapabilitiesOk = await checkLinkOk(wmsGetCapabilitiesUrl);
+
+                    let wmsGetFeatureInfoOk = false;
+                    let canton = _.find(cantonsList, i => i.name === cantonAbbrev);
+                    let location1 = canton.exampleLocation[0];
+
+                    let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, false);
+                    if (suitability && suitability < 5 && suitability > 0)
+                        wmsGetFeatureInfoOk = true;
 
 
-export default { GetWMSCanton, GetWMSLegendCanton, CheckSuitabilityCanton, error, proxyServer, SetProxyServer };
+                    let checkResult = suitability === Number(location1[2]);
+
+                    wmsAlive.push({
+                        wms: wmsUrl,
+                        aliveGetCap: wmsGetCapabilitiesOk,
+                        aliveGetFeat: wmsGetFeatureInfoOk,
+                        expectedResult: checkResult
+                    });
+
+                }
+                catch (err) {
+                    wmsAlive.push({
+                        wms: imageWmsItem.url,
+                        alive: false,
+                        error: err
+                    });
+                }
+            }
+            if (imageWmsList.length === 0)
+                wmsAlive.push({
+                    wms: 'none',
+                    aliveGetCap: false,
+                    aliveGetFeat: false,
+                    expectedResult: false
+                });
+
+        }
+        else {  //canton not configured
+            wmsAlive.push({
+                wms: 'none',
+                aliveGetCap: false,
+                aliveGetFeat: false,
+                expectedResult: false
+            });
+        }
+
+        let item = {
+            canton: cantonAbbrev,
+            configured: configured,
+            wmsAlive: wmsAlive
+        }
+
+        cantonsDict.push(item);
+        // console.log(cantonAbbrev, item);
+        console.log(cantonAbbrev);
+    }
+
+    return cantonsDict;
+}
+
+const cantonAbbrevList = ['AG',
+    'AI',
+    'AR',
+    'BE',
+    'BL',
+    'BS',
+    'FR',
+    'GE',
+    'GL',
+    'GR',
+    'JU',
+    'LU',
+    'NE',
+    'NW',
+    'OW',
+    'SG',
+    'SH',
+    'SO',
+    'SZ',
+    'TG',
+    'TI',
+    'UR',
+    'VD',
+    'VS',
+    'ZG',
+    'ZH'];
+
+export default { GetWMSCanton, GetWMSLegendCanton, CheckSuitabilityCanton, error, proxyServer, SetProxyServer, TestAllCantons };

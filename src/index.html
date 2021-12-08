@@ -10,6 +10,18 @@
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.9.0/build/ol.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.14/proj4.js"></script>
+
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" language="javascript"
+        src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
     <style>
         .map {
             width: 800px;
@@ -17,17 +29,17 @@
         }
 
         .flex-container {
-    display: flex;
-}
+            display: flex;
+        }
 
-.flex-child {
-    flex: 1;
-    border: 2px sold lightgray;
-}  
+        .flex-child {
+            flex: 1;
+            border: 2px sold lightgray;
+        }
 
-.flex-child:first-child {
-    margin-right: 20px;
-} 
+        .flex-child:first-child {
+            margin-right: 20px;
+        }
     </style>
 
 </head>
@@ -36,36 +48,38 @@
     <h1>Hallo Erdwärmensonden-Welt</h1>
     <h2>Tip: Klick auf Karte</h2>
 
-    <div class="flex-container" >
+    <div class="flex-container">
         <div class="flex-child">
-    <form id="theForm">
-        <p>
-            <label for="easting">Easting: </label>
-            <input id="easting" name="easting" value="2684890" type="number">
-        </p>
-        <p>
-            <label for="northing">Northing: </label>
-            <input id="northing" name="northing" value="1182492" type="number">
-        </p>
-        <p>
-            <label for="canton">Canton: </label>
-            <input id="canton" name="canton" value="UR" type="text">
-        </p>
-        <button>Heizung starten</button>
-    </form>
-</div>
-<div class="flex-child">
-    <div id="map" class="map"></div>
-</div>
+            <form id="theForm">
+                <p>
+                    <label for="easting">Easting: </label>
+                    <input id="easting" name="easting" value="2684890" type="number">
+                </p>
+                <p>
+                    <label for="northing">Northing: </label>
+                    <input id="northing" name="northing" value="1182492" type="number">
+                </p>
+                <p>
+                    <label for="canton">Canton: </label>
+                    <input id="canton" name="canton" value="UR" type="text">
+                </p>
+                <button>Heizung starten</button>
+            </form>
+        </div>
+        <div class="flex-child">
+            <div id="map" class="map"></div>
+        </div>
 
-    
 
-    
-</div>
-<div>
-    <h3 style="margin-top:20px;">Result:</h3>
-    <div id="result" style="font-weight: bold; font-size: larger; width: 100%; border: 2px solid #ccc; text-align: center;"></div>
-</div>
+
+
+    </div>
+    <div>
+        <h3 style="margin-top:20px;">Result:</h3>
+        <div id="result"
+            style="font-weight: bold; font-size: larger; width: 100%; border: 2px solid #ccc; text-align: center;">
+        </div>
+    </div>
 
     <hr>
     <h1>GetWMSLegend</h1>
@@ -75,7 +89,20 @@
     <h1>GetWMSURL</h1>
     <div id="GetWMSURL"></div>
 
-    
+    <hr>
+    <h1>TestAllCantons</h1>
+    <div>
+        <button id="testButton">Run Test (takes some time)</button>
+    </div>
+    <div>
+        <div id="loader" style="display: none;" class="text-danger font-weight-bold">
+            Running. Please wait... see console
+        </div>
+    </div>
+    <div>
+        <table id="testTable" class="display" style="width:100%">
+        </table>
+    </div>
 
     <script>
         var northing;
@@ -85,99 +112,198 @@
         var form;
         var wmsLegendCanton;
         var wmsCanton;
-        
+
         const proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/'; //default in lib
 
         // when form is submitted, update map, get harmonized value and update wmslegend and wmsurl
         var submitEvent = function () {
-                northing = document.getElementById("northing").value;
-                easting = document.getElementById("easting").value;
-                canton_field = document.getElementById("canton").value;
+            northing = document.getElementById("northing").value;
+            easting = document.getElementById("easting").value;
+            canton_field = document.getElementById("canton").value;
 
-                wmsLegendCanton = document.getElementById("GetWMSLegend");
-                wmsCanton = document.getElementById("GetWMSURL");
-                var result = document.getElementById("result");
+            wmsLegendCanton = document.getElementById("GetWMSLegend");
+            wmsCanton = document.getElementById("GetWMSURL");
+            var result = document.getElementById("result");
 
-                // remove all layers in map
-                map.getLayers().forEach(layer => {
-                    console.log("Layers");
-                    console.log(layer);
-                    if (layer && layer.get('name') != 'background-layer' && layer.get('name') != 'markerLayer') {
-                        map.removeLayer(layer);
-                    }
+            // remove all layers in map
+            map.getLayers().forEach(layer => {
+                console.log("Layers");
+                console.log(layer);
+                if (layer && layer.get('name') != 'background-layer' && layer.get('name') != 'markerLayer') {
+                    map.removeLayer(layer);
+                }
+            });
+
+            // GET Suitability
+            result.innerHTML = 'Loading...';
+            BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton_field).then(harmonisedValue => {
+                if (harmonisedValue == 1) result.innerHTML = 'Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig';
+                else if (harmonisedValue == 2) result.innerHTML = 'Kat 2: Grundsätzlich mit speziellen Auflagen zulässig';
+                else if (harmonisedValue == 3) result.innerHTML = 'Kat 3: Grundsätzlich nicht zulässig';
+                else if (harmonisedValue == 4) result.innerHTML = 'Kat 4: Aussage zur Eignung zurzeit nicht möglich';
+                else if (harmonisedValue == 5) result.innerHTML = 'Kat 5: Keine Daten vorhanden';
+                else if (harmonisedValue == 999) result.innerHTML = 'Allgemeiner Fehler';
+            });
+
+            // Show legend
+            wmsLegendCanton.innerHTML = '';
+            BfeLib.GetWMSLegendCanton(canton_field).then(legendUrl => {
+                var URLLists = '';
+
+                legendUrl.forEach(element => {
+                    URLLists += "<img src='" + element + "' /><br>";
                 });
+                wmsLegendCanton.innerHTML = URLLists;
+            });
 
-                // GET Suitability
-                result.innerHTML = 'Loading...';
-                BfeLib.CheckSuitabilityCanton(parseInt(easting), parseInt(northing), canton_field).then(harmonisedValue => {
-                    if (harmonisedValue == 1) result.innerHTML = 'Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig';
-                    else if (harmonisedValue == 2) result.innerHTML = 'Kat 2: Grundsätzlich mit speziellen Auflagen zulässig';
-                    else if (harmonisedValue == 3) result.innerHTML = 'Kat 3: Grundsätzlich nicht zulässig';
-                    else if (harmonisedValue == 4) result.innerHTML = 'Kat 4: Aussage zur Eignung zurzeit nicht möglich';
-                    else if (harmonisedValue == 5) result.innerHTML = 'Kat 5: Keine Daten vorhanden';
-                    else if (harmonisedValue == 999) result.innerHTML = 'Allgemeiner Fehler';
+            // Show WMS
+            wmsCanton.innerHTML = '';
+            BfeLib.GetWMSCanton(canton_field).then(url => {
+                var URLLists = '';
+
+                url.forEach(element => {
+                    URLLists += element.url_ + "<br>";
                 });
+                wmsCanton.innerHTML = URLLists;
+            });
 
-                // Show legend
-                wmsLegendCanton.innerHTML = '';
-                BfeLib.GetWMSLegendCanton(canton_field).then(legendUrl => {
-                    var URLLists = '';
-
-                    legendUrl.forEach(element => {
-                        URLLists += "<img src='" + element + "' /><br>";
+            // Sample for Openlayers WMS
+            BfeLib.GetWMSCanton(canton_field, true).then(url => {
+                url.forEach(element => {
+                    console.log(element);
+                    var newLayer = new ol.layer.Image({
+                        source: element,
+                        opacity: 0.5
                     });
-                    wmsLegendCanton.innerHTML = URLLists;
+
+                    map.addLayer(newLayer);
                 });
+            });
 
-                // Show WMS
-                wmsCanton.innerHTML = '';
-                BfeLib.GetWMSCanton(canton_field).then(url => {
-                    var URLLists = '';
+            // Add marker at current location to map
+            var firstproj = "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs  ";
+            var secondproj = "+proj=longlat +datum=WGS84 +no_defs";
 
-                    url.forEach(element => {
-                        URLLists += element.url_ + "<br>";
-                    });
-                    wmsCanton.innerHTML = URLLists;
-                });
-
-                // Sample for Openlayers WMS
-                BfeLib.GetWMSCanton(canton_field, true).then(url => {
-                    url.forEach(element => {
-                        console.log(element);
-                        var newLayer = new ol.layer.Image({
-                            source: element,
-                            opacity: 0.5
-                        });
-
-                        map.addLayer(newLayer);
-                    });
-                });
-
-                // Add marker at current location to map
-                var firstproj = "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs  ";
-                var secondproj = "+proj=longlat +datum=WGS84 +no_defs";
-
-                let [lon, lat] = proj4(firstproj, secondproj, [easting, northing]);
-                const iconFeature = new ol.Feature({
-                    geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat]))
-                });
-                map.getView().setCenter(ol.proj.fromLonLat([lon, lat]));
-                map.getView().setZoom(14);
-                markerLayer.getSource().clear();
-                markerLayer.getSource().addFeature(iconFeature);
-            };
+            let [lon, lat] = proj4(firstproj, secondproj, [easting, northing]);
+            const iconFeature = new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat]))
+            });
+            map.getView().setCenter(ol.proj.fromLonLat([lon, lat]));
+            map.getView().setZoom(14);
+            markerLayer.getSource().clear();
+            markerLayer.getSource().addFeature(iconFeature);
+        };
 
         window.addEventListener("load", function () {
-            
+
             BfeLib.SetProxyServer(proxyServer);
 
             form = document.forms[0];
-            form.addEventListener("submit", function(event) {
+            form.addEventListener("submit", function (event) {
                 event.preventDefault();
                 submitEvent();
             });
 
         });
+
+        document.getElementById("testButton").addEventListener("click", function () {
+            $("#loader").show();
+            $("#testButton").hide();
+            //run test for all cantons:
+            BfeLib.TestAllCantons().then(testData => {
+                console.log(testData);
+                $('#testTable').DataTable({
+                    pageLength: 30,
+                    processing: true,
+                    data: testData,
+                    columns: [
+                        {
+                            title: "Canton",
+                            data: "canton"
+                        },
+                        {
+                            title: "Config",
+                            data: "configured",
+                            "render": function (data, type, row, meta) {
+                                if (data === false)
+                                    return " <a class=\"text-danger\">" + data + "</a>";
+                                else
+                                    return " <a class=\"text-success\">" + data + "</a>";
+                            }
+                        },
+                        {
+                            title: "WMS Url",
+                            data: "wmsAlive.0.wms",
+                        },
+                        {
+                            title: "WMS GetCap",
+                            data: "wmsAlive.0.aliveGetCap",
+                            "render": function (data, type, row, meta) {
+                                if (data === false)
+                                    return " <a class=\"text-danger\">" + data + "</a>";
+                                else
+                                    return " <a class=\"text-success\">" + data + "</a>";
+                            }
+                        },
+                        {
+                            title: "WMS GetFeat",
+                            data: "wmsAlive.0.aliveGetFeat",
+                            "render": function (data, type, row, meta) {
+                                if (data === false)
+                                    return " <a class=\"text-danger\">" + data + "</a>";
+                                else
+                                    return " <a class=\"text-success\">" + data + "</a>";
+                            }
+                        },
+                        {
+                            title: "WMS Url",
+                            data: "wmsAlive.1.wms",
+                            "render": function (data, type, row, meta) {
+                                if (data) {
+                                    return data;
+                                }
+                                else {
+                                    return "";
+                                }
+                            }
+                        },
+                        {
+                            title: "WMS GetCap",
+                            data: "wmsAlive.1.aliveGetCap",
+                            "render": function (data, type, row, meta) {
+                                if (data) {
+                                    if (data === false)
+                                        return " <a class=\"text-danger\">" + data + "</a>";
+                                    else
+                                        return " <a class=\"text-success\">" + data + "</a>";
+                                }
+                                else {
+                                    return "";
+                                }
+                            }
+                        },
+                        {
+                            title: "WMS GetFeat",
+                            data: "wmsAlive.1.aliveGetFeat",
+                            "render": function (data, type, row, meta) {
+                                if (data) {
+                                    if (data === false)
+                                        return " <a class=\"text-danger\">" + data + "</a>";
+                                    else
+                                        return " <a class=\"text-success\">" + data + "</a>";
+                                }
+                                else {
+                                    return "";
+                                }
+                            }
+                        }
+                    ]
+                });
+                $("#loader").hide();
+            }
+            );
+        });
+
     </script>
 
     <script>
@@ -218,9 +344,9 @@
             }),
         });
 
-       
+
         // Handle map click: fill out form and submit
-        map.on('click', function(evt) {
+        map.on('click', function (evt) {
             console.log(evt.coordinate);
 
             var secondproj = "+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs ";
@@ -230,8 +356,9 @@
             document.getElementById("easting").value = Math.round(lon);
             document.getElementById("northing").value = Math.round(lat);
 
-            getCantonForCoordinate(Math.round(lon), Math.round(lat)).then(cantonValue => {document.getElementById("canton").value = cantonValue;
-            submitEvent();
+            getCantonForCoordinate(Math.round(lon), Math.round(lat)).then(cantonValue => {
+                document.getElementById("canton").value = cantonValue;
+                submitEvent();
             }
             );
         });

@@ -458,7 +458,7 @@
             ],
             "wmsMulti": [
                 {
-                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme?",
+                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme",
                     "infoFormat": "application/vnd.ogc.gml",
                     "layers": [
                         {
@@ -474,7 +474,7 @@
                     ]
                 },
                 {
-                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte?",
+                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte",
                     "infoFormat": "application/vnd.ogc.gml",
                     "layers": [
                         {
@@ -526,7 +526,7 @@
                     1214985
                 ]
             ],
-            "wmsUrl": "https://map.geo.sz.ch/mapserv_proxy?",
+            "wmsUrl": "https://map.geo.sz.ch/mapserv_proxy",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -570,7 +570,7 @@
                     "42"
                 ]
             ],
-            "wmsUrl": "https://wms.geo.sh.ch/wms?",
+            "wmsUrl": "https://wms.geo.sh.ch/wms",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -639,7 +639,7 @@
                     "2"
                 ]
             ],
-            "wmsUrl": "https://services.geo.sg.ch/wss/service/SG00025_WMS/guest?",
+            "wmsUrl": "https://services.geo.sg.ch/wss/service/SG00025_WMS/guest",
             "infoFormat": "application/geojson",
             "layers": [
                 {
@@ -838,7 +838,7 @@
                     "undefined"
                 ]
             ],
-            "wmsUrl": "https://wms.geo.gl.ch/?",
+            "wmsUrl": "https://wms.geo.gl.ch/",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -972,7 +972,7 @@
                     "Fall A"
                 ]
             ],
-            "wmsUrl": "https://geowms.bl.ch/?",
+            "wmsUrl": "https://geowms.bl.ch/",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -1057,7 +1057,7 @@
                     "im Thunersee"
                 ]
             ],
-            "wmsUrl": "https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer?",
+            "wmsUrl": "https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer",
             "infoFormat": "application/geojson",
             "layers": [
                 {
@@ -1121,7 +1121,7 @@
                     "nicht zulässig (siehe Erläuterungen)"
                 ]
             ],
-            "wmsUrl": "https://www.geoportal.ch/services/wms/ktai?",
+            "wmsUrl": "https://www.geoportal.ch/services/wms/ktai",
             "infoFormat": "application/json",
             "layers": [
                 {
