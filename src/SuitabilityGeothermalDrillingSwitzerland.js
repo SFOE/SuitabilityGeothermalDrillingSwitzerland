@@ -463,6 +463,10 @@ async function checkLinkOk(url) {
         return false;
 }
 
+/**
+ * Test WMS definition for all cantons
+ * @returns {object} test result for all cantons
+ */
 export async function TestAllCantons() {
 
     let cantonsDict = [];
@@ -482,14 +486,14 @@ export async function TestAllCantons() {
             try {
                 imageWmsList = await GetWMSCanton(cantonAbbrev, true);
             }
-            catch (err) {
+            catch (err) {   //esri rest throws an error so far
 
                 let wmsAlive = [];
                 wmsAlive.push({
                     wms: 'none',
-                    aliveGetCap: false,
-                    aliveGetFeat: false,
-                    expectedResult: false
+                    aliveGetCap: undefined,
+                    aliveGetFeat: undefined,
+                    expectedResult: undefined
                 });
 
                 let item = {
@@ -499,7 +503,6 @@ export async function TestAllCantons() {
                 }
 
                 cantonsDict.push(item);
-                // console.log(cantonAbbrev, item);
                 console.log(cantonAbbrev);
                 continue;
             }
@@ -508,6 +511,7 @@ export async function TestAllCantons() {
                 try {
                     const wmsUrl = imageWmsItem.getUrl();
 
+                    // Check GetCapabilities
                     const wmsGetCapabilitiesUrl = wmsUrl + '?version=1.3.0&request=GetCapabilities&service=WMS';
                     const wmsGetCapabilitiesOk = await checkLinkOk(wmsGetCapabilitiesUrl);
 
@@ -515,18 +519,19 @@ export async function TestAllCantons() {
                     let canton = _.find(cantonsList, i => i.name === cantonAbbrev);
                     let location1 = canton.exampleLocation[0];
 
+                    // Check Suitability (GetFeatureInfo)
                     let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, false);
                     if (suitability && suitability < 5 && suitability > 0)
                         wmsGetFeatureInfoOk = true;
 
 
-                    let checkResult = suitability === Number(location1[2]);
+                    let checkResult = suitability === Number(location1[2]); //not fully implemented yet
 
                     wmsAlive.push({
                         wms: wmsUrl,
                         aliveGetCap: wmsGetCapabilitiesOk,
                         aliveGetFeat: wmsGetFeatureInfoOk,
-                        expectedResult: checkResult
+                        expectedResult: checkResult //not fully implemented yet
                     });
 
                 }
@@ -538,21 +543,21 @@ export async function TestAllCantons() {
                     });
                 }
             }
-            if (imageWmsList.length === 0)
+            if (imageWmsList.length === 0)  //no wms for canton found
                 wmsAlive.push({
                     wms: 'none',
-                    aliveGetCap: false,
-                    aliveGetFeat: false,
-                    expectedResult: false
+                    aliveGetCap: undefined,
+                    aliveGetFeat: undefined,
+                    expectedResult: undefined
                 });
 
         }
         else {  //canton not configured
             wmsAlive.push({
                 wms: 'none',
-                aliveGetCap: false,
-                aliveGetFeat: false,
-                expectedResult: false
+                aliveGetCap: undefined,
+                aliveGetFeat: undefined,
+                expectedResult: undefined
             });
         }
 
@@ -563,13 +568,15 @@ export async function TestAllCantons() {
         }
 
         cantonsDict.push(item);
-        // console.log(cantonAbbrev, item);
         console.log(cantonAbbrev);
     }
 
     return cantonsDict;
 }
 
+/**
+ * All 26 canton abbreviations
+ */
 const cantonAbbrevList = ['AG',
     'AI',
     'AR',

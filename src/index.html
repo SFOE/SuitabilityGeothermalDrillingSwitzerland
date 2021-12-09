@@ -225,10 +225,12 @@
                             title: "Config",
                             data: "configured",
                             "render": function (data, type, row, meta) {
-                                if (data === false)
+                                if (data == false)
                                     return " <a class=\"text-danger\">" + data + "</a>";
-                                else
+                                else if (data == true)
                                     return " <a class=\"text-success\">" + data + "</a>";
+                                else
+                                    return "";
                             }
                         },
                         {
@@ -239,24 +241,28 @@
                             title: "WMS GetCap",
                             data: "wmsAlive.0.aliveGetCap",
                             "render": function (data, type, row, meta) {
-                                if (data === false)
+                                if (data == false)
                                     return " <a class=\"text-danger\">" + data + "</a>";
-                                else
+                                else if (data == true)
                                     return " <a class=\"text-success\">" + data + "</a>";
+                                else
+                                    return "";
                             }
                         },
                         {
                             title: "WMS GetFeat",
                             data: "wmsAlive.0.aliveGetFeat",
                             "render": function (data, type, row, meta) {
-                                if (data === false)
+                                if (data == false)
                                     return " <a class=\"text-danger\">" + data + "</a>";
-                                else
+                                else if (data == true)
                                     return " <a class=\"text-success\">" + data + "</a>";
+                                else
+                                    return "";
                             }
                         },
                         {
-                            title: "WMS Url",
+                            title: "WMS Url 2",
                             data: "wmsAlive.1.wms",
                             "render": function (data, type, row, meta) {
                                 if (data) {
@@ -268,33 +274,27 @@
                             }
                         },
                         {
-                            title: "WMS GetCap",
+                            title: "WMS GetCap 2",
                             data: "wmsAlive.1.aliveGetCap",
                             "render": function (data, type, row, meta) {
-                                if (data) {
-                                    if (data === false)
-                                        return " <a class=\"text-danger\">" + data + "</a>";
-                                    else
-                                        return " <a class=\"text-success\">" + data + "</a>";
-                                }
-                                else {
+                                if (data == false)
+                                    return " <a class=\"text-danger\">" + data + "</a>";
+                                else if (data == true)
+                                    return " <a class=\"text-success\">" + data + "</a>";
+                                else
                                     return "";
-                                }
                             }
                         },
                         {
-                            title: "WMS GetFeat",
+                            title: "WMS GetFeat 2",
                             data: "wmsAlive.1.aliveGetFeat",
                             "render": function (data, type, row, meta) {
-                                if (data) {
-                                    if (data === false)
-                                        return " <a class=\"text-danger\">" + data + "</a>";
-                                    else
-                                        return " <a class=\"text-success\">" + data + "</a>";
-                                }
-                                else {
+                                if (data == false)
+                                    return " <a class=\"text-danger\">" + data + "</a>";
+                                else if (data == true)
+                                    return " <a class=\"text-success\">" + data + "</a>";
+                                else
                                     return "";
-                                }
                             }
                         }
                     ]
