@@ -1,11 +1,11 @@
-//
 //  SuitabilityGeothermalDrillingSwitzerland
 //
-//  TODO:   - uniform error handling 
-//          - testing functions
+//  TODO:   - testing functions
 //
-//
-
+/**
+ * @module SuitabilityGeothermalDrillingSwitzerland
+ * @typicalname BfeLib 
+*/
 'use strict';
 
 // import fetch from "node-fetch"; //node js only, disable for browser compilation <<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -30,7 +30,7 @@ register(proj4);
 export let error;
 
 /**
- * Proxy server URL
+ * Proxy server URL (Getter)
  */
 export let proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/';
 //const proxyServer = 'http://www.whateverorigin.org/get?url=';
@@ -38,6 +38,7 @@ export let proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/';
 /**
  * Setter for proxyServer
  * @param {string} url proxy server url, e.g. 'https://bfe-cors-anywhere.herokuapp.com/'
+ * @example SetProxyServer('https://bfe-cors-anywhere.herokuapp.com/');
  */
 export function SetProxyServer(url) {
     if (url)
@@ -46,6 +47,7 @@ export function SetProxyServer(url) {
 
 /**
  * async_fetch
+ * @ignore
  * @param {string} url 
  * @returns {string} json
  */
@@ -58,6 +60,7 @@ async function async_fetch(url) {
 
 /**
  * getAllCantonsJson
+ * @ignore
  * @returns {object} all canton definitions from json
  */
 async function getAllCantonsJson() {
@@ -79,6 +82,7 @@ async function getAllCantonsJson() {
 
 /**
  * getCantonJson
+ * @ignore
  * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
  * @returns {object} canton definition from json
  */
@@ -94,6 +98,7 @@ async function getCantonJson(cantonAbbrev) {
 }
 /**
  * getWMSList
+ * @ignore
  * @param {object} canton canton defintion from json
  * @returns {object[]} list with wms defintions
  */
@@ -122,6 +127,7 @@ async function getWMSList(canton) {
 
 /**
  * imageWMSFactory
+ * @ignore
  * @param {object} wmsItem url and layer definition
  * @param {boolean} withProxy add proxy server to url. default = false
  * @param {string} wmsVersion (optional) default='1.3.0'
@@ -149,6 +155,7 @@ async function imageWMSFactory(wmsItem, withProxy = false, wmsVersion = '1.3.0')
 
 /**
  * esriRestFeatureFactory
+ * @ignore
  * @param {string} featureServerUrl base url for esri REST feature server
  * @param {number} easting LV95 Easting
  * @param {number} northing LV95 Northing
@@ -187,9 +194,11 @@ async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
 
 /**
  * GetWMSCanton
+ * @async
  * @param  {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
  * @param {boolean} withProxy (optional) add proxy server to url. default = false
  * @return {ImageWMS[]} for open layers wms, not defined for esri yet
+ * @example const imageWmsList = await GetWMSCanton('UR', true);
  */
 export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
     const canton = await getCantonJson(cantonAbbrev);
@@ -217,8 +226,10 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
 
 /**
  * GetWMSLegendCanton
+ * @async
  * @param  {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
  * @return {string[]} legend urls
+ * @example let legends = await GetWMSLegendCanton('VD');
  */
 export async function GetWMSLegendCanton(cantonAbbrev) {
 
@@ -237,6 +248,7 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
 
 /**
  * CheckSuitabilityCanton
+ * @async
  * @param {number} easting LV95 Easting in (m)
  * @param {number} northing  LV95 Northing in (m)
  * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
@@ -247,6 +259,7 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
  * @returns 3 = Kat 3: Grundsätzlich nicht zulässig
  * @returns 4 = Kat 4: Aussage zur Eignung zurzeit nicht möglich
  * @returns 5 = Kat 5: Keine Daten vorhanden
+ * @example let result = await CheckSuitabilityCanton(2652462, 1196901, 'LU');
  */
 export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose = true) {
     try {
@@ -453,6 +466,7 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
 
 /**
  * Check url for status ok
+ * @ignore
  * @param {string} url 
  * @returns {boolean} status=ok
  */
@@ -465,7 +479,9 @@ async function checkLinkOk(url) {
 
 /**
  * Test WMS definition for all cantons
+ * @async
  * @returns {object} test result for all cantons
+ * @example let result = await TestAllCantons();
  */
 export async function TestAllCantons() {
 
@@ -576,6 +592,7 @@ export async function TestAllCantons() {
 
 /**
  * All 26 canton abbreviations
+ * @ignore
  */
 const cantonAbbrevList = ['AG',
     'AI',

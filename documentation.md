@@ -1,169 +1,49 @@
-## Members
+<a name="module_SuitabilityGeothermalDrillingSwitzerland"></a>
 
-<dl>
-<dt><a href="#error">error</a></dt>
-<dd><p>on (catched) error, this object contains the error</p>
-</dd>
-<dt><a href="#proxyServer">proxyServer</a></dt>
-<dd><p>Proxy server URL</p>
-</dd>
-</dl>
+## SuitabilityGeothermalDrillingSwitzerland
 
-## Constants
+* [SuitabilityGeothermalDrillingSwitzerland](#module_SuitabilityGeothermalDrillingSwitzerland)
+    * [.error](#module_SuitabilityGeothermalDrillingSwitzerland.error)
+    * [.proxyServer](#module_SuitabilityGeothermalDrillingSwitzerland.proxyServer)
+    * [.SetProxyServer(url)](#module_SuitabilityGeothermalDrillingSwitzerland.SetProxyServer)
+    * [.GetWMSCanton(cantonAbbrev, withProxy)](#module_SuitabilityGeothermalDrillingSwitzerland.GetWMSCanton) ⇒ <code>Array.&lt;ImageWMS&gt;</code>
+    * [.GetWMSLegendCanton(cantonAbbrev)](#module_SuitabilityGeothermalDrillingSwitzerland.GetWMSLegendCanton) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose)](#module_SuitabilityGeothermalDrillingSwitzerland.CheckSuitabilityCanton) ⇒ <code>number</code>
+    * [.TestAllCantons()](#module_SuitabilityGeothermalDrillingSwitzerland.TestAllCantons) ⇒ <code>object</code>
 
-<dl>
-<dt><a href="#cantonAbbrevList">cantonAbbrevList</a></dt>
-<dd><p>All 26 canton abbreviations</p>
-</dd>
-</dl>
+<a name="module_SuitabilityGeothermalDrillingSwitzerland.error"></a>
 
-## Functions
-
-<dl>
-<dt><a href="#SetProxyServer">SetProxyServer(url)</a></dt>
-<dd><p>Setter for proxyServer</p>
-</dd>
-<dt><a href="#async_fetch">async_fetch(url)</a> ⇒ <code>string</code></dt>
-<dd><p>async_fetch</p>
-</dd>
-<dt><a href="#getAllCantonsJson">getAllCantonsJson()</a> ⇒ <code>object</code></dt>
-<dd><p>getAllCantonsJson</p>
-</dd>
-<dt><a href="#getCantonJson">getCantonJson(cantonAbbrev)</a> ⇒ <code>object</code></dt>
-<dd><p>getCantonJson</p>
-</dd>
-<dt><a href="#getWMSList">getWMSList(canton)</a> ⇒ <code>Array.&lt;object&gt;</code></dt>
-<dd><p>getWMSList</p>
-</dd>
-<dt><a href="#imageWMSFactory">imageWMSFactory(wmsItem, withProxy, wmsVersion)</a> ⇒ <code>ImageWMS</code></dt>
-<dd><p>imageWMSFactory</p>
-</dd>
-<dt><a href="#esriRestFeatureFactory">esriRestFeatureFactory(featureServerUrl, easting, northing)</a> ⇒ <code>string</code></dt>
-<dd><p>esriRestFeatureFactory</p>
-</dd>
-<dt><a href="#GetWMSCanton">GetWMSCanton(cantonAbbrev, withProxy)</a> ⇒ <code>Array.&lt;ImageWMS&gt;</code></dt>
-<dd><p>GetWMSCanton</p>
-</dd>
-<dt><a href="#GetWMSLegendCanton">GetWMSLegendCanton(cantonAbbrev)</a> ⇒ <code>Array.&lt;string&gt;</code></dt>
-<dd><p>GetWMSLegendCanton</p>
-</dd>
-<dt><a href="#CheckSuitabilityCanton">CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose)</a> ⇒ <code>number</code></dt>
-<dd><p>CheckSuitabilityCanton</p>
-</dd>
-<dt><a href="#checkLinkOk">checkLinkOk(url)</a> ⇒ <code>boolean</code></dt>
-<dd><p>Check url for status ok</p>
-</dd>
-<dt><a href="#TestAllCantons">TestAllCantons()</a> ⇒ <code>object</code></dt>
-<dd><p>Test WMS definition for all cantons</p>
-</dd>
-</dl>
-
-<a name="error"></a>
-
-## error
+### BfeLib.error
 on (catched) error, this object contains the error
 
-**Kind**: global variable  
-<a name="proxyServer"></a>
+**Kind**: static property of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
+<a name="module_SuitabilityGeothermalDrillingSwitzerland.proxyServer"></a>
 
-## proxyServer
-Proxy server URL
+### BfeLib.proxyServer
+Proxy server URL (Getter)
 
-**Kind**: global variable  
-<a name="cantonAbbrevList"></a>
+**Kind**: static property of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
+<a name="module_SuitabilityGeothermalDrillingSwitzerland.SetProxyServer"></a>
 
-## cantonAbbrevList
-All 26 canton abbreviations
-
-**Kind**: global constant  
-<a name="SetProxyServer"></a>
-
-## SetProxyServer(url)
+### BfeLib.SetProxyServer(url)
 Setter for proxyServer
 
-**Kind**: global function  
+**Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | url | <code>string</code> | proxy server url, e.g. 'https://bfe-cors-anywhere.herokuapp.com/' |
 
-<a name="async_fetch"></a>
+**Example**  
+```js
+SetProxyServer('https://bfe-cors-anywhere.herokuapp.com/');
+```
+<a name="module_SuitabilityGeothermalDrillingSwitzerland.GetWMSCanton"></a>
 
-## async\_fetch(url) ⇒ <code>string</code>
-async_fetch
-
-**Kind**: global function  
-**Returns**: <code>string</code> - json  
-
-| Param | Type |
-| --- | --- |
-| url | <code>string</code> | 
-
-<a name="getAllCantonsJson"></a>
-
-## getAllCantonsJson() ⇒ <code>object</code>
-getAllCantonsJson
-
-**Kind**: global function  
-**Returns**: <code>object</code> - all canton definitions from json  
-<a name="getCantonJson"></a>
-
-## getCantonJson(cantonAbbrev) ⇒ <code>object</code>
-getCantonJson
-
-**Kind**: global function  
-**Returns**: <code>object</code> - canton definition from json  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| cantonAbbrev | <code>string</code> | two letter abbreviation for canton, e.g. 'AG' |
-
-<a name="getWMSList"></a>
-
-## getWMSList(canton) ⇒ <code>Array.&lt;object&gt;</code>
-getWMSList
-
-**Kind**: global function  
-**Returns**: <code>Array.&lt;object&gt;</code> - list with wms defintions  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| canton | <code>object</code> | canton defintion from json |
-
-<a name="imageWMSFactory"></a>
-
-## imageWMSFactory(wmsItem, withProxy, wmsVersion) ⇒ <code>ImageWMS</code>
-imageWMSFactory
-
-**Kind**: global function  
-**Returns**: <code>ImageWMS</code> - ol imageWMS object  
-
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| wmsItem | <code>object</code> |  | url and layer definition |
-| withProxy | <code>boolean</code> | <code>false</code> | add proxy server to url. default = false |
-| wmsVersion | <code>string</code> | <code>&quot;1.3.0&quot;</code> | (optional) default='1.3.0' |
-
-<a name="esriRestFeatureFactory"></a>
-
-## esriRestFeatureFactory(featureServerUrl, easting, northing) ⇒ <code>string</code>
-esriRestFeatureFactory
-
-**Kind**: global function  
-**Returns**: <code>string</code> - feature server url at position E/N  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| featureServerUrl | <code>string</code> | base url for esri REST feature server |
-| easting | <code>number</code> | LV95 Easting |
-| northing | <code>number</code> | LV95 Northing |
-
-<a name="GetWMSCanton"></a>
-
-## GetWMSCanton(cantonAbbrev, withProxy) ⇒ <code>Array.&lt;ImageWMS&gt;</code>
+### BfeLib.GetWMSCanton(cantonAbbrev, withProxy) ⇒ <code>Array.&lt;ImageWMS&gt;</code>
 GetWMSCanton
 
-**Kind**: global function  
+**Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
 **Returns**: <code>Array.&lt;ImageWMS&gt;</code> - for open layers wms, not defined for esri yet  
 
 | Param | Type | Description |
@@ -171,24 +51,32 @@ GetWMSCanton
 | cantonAbbrev | <code>string</code> | two letter abbreviation for canton, e.g. 'AG' |
 | withProxy | <code>boolean</code> | (optional) add proxy server to url. default = false |
 
-<a name="GetWMSLegendCanton"></a>
+**Example**  
+```js
+const imageWmsList = await GetWMSCanton('UR', true);
+```
+<a name="module_SuitabilityGeothermalDrillingSwitzerland.GetWMSLegendCanton"></a>
 
-## GetWMSLegendCanton(cantonAbbrev) ⇒ <code>Array.&lt;string&gt;</code>
+### BfeLib.GetWMSLegendCanton(cantonAbbrev) ⇒ <code>Array.&lt;string&gt;</code>
 GetWMSLegendCanton
 
-**Kind**: global function  
+**Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
 **Returns**: <code>Array.&lt;string&gt;</code> - legend urls  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | cantonAbbrev | <code>string</code> | two letter abbreviation for canton, e.g. 'AG' |
 
-<a name="CheckSuitabilityCanton"></a>
+**Example**  
+```js
+let legends = await GetWMSLegendCanton('VD');
+```
+<a name="module_SuitabilityGeothermalDrillingSwitzerland.CheckSuitabilityCanton"></a>
 
-## CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose) ⇒ <code>number</code>
+### BfeLib.CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose) ⇒ <code>number</code>
 CheckSuitabilityCanton
 
-**Kind**: global function  
+**Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
 **Returns**: <code>number</code> - harmonised suitability value, 999 on error -> check 'error' object1 = Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig2 = Kat 2: Grundsätzlich mit speziellen Auflagen zulässig3 = Kat 3: Grundsätzlich nicht zulässig4 = Kat 4: Aussage zur Eignung zurzeit nicht möglich5 = Kat 5: Keine Daten vorhanden  
 
 | Param | Type | Description |
@@ -198,22 +86,18 @@ CheckSuitabilityCanton
 | cantonAbbrev | <code>string</code> | two letter abbreviation for canton, e.g. 'AG' |
 | verbose | <code>boolean</code> | (optional) activate console log |
 
-<a name="checkLinkOk"></a>
+**Example**  
+```js
+let result = await CheckSuitabilityCanton(2652462, 1196901, 'LU');
+```
+<a name="module_SuitabilityGeothermalDrillingSwitzerland.TestAllCantons"></a>
 
-## checkLinkOk(url) ⇒ <code>boolean</code>
-Check url for status ok
-
-**Kind**: global function  
-**Returns**: <code>boolean</code> - status=ok  
-
-| Param | Type |
-| --- | --- |
-| url | <code>string</code> | 
-
-<a name="TestAllCantons"></a>
-
-## TestAllCantons() ⇒ <code>object</code>
+### BfeLib.TestAllCantons() ⇒ <code>object</code>
 Test WMS definition for all cantons
 
-**Kind**: global function  
+**Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
 **Returns**: <code>object</code> - test result for all cantons  
+**Example**  
+```js
+let result = await TestAllCantons();
+```
