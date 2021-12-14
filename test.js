@@ -36,7 +36,7 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // if (response === 999)
 //     console.log(error);
 
-// await CheckSuitabilityCanton(2665393, 1217714, 'LU');
+ await CheckSuitabilityCanton(2665393, 1217714, 'LU');
 // let ans = await CheckSuitabilityCanton(2652462, 1196901, 'LU');
 // let ans = await CheckSuitabilityCanton(2645598, 1202446, 'LU');
 
@@ -83,15 +83,15 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // await CheckSuitabilityCanton(2684565, 1225437, 'ZG');
 // await CheckSuitabilityCanton(2686680, 1226360, 'ZG');
 
-// await CheckSuitabilityCanton(2599214,1120261, 'VS');      //4/0
-// await CheckSuitabilityCanton(2599307,1125129, 'VS');      //3/100
+//await CheckSuitabilityCanton(2599214,1120261, 'VS');      //4/0
+//await CheckSuitabilityCanton(2599307,1125129, 'VS');      //3/100
 // await CheckSuitabilityCanton(2599331,1123423, 'VS');      //1/400
 // await CheckSuitabilityCanton(2599032,1125930, 'VS');      //2/-999
 // await CheckSuitabilityCanton(2598068.4,1130927.1, 'VS');      //5/-999
 // await CheckSuitabilityCanton(2609841,1125573, 'VS');      //3/200
 // await CheckSuitabilityCanton(2609846,1125808, 'VS');      //3/50
 
-// await CheckSuitabilityCanton(2510785, 1121097, 'GE', true);   //Sondes géothermiques verticales (système fermé)
+//  await CheckSuitabilityCanton(2510785, 1121097, 'GE', true);   //Sondes géothermiques verticales (système fermé)
 // await CheckSuitabilityCanton(2506500,1118148, 'GE');      //Demande de renseignement
 // await CheckSuitabilityCanton(2502640,1113946, 'GE');      //Interdiction de géothermie
 // await CheckSuitabilityCanton(2494984,1116373, 'GE');      //Géothermie sur nappe (système ouvert)
@@ -111,9 +111,9 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // await CheckSuitabilityCanton(2742740, 1233995, 'SG');
 // await CheckSuitabilityCanton(2502359,1110025, 'SG');
 
-let result = await TestAllCantons();
-console.log(result);
-
+// let result = await TestAllCantons();
+// console.log(result);
+// 
 
 
 

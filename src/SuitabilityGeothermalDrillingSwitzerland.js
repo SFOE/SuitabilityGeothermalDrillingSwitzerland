@@ -178,8 +178,8 @@ async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
         `${(northing + delta).toFixed(3)}` +
         // '&geometryType=esriGeometryEnvelope&' +
         '&geometryType=esriGeometryPoint&' +
-        // 'inSR=2056&' +
-        // '&outSR=2056' +
+        'inSR=2056&' +
+        '&outSR=2056' +
         '&sr=2056';
 
     return url;
