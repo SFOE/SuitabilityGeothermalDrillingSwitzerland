@@ -77,7 +77,7 @@ let legends = await GetWMSLegendCanton('VD');
 CheckSuitabilityCanton
 
 **Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
-**Returns**: <code>number</code> - harmonised suitability value, 999 on error -> check 'error' object1 = Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig2 = Kat 2: Grundsätzlich mit speziellen Auflagen zulässig3 = Kat 3: Grundsätzlich nicht zulässig4 = Kat 4: Aussage zur Eignung zurzeit nicht möglich5 = Kat 5: Keine Daten vorhanden  
+**Returns**: <code>number</code> - harmonised suitability value, 999 on error -> check 'error' object- 1 = Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig- 2 = Kat 2: Grundsätzlich mit speziellen Auflagen zulässig- 3 = Kat 3: Grundsätzlich nicht zulässig- 4 = Kat 4: Aussage zur Eignung zurzeit nicht möglich- 5 = Kat 5: Keine Daten vorhanden  
 
 | Param | Type | Description |
 | --- | --- | --- |

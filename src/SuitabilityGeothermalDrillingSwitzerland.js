@@ -254,11 +254,11 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
  * @param {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
  * @param {boolean} verbose (optional) activate console log
  * @returns {number} harmonised suitability value, 999 on error -> check 'error' object
- * 1 = Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig
- * 2 = Kat 2: Grundsätzlich mit speziellen Auflagen zulässig
- * 3 = Kat 3: Grundsätzlich nicht zulässig
- * 4 = Kat 4: Aussage zur Eignung zurzeit nicht möglich
- * 5 = Kat 5: Keine Daten vorhanden
+ * - 1 = Kat 1: Grundsätzlich mit allgemeinen Auflagen zulässig
+ * - 2 = Kat 2: Grundsätzlich mit speziellen Auflagen zulässig
+ * - 3 = Kat 3: Grundsätzlich nicht zulässig
+ * - 4 = Kat 4: Aussage zur Eignung zurzeit nicht möglich
+ * - 5 = Kat 5: Keine Daten vorhanden
  * @example let result = await CheckSuitabilityCanton(2652462, 1196901, 'LU');
  */
 export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose = true) {
