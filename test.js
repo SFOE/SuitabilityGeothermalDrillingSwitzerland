@@ -112,8 +112,8 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // await CheckSuitabilityCanton(2502359,1110025, 'SG');
 
 // await CheckSuitabilityCanton(2582124, 1164966, 'FR');
-// await CheckSuitabilityCanton(2582392, 1164789, 'FR');
-await CheckSuitabilityCanton(2582439, 1165031, 'FR');
+await CheckSuitabilityCanton(2582392, 1164789, 'FR');
+// await CheckSuitabilityCanton(2582439, 1165031, 'FR');
 // await CheckSuitabilityCanton(2782439, 1165031, 'FR');
 
 // let result = await TestAllCantons();

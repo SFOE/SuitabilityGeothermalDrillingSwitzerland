@@ -955,16 +955,20 @@
                     "SGV interdites"
                 ]
             ],
+            "wmsUrl2": "https://map.geo.fr.ch/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/identify",
             "wmsUrl": "https://map.geo.fr.ch/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/17",
             "mapServerUrl": "",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
             "layers": [
                 {
-                    "name": "Admissibilite des sondes geothermiques SGV",
+                    "name": "all:17",
+                    "desc": "Admissibilite des sondes geothermiques SGV",
                     "rootName": "features",
+                    "rootName2": "results",
                     "nodeName": "attributes",
                     "propertyName": "DAsgv_desc",
+                    "propertyName2": "Admissibilité",
                     "propertyValues": [
                         {
                             "name": "SGV autorisées",

@@ -318,11 +318,11 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                 try {
                     //fetch wms url
                     url = proxyServer + url;
-                    if (verbose) console.log(url);
-                    let response = await fetch(url);
+                    if (verbose && wmsItem.infoFormat !== 'arcgis/json') console.log(url);
+                    let response = await fetch(url);        //TODO: not needed for wmsItem.infoFormat === 'arcgis/json'
                     let dataraw = await response.text();
 
-                    if (verbose) console.log(dataraw);
+                    if (verbose && wmsItem.infoFormat !== 'arcgis/json') console.log(dataraw);
 
                     //handle response
                     for (let layer of wmsItem.layers) {
@@ -351,8 +351,9 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
 
                                 let urlLayer = url + '&layers=' + layer.name;
                                 if (verbose) console.log(urlLayer);
-                                response = await fetch(urlLayer);
+                                response = await fetch(urlLayer);       // get esri rest response for layer
                                 dataraw = await response.text();
+                                if (verbose) console.log(dataraw);
 
                                 rootName = layer.rootName;
                                 nodeName = layer.nodeName;
