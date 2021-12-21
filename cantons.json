@@ -937,6 +937,66 @@
             ]
         },
         {
+            "name": "FR",
+            "exampleLocation": [
+                [
+                    2582124,
+                    1164966,
+                    "SGV autorisées"
+                ],
+                [
+                    2582392,
+                    1164789,
+                    "SGV avec demande préalable obligatoire"
+                ],
+                [
+                    2582439,
+                    1165031,
+                    "SGV interdites"
+                ]
+            ],
+            "wmsUrl": "https://map.geo.fr.ch/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/17",
+            "mapServerUrl": "",
+            "mapServerUrlLegendUrl": "",
+            "infoFormat": "arcgis/json",
+            "layers": [
+                {
+                    "name": "Admissibilite des sondes geothermiques SGV",
+                    "rootName": "features",
+                    "nodeName": "attributes",
+                    "propertyName": "DAsgv_desc",
+                    "propertyValues": [
+                        {
+                            "name": "SGV autorisées",
+                            "summand": 1
+                        },
+                        {
+                            "name": "SGV avec demande préalable obligatoire",
+                            "summand": 2
+                        },
+                        {
+                            "name": "SGV interdites",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
             "name": "BL",
             "exampleLocation": [
                 [
