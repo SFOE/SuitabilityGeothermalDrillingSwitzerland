@@ -1056,7 +1056,7 @@
                         {
                             "name": "BC",
                             "desc": "Fall BC - Wärmenutzung durch Erdwärmesonden mit Standardauflagen für Schichten des Fall C, darunter bis max. zulässige Bohrtiefe Wärmenutzung mit spez. Auflagen",
-                            "summand": 2
+                            "summand": 1
                         },
                         {
                             "name": "nB",
