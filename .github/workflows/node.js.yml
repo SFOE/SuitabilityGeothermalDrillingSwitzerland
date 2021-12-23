@@ -33,5 +33,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: cantons_test.md
-        path: test/cantons_test.md
+        path: cantons_test.md
 
