@@ -29,4 +29,9 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v2
+      with:
+        name: cantons_test.md
+        path: test/cantons_test.md
 
