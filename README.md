@@ -24,12 +24,7 @@ npm run serve
 to start the application on localhost 🚀
 
 ## Running with Node.js
-To run the code in Node.js, you have to add the line
-```
-"type": "module"
-```
-to your `package.json` file. In `SuitabilityGeothermalDrillingSwitzerland.js` uncomment the three lines 11-13. 
-Then run 
+Run 
 ```
 node .\test.js
 ```

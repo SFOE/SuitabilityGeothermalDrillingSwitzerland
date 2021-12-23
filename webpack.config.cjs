@@ -57,6 +57,11 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+  externals:{
+    fs:    "{}",
+    jsdom:  "{}",
+    fetch: "{}"
+},
   plugins: [
     new CopyPlugin({
       patterns: [
