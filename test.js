@@ -8,6 +8,8 @@
 
 import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyServer, SetProxyServer, TestAllCantons } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
 
+import fs from 'fs'; 
+
 //  await CheckSuitabilityCanton(2655805, 1258983, 'AG');
 // await CheckSuitabilityCanton(2653716, 1269536, 'AG');
 // await CheckSuitabilityCanton(2658947, 1240238, 'AG');
@@ -121,8 +123,19 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 
 let result = await TestAllCantons();
 console.log(result);
-// 
 
+
+var file = fs.createWriteStream('cantons_test.md');
+file.on('error', function(err) { /* error handling */ });
+file.write("# Cantons Test Output\nRun on 2021/12/23\n## Results\n|Canton|Configured|WMS|GetCapabilities|GetFeature|ExpectedValue|\n|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|")
+result.forEach(function(v) { 
+    file.write(v.canton + "|" + v.configured +"|"); 
+    v.wmsAlive.forEach(function(alive) {
+        file.write(alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|" +  alive.expectedResult);
+    })
+    file.write("\n");
+});
+file.end();
 
 
 
