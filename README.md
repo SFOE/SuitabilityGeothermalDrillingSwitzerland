@@ -1,5 +1,7 @@
 # SuitabilityGeothermalDrillingSwitzerland
 
+[![Node.js CI](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml/badge.svg)](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml)
+
 ## First steps
 On first check out run
 ```
