@@ -234,6 +234,18 @@
                             }
                         },
                         {
+                            title: "Result Expected",
+                            data: "wmsAlive.0.expectedResult",
+                            "render": function (data, type, row, meta) {
+                                if (data == false)
+                                    return " <a class=\"text-danger\">" + data + "</a>";
+                                else if (data == true)
+                                    return " <a class=\"text-success\">" + data + "</a>";
+                                else
+                                    return "";
+                            }
+                        },
+                        {
                             title: "WMS Url",
                             data: "wmsAlive.0.wms",
                         },

@@ -11,6 +11,8 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 //  await CheckSuitabilityCanton(2655805, 1258983, 'AG');
 // await CheckSuitabilityCanton(2653716, 1269536, 'AG');
 // await CheckSuitabilityCanton(2658947, 1240238, 'AG');
+// await CheckSuitabilityCanton(2657482, 1264764, 'AG');
+// await CheckSuitabilityCanton(2658947, 1259532, 'AG');
 
 // await CheckSuitabilityCanton(2703052, 1180378, 'UR');
 // await CheckSuitabilityCanton(2699152, 1175536, 'UR');
@@ -82,9 +84,10 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // await CheckSuitabilityCanton(2676912, 1228091, 'ZG');
 // await CheckSuitabilityCanton(2684565, 1225437, 'ZG');
 // await CheckSuitabilityCanton(2686680, 1226360, 'ZG');
+// await CheckSuitabilityCanton(2690680, 1219207, 'ZG');
 
-//await CheckSuitabilityCanton(2599214,1120261, 'VS');      //4/0
-//await CheckSuitabilityCanton(2599307,1125129, 'VS');      //3/100
+// await CheckSuitabilityCanton(2599214,1120261, 'VS');      //4/0
+// await CheckSuitabilityCanton(2599307,1125129, 'VS');      //3/100
 // await CheckSuitabilityCanton(2599331,1123423, 'VS');      //1/400
 // await CheckSuitabilityCanton(2599032,1125930, 'VS');      //2/-999
 // await CheckSuitabilityCanton(2598068.4,1130927.1, 'VS');      //5/-999
@@ -112,12 +115,12 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 // await CheckSuitabilityCanton(2502359,1110025, 'SG');
 
 // await CheckSuitabilityCanton(2582124, 1164966, 'FR');
-await CheckSuitabilityCanton(2582392, 1164789, 'FR');
+// await CheckSuitabilityCanton(2582392, 1164789, 'FR');
 // await CheckSuitabilityCanton(2582439, 1165031, 'FR');
-// await CheckSuitabilityCanton(2782439, 1165031, 'FR');
+await CheckSuitabilityCanton(2782439, 1165031, 'FR');
 
-// let result = await TestAllCantons();
-// console.log(result);
+//  let result = await TestAllCantons();
+//  console.log(result);
 // 
 
 

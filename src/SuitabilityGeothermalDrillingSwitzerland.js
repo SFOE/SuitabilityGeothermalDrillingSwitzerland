@@ -493,6 +493,8 @@ export async function TestAllCantons() {
     const cantonNames = _.pluck(cantonsList, 'name').sort();
     // console.log(cantonNames;
 
+    // const cantonAbbrevList = ['ZG']; //for debug 
+
     for (const cantonAbbrev of cantonAbbrevList) {
         const configured = _.contains(cantonNames, cantonAbbrev);
         let wmsAlive = [];
@@ -541,8 +543,8 @@ export async function TestAllCantons() {
                     if (suitability && suitability < 5 && suitability > 0)
                         wmsGetFeatureInfoOk = true;
 
-
-                    let checkResult = suitability === Number(location1[2]); //not fully implemented yet
+                    // let checkResult = suitability === Number(location1[2]);
+                    let checkResult = suitability === location1[2]; 
 
                     wmsAlive.push({
                         wms: wmsUrl,
