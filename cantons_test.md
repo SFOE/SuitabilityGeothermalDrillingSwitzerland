@@ -31,3 +31,6 @@ Run on 2021/12/27
 |VS|<span style='color:green;'>true</span>|true|none|undefined|true|
 |ZG|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://services.geo.zg.ch/ows/Erdwaermenutzung|true|true|
 |ZH|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/http://wms.zh.ch/AwelGSWaermewwwZHWMS|true|true|
+## Overall results
+
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): SZ</span>
