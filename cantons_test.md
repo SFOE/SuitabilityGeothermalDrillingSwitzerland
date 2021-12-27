@@ -20,7 +20,7 @@ Run on 2021/12/27
 |NW|<span style='color:grey;'>undefined</span>|false||||
 |OW|<span style='color:grey;'>undefined</span>|false||||
 |SG|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
-|SH|<span style='color:red;'>false</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://wms.geo.sh.ch/wms|true|true|
+|SH|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
 |SZ|<span style='color:red;'>false</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://map.geo.sz.ch/mapserv_proxy|true|false|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
