@@ -18,7 +18,7 @@
         "watch": "webpack --watch",
         "serve": "webpack serve",
         "servedev": "webpack serve --mode=development",
-        "docs": "jsdoc2md src/SuitabilityGeothermalDrillingSwitzerland.js > documentation.md"
+        "docs": "jsdoc2md src/SuitabilityGeothermalDrillingSwitzerland.js > docs/documentation.md"
     },
     "keywords": [],
     "author": "Swiss Federal Office of Energy SFOE",

@@ -25,6 +25,8 @@ let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 // current year
 let year = date_ob.getFullYear();
 
+let everythingWorking = true;
+let problemsWithCantons = "";
 // Ouput Result to cantons_test.md
 
 var file = fs.createWriteStream('./cantons_test.md');
@@ -46,6 +48,8 @@ result.forEach(function(v) {
             outputline += header + "|<span style='color:grey;'>"+  alive.expectedResult +"</span>|" + v.configured + "|" + alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
         }
         else {
+            everythingWorking = false;
+            problemsWithCantons += v.canton +", ";
             outputline += header + "|<span style='color:red;'>"+  alive.expectedResult +"</span>|" + v.configured + "|" + alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
         }
 
@@ -53,6 +57,10 @@ result.forEach(function(v) {
         file.write("\n");
     })
 });
+
+file.write("## Overall results\n\n");
+if (everythingWorking) file.write("<span style='color:green;font-weight:bold;'>All services up and running</span>");
+else file.write("<span style='color:red;font-weight:bold;'>Problems with following canton(s): " + problemsWithCantons.substring(0, problemsWithCantons.length - 2) + "</span>");
 file.end();
 
 
