@@ -32,6 +32,7 @@ jobs:
     - name: Move files
       run: |
         mv ./cantons_test.md docs/
+        mv ./example docs/
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
