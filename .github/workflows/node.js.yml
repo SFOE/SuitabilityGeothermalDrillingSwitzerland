@@ -29,9 +29,12 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v2
+    - name: Move files
+      run: |
+        mv ./cantons_test.md docs/
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
-        name: cantons_test.md
-        path: cantons_test.md
+        branch: gh-pages
+        folder: docs
 
