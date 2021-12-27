@@ -496,6 +496,7 @@ export async function TestAllCantons() {
     // const cantonAbbrevList = ['ZG']; //for debug 
 
     for (const cantonAbbrev of cantonAbbrevList) {
+
         const configured = _.contains(cantonNames, cantonAbbrev);
         let wmsAlive = [];
 
@@ -506,13 +507,22 @@ export async function TestAllCantons() {
                 imageWmsList = await GetWMSCanton(cantonAbbrev, true);
             }
             catch (err) {   //esri rest throws an error so far
+                let canton = _.find(cantonsList, i => i.name === cantonAbbrev);
+                let location1 = canton.exampleLocation[0];
+                
+                let wmsGetFeatureInfoOk = false;
+                let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, false);
+
+                if (suitability && suitability < 5 && suitability > 0)
+                wmsGetFeatureInfoOk = true;
+                let checkResult = suitability === location1[2]; 
 
                 let wmsAlive = [];
                 wmsAlive.push({
                     wms: 'none',
                     aliveGetCap: undefined,
-                    aliveGetFeat: undefined,
-                    expectedResult: undefined
+                    aliveGetFeat: wmsGetFeatureInfoOk,
+                    expectedResult: checkResult
                 });
 
                 let item = {
