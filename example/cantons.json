@@ -1,0 +1,1374 @@
+{
+    "cantonsList": [
+        {
+            "name": "ZH",
+            "exampleLocation": [
+                [
+                    2679004,
+                    1247702,
+                    2,
+                    "Auflagen & waermenutzung-zone-d"
+                ],
+                [
+                    2684200,
+                    1244025,
+                    1,
+                    "waermenutzung-zone-f"
+                ],
+                [
+                    2689003,
+                    1274084,
+                    3,
+                    "waermenutzung-zone-a"
+                ]
+            ],
+            "wmsUrl": "http://wms.zh.ch/AwelGSWaermewwwZHWMS",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "erdwaermesonden-auflagen",
+                    "propertyName": "zonen",
+                    "propertyValues": [
+                        {
+                            "name": "undefined",
+                            "summand": 0
+                        },
+                        {
+                            "name": "Auflagen",
+                            "summand": 1
+                        },
+                        {
+                            "name": "Verbot",
+                            "summand": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "waermenutzung-zone-a",
+                    "propertyName": "geodb_oid",
+                    "summand": 10
+                },
+                {
+                    "name": "waermenutzung-zone-b",
+                    "propertyName": "geodb_oid",
+                    "summand": 20
+                },
+                {
+                    "name": "waermenutzung-zone-c",
+                    "propertyName": "geodb_oid",
+                    "summand": 30
+                },
+                {
+                    "name": "waermenutzung-zone-d",
+                    "propertyName": "geodb_oid",
+                    "summand": 40
+                },
+                {
+                    "name": "waermenutzung-zone-e",
+                    "propertyName": "geodb_oid",
+                    "summand": 50
+                },
+                {
+                    "name": "waermenutzung-zone-f",
+                    "propertyName": "geodb_oid",
+                    "summand": 60
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 10,
+                    "value": 3
+                },
+                {
+                    "sum": 11,
+                    "value": 3
+                },
+                {
+                    "sum": 12,
+                    "value": 3
+                },
+                {
+                    "sum": 20,
+                    "value": 3
+                },
+                {
+                    "sum": 21,
+                    "value": 3
+                },
+                {
+                    "sum": 22,
+                    "value": 3
+                },
+                {
+                    "sum": 32,
+                    "value": 3
+                },
+                {
+                    "sum": 42,
+                    "value": 3
+                },
+                {
+                    "sum": 52,
+                    "value": 3
+                },
+                {
+                    "sum": 62,
+                    "value": 3
+                },
+                {
+                    "sum": 30,
+                    "value": 2
+                },
+                {
+                    "sum": 31,
+                    "value": 2
+                },
+                {
+                    "sum": 41,
+                    "value": 2
+                },
+                {
+                    "sum": 50,
+                    "value": 2
+                },
+                {
+                    "sum": 51,
+                    "value": 2
+                },
+                {
+                    "sum": 61,
+                    "value": 2
+                },
+                {
+                    "sum": 40,
+                    "value": 1
+                },
+                {
+                    "sum": 60,
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "name": "ZG",
+            "exampleLocation": [
+                [
+                    2676912,
+                    1228091,
+                    1,
+                    "mit Standardauflagen zulässig"
+                ],
+                [
+                    2684565,
+                    1225437,
+                    2,
+                    "mit spezifischen Auflagen zulässig"
+                ],
+                [
+                    2686680,
+                    1226360,
+                    3,
+                    "unzulässig"
+                ],
+                [
+                    2690680,
+                    1219207,
+                    4
+                ]
+            ],
+            "wmsUrl": "https://services.geo.zg.ch/ows/Erdwaermenutzung",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "zg.ews_zulaessigkeit",
+                    "propertyName": "zulaessigkeit",
+                    "propertyValues": [
+                        {
+                            "name": "mit Standardauflagen zulässig",
+                            "summand": 1
+                        },
+                        {
+                            "name": "mit spezifischen Auflagen zulässig",
+                            "summand": 2
+                        },
+                        {
+                            "name": "unzulässig",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "VS",
+            "exampleLocation": [
+                [
+                    2599214,
+                    1120261,
+                    3,
+                    "4/0"
+                ],
+                [
+                    2599307,
+                    1125129,
+                    1,
+                    "3/100"
+                ],
+                [
+                    2599331,
+                    1123423,
+                    1,
+                    "1/400"
+                ],
+                [
+                    2599032,
+                    1125930,
+                    2,
+                    "2/-999"
+                ],
+                [
+                    2598068.4,
+                    1130927.1,
+                    4,
+                    "5/-999"
+                ],
+                [
+                    2609841,
+                    1125573,
+                    1,
+                    "3/200"
+                ],
+                [
+                    2609846,
+                    1125808,
+                    1,
+                    "3/50"
+                ]
+            ],
+            "wmsUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/sonde_geothermique/FeatureServer/0",
+            "mapServerUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/Sonde_g%c3%a9othermiques/MapServer/",
+            "mapServerUrlLegendUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/Sonde_g%C3%A9othermiques/MapServer/legend",
+            "infoFormat": "arcgis/json",
+            "layers": [
+                {
+                    "name": "sonde_geothermique",
+                    "rootName": "features",
+                    "nodeName": "attributes",
+                    "propertyName": "prof",
+                    "propertyValues": [
+                        {
+                            "name": "1/400",
+                            "desc": "SGV admises (avec obligations standards)",
+                            "summand": 1
+                        },
+                        {
+                            "name": "3/50",
+                            "desc": "Limitation de profondeur 50m",
+                            "summand": 1
+                        },
+                        {
+                            "name": "3/100",
+                            "desc": "Limitation de profondeur 100m",
+                            "summand": 1
+                        },
+                        {
+                            "name": "3/200",
+                            "desc": "Limitation de profondeur 200m",
+                            "summand": 1
+                        },
+                        {
+                            "name": "2/-999",
+                            "desc": "Investigations hydrogéologiques nécessaires - Suivi de forage obligatoire",
+                            "summand": 2
+                        },
+                        {
+                            "name": "4/0",
+                            "desc": "SGV interdites",
+                            "summand": 3
+                        },
+                        {
+                            "name": "5/-999",
+                            "desc": "Contacter le SPE",
+                            "summand": 4
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "VD",
+            "exampleLocation": [
+                [
+                    2536682,
+                    1156974,
+                    1,
+                    "Admissible sous conditions"
+                ],
+                [
+                    2548704,
+                    1168639,
+                    2,
+                    "Limitation"
+                ],
+                [
+                    2535551,
+                    1180721,
+                    3,
+                    "Interdiction"
+                ]
+            ],
+            "wmsUrl": "https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer",
+            "infoFormat": "application/geojson",
+            "layers": [
+                {
+                    "name": "vd.admissibilite_indicative_sonde_geothermique",
+                    "propertyName": "Type",
+                    "propertyValues": [
+                        {
+                            "name": "Admissible sous conditions",
+                            "summand": 1
+                        },
+                        {
+                            "name": "Limitation",
+                            "summand": 2
+                        },
+                        {
+                            "name": "Interdiction",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "UR",
+            "exampleLocation": [
+                [
+                    2703052,
+                    1180378,
+                    1,
+                    "B"
+                ],
+                [
+                    2699152,
+                    1175536,
+                    2,
+                    "C"
+                ],
+                [
+                    2708687,
+                    1186403,
+                    3,
+                    "A"
+                ]
+            ],
+            "wmsUrl": "https://geo.ur.ch/overlay/wms",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "umwelt:wnk_zulaessigkeitsbereiche_erdsonden",
+                    "propertyName": "zulaessigkeit_ews",
+                    "propertyValues": [
+                        {
+                            "name": "B",
+                            "desc": "grüner Zulässigkeitsbereich",
+                            "desc2": "Zulässig unter allgemeinen Auflagen",
+                            "summand": 1
+                        },
+                        {
+                            "name": "C",
+                            "desc": "gelber Zulässigkeitsbereich",
+                            "desc2": "Zulässig unter zusätzlichen Schutzmassnahmen",
+                            "summand": 2
+                        },
+                        {
+                            "name": "A",
+                            "desc": "roter Zulässigkeitsbereich / nicht zulässig",
+                            "desc2": "Nicht zulässig",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "TG",
+            "exampleLocation": [
+                [
+                    2747716.6,
+                    1262056.4,
+                    3,
+                    "ugszonen3 & verboten"
+                ],
+                [
+                    2747720.5,
+                    1262436.9,
+                    1,
+                    "undefined"
+                ],
+                [
+                    2747719.4,
+                    1262269.7,
+                    3,
+                    "verboten"
+                ],
+                [
+                    2740704.4,
+                    1260672.8,
+                    3,
+                    "ugszonen2"
+                ],
+                [
+                    2741036.0,
+                    1260729.5,
+                    3,
+                    "ugszonen1"
+                ]
+            ],
+            "wmsMulti": [
+                {
+                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme",
+                    "infoFormat": "application/vnd.ogc.gml",
+                    "layers": [
+                        {
+                            "name": "verboten",
+                            "propertyName": "objectid",
+                            "summand": 3
+                        },
+                        {
+                            "name": "Gefahrenhinweise",
+                            "propertyName": "grund",
+                            "summand": 2
+                        }
+                    ]
+                },
+                {
+                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte",
+                    "infoFormat": "application/vnd.ogc.gml",
+                    "layers": [
+                        {
+                            "name": "ugszonen1",
+                            "propertyName": "zonen",
+                            "summand": 3
+                        },
+                        {
+                            "name": "ugszonen2",
+                            "propertyName": "zonen",
+                            "summand": 3
+                        },
+                        {
+                            "name": "ugszonen3",
+                            "propertyName": "zonen",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 0,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                },
+                {
+                    "sum": 5,
+                    "value": 3
+                },
+                {
+                    "sum": 6,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "SZ",
+            "exampleLocation": [
+                [
+                    2704293,
+                    1214985,
+                    9999
+                ]
+            ],
+            "wmsUrl": "https://map.geo.sz.ch/mapserv_proxy",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "ch.sz.a034c.waermenutzung.erdwaerme",
+                    "problem": "no feature provided by GetFeatureInfo()"
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 0,
+                    "value": 5
+                }
+            ]
+        },
+        {
+            "name": "SH",
+            "exampleLocation": [
+                [
+                    2690343,
+                    1289821,
+                    1,
+                    "3"
+                ],
+                [
+                    2682889,
+                    1292346,
+                    2,
+                    "5"
+                ],
+                [
+                    2691554,
+                    1293373,
+                    3,
+                    "1"
+                ],
+                [
+                    2695085,
+                    1290396,
+                    2,
+                    "41"
+                ],
+                [
+                    2695476,
+                    1286474,
+                    2,
+                    "42"
+                ]
+            ],
+            "wmsUrl": "https://wms.geo.sh.ch/wms",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "sh.energie.erdsonden.eignung",
+                    "propertyName": "eignung_erdwaermesonden_code",
+                    "propertyValues": [
+                        {
+                            "name": "3",
+                            "desc": "EWS bis 200 m Tiefe zulässig (über 200 m Vorabklärung notwendig)",
+                            "summand": 1
+                        },
+                        {
+                            "name": "5",
+                            "desc": "EWS mit Vorabklärung und fallweise geologischer Begleitung zulässig",
+                            "summand": 2
+                        },
+                        {
+                            "name": "41",
+                            "desc": "GWWN-Grossanlagen mit Gutachten zulässig (EWS auf Anfrage)",
+                            "summand": 2
+                        },
+                        {
+                            "name": "42",
+                            "desc": "GWWN-Grossanlagen mit Gutachten zulässig (Kurzsonden auf Anfrage)",
+                            "summand": 2
+                        },
+                        {
+                            "name": "1",
+                            "desc": "EWS und GWWN unzulässig",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "SG",
+            "exampleLocation": [
+                [
+                    2733447,
+                    1241435,
+                    2,
+                    "1"
+                ],
+                [
+                    2735185,
+                    1244058,
+                    1,
+                    "3"
+                ],
+                [
+                    2742740,
+                    1233995,
+                    3,
+                    "2"
+                ]
+            ],
+            "wmsUrl": "https://services.geo.sg.ch/wss/service/SG00025_WMS/guest",
+            "infoFormat": "application/geojson",
+            "layers": [
+                {
+                    "name": "Zulaessigkeitsbereich",
+                    "propertyName": "OBJECTID",
+                    "propertyValues": [
+                        {
+                            "name": "2",
+                            "desc": "nicht zulässig (siehe Erläuterungen)",
+                            "summand": 3
+                        },
+                        {
+                            "name": "3",
+                            "desc": "zulässig (siehe Erläuterungen)",
+                            "summand": 1
+                        },
+                        {
+                            "name": "1",
+                            "desc": "bedingt zulässig (siehe Erläuterungen)",
+                            "summand": 2
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "LU",
+            "exampleLocation": [
+                [
+                    2665393,
+                    1217714,
+                    1,
+                    "ews_zulaessig"
+                ],
+                [
+                    2652462,
+                    1196901,
+                    2,
+                    "ews_zulaessig & ews_zulaessig_auflagen"
+                ],
+                [
+                    2645371,
+                    1200735,
+                    2,
+                    "ews_vorabklaeren"
+                ],
+                [
+                    2645598,
+                    1202446,
+                    3,
+                    "ews_nicht_zulaessig"
+                ]
+            ],
+            "wmsUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer/identify",
+            "mapServerUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer",
+            "mapServerUrlLegendUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer/legend",
+            "infoFormat": "arcgis/json",
+            "layers": [
+                {
+                    "name": "all:80",
+                    "desc": "ews_zulaessig",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 1
+                },
+                {
+                    "name": "all:78",
+                    "desc": "ews_vorabklaeren",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 2
+                },
+                {
+                    "name": "all:51",
+                    "desc": "ews_zulaessig_auflagen",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 10
+                },
+                {
+                    "name": "all:79",
+                    "desc": "ews_nicht_zulaessig",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Bewertungskriterium",
+                    "summand": 3
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 11,
+                    "value": 2
+                },
+                {
+                    "sum": 12,
+                    "value": 2
+                },
+                {
+                    "sum": 13,
+                    "value": 3
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "GR",
+            "exampleLocation": [
+                [
+                    2745188,
+                    1187042,
+                    1,
+                    "zulässig"
+                ],
+                [
+                    2747613,
+                    1190056,
+                    2,
+                    "bedingt zulässig"
+                ],
+                [
+                    2730752,
+                    1191438,
+                    3,
+                    "nicht zulässig"
+                ]
+            ],
+            "wmsUrl": "https://wms.geo.gr.ch/erdwaermenutzung",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "Erdwaermenutzung_Zulaessigkeit",
+                    "propertyName": "zulaessigkeit",
+                    "propertyValues": [
+                        {
+                            "name": "zulässig",
+                            "summand": 1
+                        },
+                        {
+                            "name": "bedingt zulässig",
+                            "summand": 2
+                        },
+                        {
+                            "name": "nicht zulässig",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "GL",
+            "exampleLocation": [
+                [
+                    2724237,
+                    1206147,
+                    3,
+                    "Erdsondenausschlussgebiet"
+                ],
+                [
+                    2725831,
+                    1215961,
+                    2,
+                    "undefined"
+                ]
+            ],
+            "wmsUrl": "https://wms.geo.gl.ch/",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "ch.gl.utilities.erdsondenausschlussbereich",
+                    "propertyName": "art",
+                    "propertyValues": [
+                        {
+                            "name": "undefined",
+                            "summand": 2
+                        },
+                        {
+                            "name": "Erdsondenausschlussgebiet",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "GE",
+            "exampleLocation": [
+                [
+                    2510785,
+                    1121097,
+                    1,
+                    "Sondes géothermiques verticales (système fermé)"
+                ],
+                [
+                    2506500,
+                    1118148,
+                    2,
+                    "Demande de renseignement"
+                ],
+                [
+                    2502640,
+                    1113946,
+                    3,
+                    "Interdiction de géothermie"
+                ],
+                [
+                    2494984,
+                    1116373,
+                    3,
+                    "Géothermie sur nappe (système ouvert)"
+                ]
+            ],
+            "wmsUrl": "https://ge.ch/sitgags1/rest/services/VECTOR/SITG_OPENDATA_02/MapServer/6883",
+            "mapServerUrl": "",
+            "mapServerUrlLegendUrl": "",
+            "infoFormat": "arcgis/json",
+            "layers": [
+                {
+                    "name": "sonde_geothermique",
+                    "rootName": "features",
+                    "nodeName": "attributes",
+                    "propertyName": "SECTEUR",
+                    "propertyValues": [
+                        {
+                            "name": "Sondes géothermiques verticales (système fermé)",
+                            "summand": 1
+                        },
+                        {
+                            "name": "Demande de renseignement",
+                            "summand": 2
+                        },
+                        {
+                            "name": "Interdiction de géothermie",
+                            "summand": 3
+                        },
+                        {
+                            "name": "Géothermie sur nappe (système ouvert)",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "FR",
+            "exampleLocation": [
+                [
+                    2582124,
+                    1164966,
+                    1,
+                    "SGV autorisées"
+                ],
+                [
+                    2582392,
+                    1164789,
+                    2,
+                    "SGV avec demande préalable obligatoire"
+                ],
+                [
+                    2582439,
+                    1165031,
+                    3,
+                    "SGV interdites"
+                ]
+            ],
+            "wmsUrl2": "https://map.geo.fr.ch/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/identify",
+            "wmsUrl": "https://map.geo.fr.ch/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/17",
+            "mapServerUrl": "",
+            "mapServerUrlLegendUrl": "",
+            "infoFormat": "arcgis/json",
+            "layers": [
+                {
+                    "name": "all:17",
+                    "desc": "Admissibilite des sondes geothermiques SGV",
+                    "rootName": "features",
+                    "rootName2": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "DAsgv_desc",
+                    "propertyName2": "Admissibilité",
+                    "propertyValues": [
+                        {
+                            "name": "SGV autorisées",
+                            "summand": 1
+                        },
+                        {
+                            "name": "SGV avec demande préalable obligatoire",
+                            "summand": 2
+                        },
+                        {
+                            "name": "SGV interdites",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "BL",
+            "exampleLocation": [
+                [
+                    2622256,
+                    1258565,
+                    1,
+                    "BC"
+                ],
+                [
+                    2623417,
+                    1270092,
+                    3,
+                    "undefined",
+                    "ausserhalb BL"
+                ],
+                [
+                    2623503,
+                    1259120,
+                    2,
+                    "B"
+                ],
+                [
+                    2620984,
+                    1259551,
+                    4,
+                    "nB"
+                ],
+                [
+                    2620314.1,
+                    1263004.5,
+                    1,
+                    "C"
+                ],
+                [
+                    2623369,
+                    1261302,
+                    3,
+                    "undefined",
+                    "Fall A"
+                ]
+            ],
+            "wmsUrl": "https://geowms.bl.ch/",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "erdwaerme_uebersicht_ohne_a",
+                    "propertyName": "ov_kategor",
+                    "propertyValues": [
+                        {
+                            "name": "C",
+                            "desc": "Fall C - Wärmenutzung durch Erdwärmesonden bis max. zulässige Bohrtiefe mit Standardauflagen möglich",
+                            "summand": 1
+                        },
+                        {
+                            "name": "B",
+                            "desc": "Fall B - Wärmenutzung durch Erdwärmesonden mit speziellen Auflagen möglich",
+                            "summand": 2
+                        },
+                        {
+                            "name": "BC",
+                            "desc": "Fall BC - Wärmenutzung durch Erdwärmesonden mit Standardauflagen für Schichten des Fall C, darunter bis max. zulässige Bohrtiefe Wärmenutzung mit spez. Auflagen",
+                            "summand": 1
+                        },
+                        {
+                            "name": "nB",
+                            "desc": "Fall nB - Gebiet wurde noch nicht bearbeitet",
+                            "summand": 4
+                        },
+                        {
+                            "name": "undefined",
+                            "desc": "Fall A - Wärmenutzung durch Erdwärmesonden unzulässig",
+                            "warning": "!! Kann nicht abgefragt werden: erdwaerme_uebersicht_a",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                },
+                {
+                    "sum": 4,
+                    "value": 4
+                }
+            ]
+        },
+        {
+            "name": "BE",
+            "exampleLocation": [
+                [
+                    2599525,
+                    1201544,
+                    1,
+                    "1"
+                ],
+                [
+                    2597320,
+                    1198900,
+                    1,
+                    "2"
+                ],
+                [
+                    2599516,
+                    1200212,
+                    2,
+                    "3"
+                ],
+                [
+                    2600318,
+                    1199065,
+                    3,
+                    "4"
+                ],
+                [
+                    2621040,
+                    1171911,
+                    4,
+                    "undefined",
+                    "im Thunersee"
+                ]
+            ],
+            "wmsUrl": "https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer",
+            "infoFormat": "application/geojson",
+            "layers": [
+                {
+                    "name": "GEODB.ERDSOND_ERDSOND_kMGDM",
+                    "propertyName": "CODE",
+                    "propertyValues": [
+                        {
+                            "name": "1",
+                            "desc": "EWS erlaubt",
+                            "summand": 1
+                        },
+                        {
+                            "name": "2",
+                            "desc": "EWS erlaubt mit Tiefenbeschränkung",
+                            "summand": 1
+                        },
+                        {
+                            "name": "3",
+                            "desc": "Fallweise erlaubt, AWA kontaktieren",
+                            "summand": 2
+                        },
+                        {
+                            "name": "4",
+                            "desc": "EWS verboten",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "AI",
+            "exampleLocation": [
+                [
+                    2751274,
+                    1244545,
+                    1,
+                    "zulässig (siehe Erläuterungen)"
+                ],
+                [
+                    2747293,
+                    1243755,
+                    2,
+                    "bedingt zulässig (siehe Erläuterungen)"
+                ],
+                [
+                    2748348,
+                    1237931,
+                    3,
+                    "nicht zulässig (siehe Erläuterungen)"
+                ]
+            ],
+            "wmsUrl": "https://www.geoportal.ch/services/wms/ktai",
+            "infoFormat": "application/json",
+            "layers": [
+                {
+                    "name": "ch.geoportal.ver_entsorgung_kommunikation.29.0.erdwaermesonden_kt",
+                    "propertyName": "Info",
+                    "propertyValues": [
+                        {
+                            "name": "zulässig (siehe Erläuterungen)",
+                            "summand": 1
+                        },
+                        {
+                            "name": "bedingt zulässig (siehe Erläuterungen)",
+                            "summand": 2
+                        },
+                        {
+                            "name": "nicht zulässig (siehe Erläuterungen)",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
+            "name": "AG",
+            "exampleLocation": [
+                [
+                    2655805,
+                    1258983,
+                    2,
+                    "3"
+                ],
+                [
+                    2653716,
+                    1269536,
+                    3,
+                    "6"
+                ],
+                [
+                    2657482,
+                    1264764,
+                    2,
+                    "2"
+                ],
+                [
+                    2658947,
+                    1259532,
+                    3,
+                    "4"
+                ],
+                [
+                    2658947,
+                    1240238,
+                    1,
+                    "1"
+                ]
+            ],
+            "wmsUrl": "https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer",
+            "infoFormat": "application/geo+json",
+            "layers": [
+                {
+                    "name": "Eignung_Erdwärmenutzung55223",
+                    "propertyName": "G_Nutz_N",
+                    "propertyValues": [
+                        {
+                            "name": "1",
+                            "desc": "EWS möglich",
+                            "summand": 1
+                        },
+                        {
+                            "name": "2",
+                            "desc": "EWS mit geologischer Begleitung möglich",
+                            "summand": 2
+                        },
+                        {
+                            "name": "3",
+                            "desc": "EWS mit geologischem Gutachten und geologischer Begleitung möglich",
+                            "summand": 2
+                        },
+                        {
+                            "name": "4",
+                            "desc": "Nur Grundwasserwärmepumpe möglich",
+                            "summand": 3
+                        },
+                        {
+                            "name": "6",
+                            "desc": "Keine Erdwärmenutzung möglich",
+                            "summand": 3
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        }
+    ]
+}
