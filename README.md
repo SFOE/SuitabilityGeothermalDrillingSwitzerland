@@ -2,6 +2,10 @@
 
 [![Node.js CI](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml/badge.svg)](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml)
 
+# Documentation
+
+The documentation and description of the library can be found at [sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland/](https://sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland/). For an example application, the [example page](https://sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland/example/) is available.
+
 ## First steps
 On first check out run
 ```
@@ -31,3 +35,4 @@ Run
 node .\test.js
 ```
 to work and debug in Node.js.
+
