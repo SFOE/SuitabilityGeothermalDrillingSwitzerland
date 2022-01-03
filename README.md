@@ -1,12 +1,26 @@
 # SuitabilityGeothermalDrillingSwitzerland
 
+SuitabilityGeothermalDrillingSwitzerland is an open source Java script library that allows to query the cantonal interfaces whether a site in Switzerland is suitable for a geothermal drilling.
+
+It was developed to support the web app www.kann-ich-bohren.ch.
+
+## Documentation
+
+The documentation and description of the library can be found at [sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland](https://sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland).
+
+## Further information on the topic
+
+https://www.bfe.admin.ch/bfe/en/home/supply/renewable-energy/geothermal-energy.html
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Deploying with Node.js
+
 [![Node.js CI](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml/badge.svg)](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml)
 
-# Documentation
-
-The documentation and description of the library can be found at [sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland/](https://sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland/). For an example application, the [example page](https://sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland/example/) is available.
-
-## First steps
+### First steps
 On first check out run
 ```
 npm install
@@ -14,7 +28,7 @@ npm install
 to load all node_modules.
 
 
-## Building the application
+### Building the application
 This project has been created using **webpack-cli**, you can run
 
 ```
@@ -29,7 +43,7 @@ npm run serve
 
 to start the application on localhost 🚀
 
-## Running with Node.js
+### Running with Node.js
 Run 
 ```
 node .\test.js
