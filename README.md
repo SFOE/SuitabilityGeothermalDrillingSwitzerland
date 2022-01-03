@@ -18,7 +18,7 @@ https://www.bfe.admin.ch/bfe/en/home/supply/renewable-energy/geothermal-energy.h
 
 ## Deploying with Node.js
 
-[![Node.js CI](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml/badge.svg)](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/node.js.yml)
+[![Run tests and publish results to github pages](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/runtests.js.yml/badge.svg)](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/runtests.js.yml)
 
 ### First steps
 On first check out run
