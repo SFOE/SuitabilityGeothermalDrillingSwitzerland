@@ -58,7 +58,7 @@ result.forEach(function(v) {
     })
 });
 
-file.write("## Overall results\n\n");
+file.write("\n\n## Overall results\n\n");
 if (everythingWorking) file.write("<span style='color:green;font-weight:bold;'>All services up and running</span>");
 else file.write("<span style='color:red;font-weight:bold;'>Problems with following canton(s): " + problemsWithCantons.substring(0, problemsWithCantons.length - 2) + "</span>");
 file.end();
