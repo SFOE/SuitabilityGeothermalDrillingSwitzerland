@@ -16,9 +16,17 @@ https://www.bfe.admin.ch/bfe/en/home/supply/renewable-energy/geothermal-energy.h
 &nbsp;
 &nbsp;
 
-## Building and running with Node.js
+## Monitoring of the cantonal interfaces
 
 [![Run tests and publish results to github pages](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/runtests.js.yml/badge.svg)](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/actions/workflows/runtests.js.yml)
+
+See the [results](sfoe.github.io/SuitabilityGeothermalDrillingSwitzerland)
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Building and running with Node.js
 
 ### First steps
 On first check out run
