@@ -9,6 +9,7 @@
 import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyServer, SetProxyServer, TestAllCantons } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
 
 import fs from 'fs'; 
+import fetch from 'cross-fetch';  
 
 let result = await TestAllCantons();
 console.log(result);
@@ -59,7 +60,11 @@ result.forEach(function(v) {
 });
 
 file.write("\n\n## Overall results\n\n");
-if (everythingWorking) file.write("<span style='color:green;font-weight:bold;'>All services up and running</span>");
+if (everythingWorking) {
+    file.write("<span style='color:green;font-weight:bold;'>All services up and running</span>");
+    // send heartbeat to uptime
+    await fetch('https://heartbeat.uptimerobot.com/m790238162-94cef700d39c5a92f275efbdeaca8710143a392b');
+}
 else file.write("<span style='color:red;font-weight:bold;'>Problems with following canton(s): " + problemsWithCantons.substring(0, problemsWithCantons.length - 2) + "</span>");
 file.end();
 

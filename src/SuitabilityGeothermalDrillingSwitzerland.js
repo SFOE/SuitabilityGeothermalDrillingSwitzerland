@@ -491,9 +491,16 @@ export async function TestAllCantons() {
     const cantons = await getAllCantonsJson();
     const cantonsList = cantons.cantonsList;
     const cantonNames = _.pluck(cantonsList, 'name').sort();
-    // console.log(cantonNames;
+    
+    // First test proxy
+    try {
+        let isOnline = await checkLinkOk(proxyServer + 'https://google.com');
+        if (!isOnline) console.log("Proxy or Google not working...");
+    }
+    catch (e) {
+        console.log("Proxy or Google not working...");
+    }
 
-    // const cantonAbbrevList = ['ZG']; //for debug 
 
     for (const cantonAbbrev of cantonAbbrevList) {
 
