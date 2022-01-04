@@ -11,7 +11,7 @@ For current state (run daily) of all checks of all cantonal interfaces please vi
 ### How to use the library
 
 There are three examples:
-* The web app www.kann-ich-bohren.ch (see [Code](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland-WebApp))
+* The web app [www.kann-ich-bohren.ch](http://www.kann-ich-bohren.ch) (see [Code](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland-WebApp))
 * A working example in the example directory and online on [Link](example/)
 * A very simple example of an HTML page showing the suitability of drilling at a given coordinate can be implemented as follows (Working sample on [Simple example](example/simple_example.html)). Please don't forget to save the cantons.json on the same path as the javascript file.
 
