@@ -2,7 +2,7 @@
 
 SuitabilityGeothermalDrillingSwitzerland is an open source Java script library that allows to query the cantonal interfaces whether a site in Switzerland is suitable for a geothermal drilling.
 
-It was developed to support the web app www.kann-ich-bohren.ch.
+This library is supporting the web app www.kann-ich-bohren.ch and was developped by [Geotest AG](https://www.geotest.ch).
 
 ## Documentation
 
