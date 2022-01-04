@@ -494,7 +494,7 @@ export async function TestAllCantons() {
     
     // First test proxy
     try {
-        let isOnline = await checkLinkOk(proxyServer + 'https://google.com');
+        let isOnline = await checkLinkOk(proxyServer + 'https://admin.ch');
         if (!isOnline) console.log("Proxy or Google not working...");
     }
     catch (e) {
