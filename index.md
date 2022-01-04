@@ -1,12 +1,19 @@
 ## Welcome to SuitabilityGeothermalDrillingSwitzerland documentation
 
-For current state of all checks (run daily) please visit [Link](cantons_test.html)
+### Documentation
+
+Please find the documentation of the library [here](documentation.html)
+
+### Monitoring of the cantonal interfaces
+
+For current state (run daily) of all checks of all cantonal interfaces please visit [Link](cantons_test.html)
 
 ### How to use the library
 
-You can find a working example in the example directory and online on [Link](example/)
-
-A very simple example of an HTML page showing the suitability of drilling at a given coordinate can be implemented as follows (Working sample on [Simple example](example/simple_example.html)). Please don't forget to save the cantons.json on the same path as the javascript file.
+There are three examples:
+* The web app www.kann-ich-bohren.ch (see [Code](https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland-WebApp))
+* A working example in the example directory and online on [Link](example/)
+* A very simple example of an HTML page showing the suitability of drilling at a given coordinate can be implemented as follows (Working sample on [Simple example](example/simple_example.html)). Please don't forget to save the cantons.json on the same path as the javascript file.
 
 ```
 <!doctype html>
@@ -39,7 +46,5 @@ A very simple example of an HTML page showing the suitability of drilling at a g
 </html>
 ```
 
-### Documentation
 
-Please find the documentation of the library on [Link](documentation.html)
 
