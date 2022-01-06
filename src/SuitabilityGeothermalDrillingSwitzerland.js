@@ -197,10 +197,11 @@ async function esriRestFeatureFactory(featureServerUrl, easting, northing) {
  * @async
  * @param  {string} cantonAbbrev two letter abbreviation for canton, e.g. 'AG'
  * @param {boolean} withProxy (optional) add proxy server to url. default = false
+ * @param {boolean} verbose (optional) activate console log. default = false
  * @return {ImageWMS[]} for open layers wms, not defined for esri yet
  * @example const imageWmsList = await GetWMSCanton('UR', true);
  */
-export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
+export async function GetWMSCanton(cantonAbbrev, withProxy = false, verbose = false) {
     const canton = await getCantonJson(cantonAbbrev);
     const wmsList = await getWMSList(canton);
 
@@ -214,10 +215,9 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
         else {                                          //Esri ArcGIS REST 
             // const url = await esriRestFeatureFactory(wmsItem, easting, northing);
             // imageWmsList.push(url);
+            // throw new Error('Esri ArcGIS REST not implemented yet');
 
-            //TODO:
-
-            throw new Error('Esri ArcGIS REST not implemented yet');
+            if (verbose) console.log('Esri ArcGIS REST not implemented yet for canton ', cantonAbbrev);
         }
     }
 
@@ -233,7 +233,7 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false) {
  */
 export async function GetWMSLegendCanton(cantonAbbrev) {
 
-    //TODO: for ESRI case
+    //TODO: impolement for ESRI case?
 
     const imageWmsList = await GetWMSCanton(cantonAbbrev);
 
@@ -500,7 +500,6 @@ export async function TestAllCantons() {
     catch (e) {
         console.log("Proxy or Google not working...");
     }
-
 
     for (const cantonAbbrev of cantonAbbrevList) {
 
