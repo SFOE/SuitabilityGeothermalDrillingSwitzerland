@@ -481,10 +481,11 @@ async function checkLinkOk(url) {
 /**
  * Test WMS definition for all cantons
  * @async
+ * @param {boolean} verbose (optional) activate detailled console log. default = true
  * @returns {object} test result for all cantons
  * @example let result = await TestAllCantons();
  */
-export async function TestAllCantons() {
+export async function TestAllCantons(verbose = true) {
 
     let cantonsDict = [];
 
@@ -501,6 +502,8 @@ export async function TestAllCantons() {
         console.log("Proxy or Google not working...");
     }
 
+    // let cantonAbbrevList = ['LU'];
+
     for (const cantonAbbrev of cantonAbbrevList) {
 
         const configured = _.contains(cantonNames, cantonAbbrev);
@@ -509,15 +512,14 @@ export async function TestAllCantons() {
         if (configured) {
             let imageWmsList;
 
-            try {
-                imageWmsList = await GetWMSCanton(cantonAbbrev, true);
-            }
-            catch (err) {   //esri rest throws an error so far
+            imageWmsList = await GetWMSCanton(cantonAbbrev, true);
+
+            if (imageWmsList.length == 0) {   //esri rest return empty list --> fallback: assume esri rest
                 let canton = _.find(cantonsList, i => i.name === cantonAbbrev);
                 let location1 = canton.exampleLocation[0];
                 
                 let wmsGetFeatureInfoOk = false;
-                let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, false);
+                let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, verbose);
 
                 if (suitability && suitability < 5 && suitability > 0)
                 wmsGetFeatureInfoOk = true;
@@ -555,7 +557,7 @@ export async function TestAllCantons() {
                     let location1 = canton.exampleLocation[0];
 
                     // Check Suitability (GetFeatureInfo)
-                    let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, false);
+                    let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, verbose);
                     if (suitability && suitability < 5 && suitability > 0)
                         wmsGetFeatureInfoOk = true;
 
