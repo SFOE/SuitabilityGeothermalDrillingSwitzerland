@@ -496,10 +496,10 @@ export async function TestAllCantons(verbose = true) {
     // First test proxy
     try {
         let isOnline = await checkLinkOk(proxyServer + 'https://admin.ch');
-        if (!isOnline) console.log("Proxy or Google not working...");
+        if (!isOnline) console.log("Proxy or Admin not working...");
     }
     catch (e) {
-        console.log("Proxy or Google not working...");
+        console.err("Proxy or Admin not working...");
     }
 
     // let cantonAbbrevList = ['LU'];
