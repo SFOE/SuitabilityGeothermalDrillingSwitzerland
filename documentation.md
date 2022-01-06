@@ -6,10 +6,10 @@
     * [.error](#module_SuitabilityGeothermalDrillingSwitzerland.error)
     * [.proxyServer](#module_SuitabilityGeothermalDrillingSwitzerland.proxyServer)
     * [.SetProxyServer(url)](#module_SuitabilityGeothermalDrillingSwitzerland.SetProxyServer)
-    * [.GetWMSCanton(cantonAbbrev, withProxy)](#module_SuitabilityGeothermalDrillingSwitzerland.GetWMSCanton) ⇒ <code>Array.&lt;ImageWMS&gt;</code>
+    * [.GetWMSCanton(cantonAbbrev, withProxy, verbose)](#module_SuitabilityGeothermalDrillingSwitzerland.GetWMSCanton) ⇒ <code>Array.&lt;ImageWMS&gt;</code>
     * [.GetWMSLegendCanton(cantonAbbrev)](#module_SuitabilityGeothermalDrillingSwitzerland.GetWMSLegendCanton) ⇒ <code>Array.&lt;string&gt;</code>
     * [.CheckSuitabilityCanton(easting, northing, cantonAbbrev, verbose)](#module_SuitabilityGeothermalDrillingSwitzerland.CheckSuitabilityCanton) ⇒ <code>number</code>
-    * [.TestAllCantons()](#module_SuitabilityGeothermalDrillingSwitzerland.TestAllCantons) ⇒ <code>object</code>
+    * [.TestAllCantons(verbose)](#module_SuitabilityGeothermalDrillingSwitzerland.TestAllCantons) ⇒ <code>object</code>
 
 <a name="module_SuitabilityGeothermalDrillingSwitzerland.error"></a>
 
@@ -40,7 +40,7 @@ SetProxyServer('https://bfe-cors-anywhere.herokuapp.com/');
 ```
 <a name="module_SuitabilityGeothermalDrillingSwitzerland.GetWMSCanton"></a>
 
-### BfeLib.GetWMSCanton(cantonAbbrev, withProxy) ⇒ <code>Array.&lt;ImageWMS&gt;</code>
+### BfeLib.GetWMSCanton(cantonAbbrev, withProxy, verbose) ⇒ <code>Array.&lt;ImageWMS&gt;</code>
 GetWMSCanton
 
 **Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
@@ -50,6 +50,7 @@ GetWMSCanton
 | --- | --- | --- |
 | cantonAbbrev | <code>string</code> | two letter abbreviation for canton, e.g. 'AG' |
 | withProxy | <code>boolean</code> | (optional) add proxy server to url. default = false |
+| verbose | <code>boolean</code> | (optional) activate console log. default = false |
 
 **Example**  
 ```js
@@ -92,11 +93,16 @@ let result = await CheckSuitabilityCanton(2652462, 1196901, 'LU');
 ```
 <a name="module_SuitabilityGeothermalDrillingSwitzerland.TestAllCantons"></a>
 
-### BfeLib.TestAllCantons() ⇒ <code>object</code>
+### BfeLib.TestAllCantons(verbose) ⇒ <code>object</code>
 Test WMS definition for all cantons
 
 **Kind**: static method of [<code>SuitabilityGeothermalDrillingSwitzerland</code>](#module_SuitabilityGeothermalDrillingSwitzerland)  
 **Returns**: <code>object</code> - test result for all cantons  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| verbose | <code>boolean</code> | (optional) activate detailled console log. default = true |
+
 **Example**  
 ```js
 let result = await TestAllCantons();
