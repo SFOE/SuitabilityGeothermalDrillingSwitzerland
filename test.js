@@ -26,13 +26,22 @@ let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
 // current year
 let year = date_ob.getFullYear();
 
+// current hours
+let hours = date_ob.getHours();
+
+// current minutes
+let minutes = date_ob.getMinutes();
+
+// current seconds
+let seconds = date_ob.getSeconds();
+
 let everythingWorking = true;
 let problemsWithCantons = "";
 // Ouput Result to cantons_test.md
 
 var file = fs.createWriteStream('./cantons_test.md');
 file.on('error', function(err) { /* error handling */ });
-file.write("# Cantons Test Output\nRun on "+year+"/"+month+"/"+ date + "\n## Results\n\n|Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|\n|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|\n")
+file.write("# Cantons Test Output\nRun on "+year+"/"+month+"/"+ date + " " + hours+ ":" + minutes + ":" + seconds+"\n## Results\n\n|Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|\n|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|\n")
 result.forEach(function(v) { 
     let outputline = "";
     let header = "|" + v.canton;
