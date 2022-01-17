@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/01/17 4:19:38
+Run on 2022/01/17 7:9:14
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -11,7 +11,7 @@ Run on 2022/01/17 4:19:38
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
-|GE|<span style='color:green;'>true</span>|true|none|undefined|true|
+|GE|<span style='color:red;'>false</span>|true|none|undefined|false|
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
@@ -35,4 +35,4 @@ Run on 2022/01/17 4:19:38
 
 ## Overall results
 
-<span style='color:green;font-weight:bold;'>All services up and running</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GE</span>
