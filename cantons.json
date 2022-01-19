@@ -747,7 +747,7 @@
             "infoFormat": "arcgis/json",
             "layers": [
                 {
-                    "name": "all:80",
+                    "name": "all:83",
                     "desc": "ews_zulaessig",
                     "rootName": "results",
                     "nodeName": "attributes",
@@ -755,7 +755,7 @@
                     "summand": 1
                 },
                 {
-                    "name": "all:78",
+                    "name": "all:81",
                     "desc": "ews_vorabklaeren",
                     "rootName": "results",
                     "nodeName": "attributes",
@@ -771,7 +771,7 @@
                     "summand": 10
                 },
                 {
-                    "name": "all:79",
+                    "name": "all:82",
                     "desc": "ews_nicht_zulaessig",
                     "rootName": "results",
                     "nodeName": "attributes",
