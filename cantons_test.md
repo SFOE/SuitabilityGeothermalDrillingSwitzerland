@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/01/19 6:31:31
+Run on 2022/01/19 7:58:33
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -15,11 +15,11 @@ Run on 2022/01/19 6:31:31
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
-|LU|<span style='color:red;'>false</span>|true|none|undefined|true|
+|LU|<span style='color:green;'>true</span>|true|none|undefined|true|
 |NE|<span style='color:grey;'>undefined</span>|false||||
 |NW|<span style='color:grey;'>undefined</span>|false||||
 |OW|<span style='color:grey;'>undefined</span>|false||||
-|SG|<span style='color:red;'>false</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|false|false|
+|SG|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
 |SZ|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.herokuapp.com/https://map.geo.sz.ch/mapserv_proxy|true|false|
@@ -35,4 +35,4 @@ Run on 2022/01/19 6:31:31
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): LU, SG</span>
+<span style='color:green;font-weight:bold;'>All services up and running</span>
