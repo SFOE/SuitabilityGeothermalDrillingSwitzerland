@@ -484,6 +484,7 @@
             "wmsMulti": [
                 {
                     "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme",
+                    "mapServerUrlLegendUrl": "https://map.geo.tg.ch/services/geofy_chsdi3/static/images/legends/erdwaerme_verboten_de.png",
                     "infoFormat": "application/vnd.ogc.gml",
                     "layers": [
                         {
@@ -500,6 +501,7 @@
                 },
                 {
                     "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte",
+                    "mapServerUrlLegendUrl": "https://map.geo.tg.ch/services/geofy_chsdi3/static/images/legends/gewaesserschutzkarte-grundwasserschutzzonen_s1_s2_s3_de.png",
                     "infoFormat": "application/vnd.ogc.gml",
                     "layers": [
                         {
