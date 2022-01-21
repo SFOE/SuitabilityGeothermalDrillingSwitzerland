@@ -32,13 +32,12 @@ export let error;
 /**
  * Proxy server URL (Getter)
  */
-export let proxyServer = 'https://bfe-cors-anywhere.herokuapp.com/';
-//const proxyServer = 'http://www.whateverorigin.org/get?url=';
+export let proxyServer = 'https://bfe-cors.geotest.ch/';
 
 /**
  * Setter for proxyServer
- * @param {string} url proxy server url, e.g. 'https://bfe-cors-anywhere.herokuapp.com/'
- * @example SetProxyServer('https://bfe-cors-anywhere.herokuapp.com/');
+ * @param {string} url proxy server url, e.g. 'https://bfe-cors.geotest.ch/'
+ * @example SetProxyServer('https://bfe-cors.geotest.ch/');
  */
 export function SetProxyServer(url) {
     if (url)

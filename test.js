@@ -10,7 +10,7 @@ import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyS
 
 import fs from 'fs'; 
 import fetch from 'cross-fetch';  
-
+SetProxyServer('https://bfe-cors.geotest.ch/');
 let result = await TestAllCantons();
 console.log(result);
 
