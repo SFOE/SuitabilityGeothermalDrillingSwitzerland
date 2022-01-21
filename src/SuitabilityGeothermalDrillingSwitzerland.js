@@ -116,6 +116,7 @@ async function getWMSList(canton) {
     else {              //handle single wms source
         wmsList.push({
             wmsUrl: canton.wmsUrl,
+            mapServerUrlLegendUrl: canton.mapServerUrlLegendUrl,
             infoFormat: canton.infoFormat,
             layers: canton.layers
         });
@@ -239,7 +240,16 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
     let legendUrlList = [];
     for (const imageWmsItem of imageWmsList) {
         const legendItem = imageWmsItem.getLegendUrl();
-        legendUrlList.push(legendItem);
+        if (legendItem!=null) legendUrlList.push(legendItem);
+    }
+
+    if (legendUrlList.length==0) {
+        const canton = await getCantonJson(cantonAbbrev);
+        const wmsList = await getWMSList(canton);
+        for (const wmsInfo of wmsList)
+        {
+            if (wmsInfo.mapServerUrlLegendUrl!=null) legendUrlList.push(wmsInfo.mapServerUrlLegendUrl);
+        }
     }
 
     return legendUrlList;
