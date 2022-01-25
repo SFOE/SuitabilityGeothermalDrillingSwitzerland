@@ -104,24 +104,26 @@ async function getCantonJson(cantonAbbrev) {
 async function getWMSList(canton) {
     let wmsList = [];
 
-    const hasMultiWMS = typeof canton.wmsMulti !== 'undefined';
-    if (hasMultiWMS) {  //handle mutliple wms sources
-        // console.log('Multiple WMS defined: ', canton.wmsMulti);
+    if (canton!=undefined)
+    {
+        const hasMultiWMS = typeof canton.wmsMulti !== 'undefined';
+        if (hasMultiWMS) {  //handle mutliple wms sources
+            // console.log('Multiple WMS defined: ', canton.wmsMulti);
 
-        for (let index = 0; index < canton.wmsMulti.length; index++) {
-            const wmsItem = canton.wmsMulti[index];
-            wmsList.push(wmsItem);
+            for (let index = 0; index < canton.wmsMulti.length; index++) {
+                const wmsItem = canton.wmsMulti[index];
+                wmsList.push(wmsItem);
+            }
+        }
+        else {              //handle single wms source
+            wmsList.push({
+                wmsUrl: canton.wmsUrl,
+                mapServerUrlLegendUrl: canton.mapServerUrlLegendUrl,
+                infoFormat: canton.infoFormat,
+                layers: canton.layers
+            });
         }
     }
-    else {              //handle single wms source
-        wmsList.push({
-            wmsUrl: canton.wmsUrl,
-            mapServerUrlLegendUrl: canton.mapServerUrlLegendUrl,
-            infoFormat: canton.infoFormat,
-            layers: canton.layers
-        });
-    }
-
     return wmsList;
 }
 
