@@ -104,8 +104,7 @@ async function getCantonJson(cantonAbbrev) {
 async function getWMSList(canton) {
     let wmsList = [];
 
-    if (canton!=undefined)
-    {
+    if (canton != undefined) {
         const hasMultiWMS = typeof canton.wmsMulti !== 'undefined';
         if (hasMultiWMS) {  //handle mutliple wms sources
             // console.log('Multiple WMS defined: ', canton.wmsMulti);
@@ -242,15 +241,14 @@ export async function GetWMSLegendCanton(cantonAbbrev) {
     let legendUrlList = [];
     for (const imageWmsItem of imageWmsList) {
         const legendItem = imageWmsItem.getLegendUrl();
-        if (legendItem!=null) legendUrlList.push(legendItem);
+        if (legendItem != null) legendUrlList.push(legendItem);
     }
 
-    if (legendUrlList.length==0) {
+    if (legendUrlList.length == 0) {
         const canton = await getCantonJson(cantonAbbrev);
         const wmsList = await getWMSList(canton);
-        for (const wmsInfo of wmsList)
-        {
-            if (wmsInfo.mapServerUrlLegendUrl!=null) legendUrlList.push(wmsInfo.mapServerUrlLegendUrl);
+        for (const wmsInfo of wmsList) {
+            if (wmsInfo.mapServerUrlLegendUrl != null) legendUrlList.push(wmsInfo.mapServerUrlLegendUrl);
         }
     }
 
@@ -503,7 +501,7 @@ export async function TestAllCantons(verbose = true) {
     const cantons = await getAllCantonsJson();
     const cantonsList = cantons.cantonsList;
     const cantonNames = _.pluck(cantonsList, 'name').sort();
-    
+
     // First test proxy
     try {
         let isOnline = await checkLinkOk(proxyServer + 'https://admin.ch');
@@ -528,13 +526,13 @@ export async function TestAllCantons(verbose = true) {
             if (imageWmsList.length == 0) {   //esri rest return empty list --> fallback: assume esri rest
                 let canton = _.find(cantonsList, i => i.name === cantonAbbrev);
                 let location1 = canton.exampleLocation[0];
-                
+
                 let wmsGetFeatureInfoOk = false;
                 let suitability = await CheckSuitabilityCanton(location1[0], location1[1], cantonAbbrev, verbose);
 
                 if (suitability && suitability < 5 && suitability > 0)
-                wmsGetFeatureInfoOk = true;
-                let checkResult = suitability === location1[2]; 
+                    wmsGetFeatureInfoOk = true;
+                let checkResult = suitability === location1[2];
 
                 let wmsAlive = [];
                 wmsAlive.push({
@@ -573,7 +571,7 @@ export async function TestAllCantons(verbose = true) {
                         wmsGetFeatureInfoOk = true;
 
                     // let checkResult = suitability === Number(location1[2]);
-                    let checkResult = suitability === location1[2]; 
+                    let checkResult = suitability === location1[2];
 
                     wmsAlive.push({
                         wms: wmsUrl,
