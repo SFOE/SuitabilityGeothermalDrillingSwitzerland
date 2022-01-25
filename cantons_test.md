@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/01/25 5:4:47
+Run on 2022/01/25 5:10:48
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -13,13 +13,13 @@ Run on 2022/01/25 5:4:47
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:red;'>false</span>|true|none|undefined|false|
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
-|GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
+|GR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|false|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:green;'>true</span>|true|none|undefined|true|
 |NE|<span style='color:grey;'>undefined</span>|false||||
 |NW|<span style='color:grey;'>undefined</span>|false||||
 |OW|<span style='color:grey;'>undefined</span>|false||||
-|SG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|false|false|
+|SG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
 |SZ|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://map.geo.sz.ch/mapserv_proxy|false|false|
@@ -35,4 +35,4 @@ Run on 2022/01/25 5:4:47
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GE, SG</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GE, GR</span>
