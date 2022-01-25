@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/01/25 5:15:22
+Run on 2022/01/25 6:9:23
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -11,7 +11,7 @@ Run on 2022/01/25 5:15:22
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
-|GE|<span style='color:red;'>false</span>|true|none|undefined|false|
+|GE|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
@@ -35,4 +35,4 @@ Run on 2022/01/25 5:15:22
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GE</span>
+<span style='color:green;font-weight:bold;'>All services up and running</span>
