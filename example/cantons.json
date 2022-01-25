@@ -549,23 +549,59 @@
             "name": "SZ",
             "exampleLocation": [
                 [
-                    2704293,
-                    1214985,
-                    5
+                    2707885,
+                    1226453,
+                    1
+                ],
+                [
+                    2707994,
+                    1227010,
+                    2
+                ],
+                [
+                    2708393,
+                    1227843,
+                    3
                 ]
             ],
-            "wmsUrl": "https://map.geo.sz.ch/mapserv_proxy",
+            "wmsUrl": "https://map-d.geo.sz.ch/mapserv_proxy",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
                     "name": "ch.sz.a034c.waermenutzung.erdwaerme",
-                    "problem": "no feature provided by GetFeatureInfo()"
+                    "propertyName": "zulaessigkeit_cd",
+                    "propertyValues": [
+                        {
+                            "name": "ja",
+                            "desc": "zulässig",
+                            "summand": 1
+                        },
+                        {
+                            "name": "Abklaerung_noetig",
+                            "desc": "bedingt zulässig",
+                            "summand": 2
+                        },
+                        {
+                            "name": "nein",
+                            "desc": "nicht zulässig",
+                            "summand": 3
+                        }
+                    ]
+
                 }
             ],
             "harmonyMap": [
                 {
-                    "sum": 0,
-                    "value": 5
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
                 }
             ]
         },
