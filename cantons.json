@@ -568,7 +568,7 @@
                     3
                 ]
             ],
-            "wmsUrl": "https://map-d.geo.sz.ch/mapserv_proxy",
+            "wmsUrl": "https://map.geo.sz.ch/mapserv_proxy",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
