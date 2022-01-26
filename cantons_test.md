@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/01/25 15:1:18
+Run on 2022/01/26 3:14:13
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -22,7 +22,7 @@ Run on 2022/01/25 15:1:18
 |SG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
-|SZ|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://map-d.geo.sz.ch/mapserv_proxy|false|true|
+|SZ|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://map-d.geo.sz.ch/mapserv_proxy|true|true|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte|true|true|
 |TI|<span style='color:grey;'>undefined</span>|false||||
@@ -35,4 +35,4 @@ Run on 2022/01/25 15:1:18
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): SZ</span>
+<span style='color:green;font-weight:bold;'>All services up and running</span>
