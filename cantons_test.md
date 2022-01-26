@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/01/26 9:25:51
+Run on 2022/01/26 13:50:13
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -12,7 +12,7 @@ Run on 2022/01/26 9:25:51
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|none|undefined|true|
-|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
+|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|false|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:green;'>true</span>|true|none|undefined|true|
