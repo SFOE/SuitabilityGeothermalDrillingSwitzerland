@@ -789,7 +789,7 @@
             "infoFormat": "arcgis/json",
             "layers": [
                 {
-                    "name": "all:83",
+                    "name": "all:86",
                     "desc": "ews_zulaessig",
                     "rootName": "results",
                     "nodeName": "attributes",
@@ -797,7 +797,7 @@
                     "summand": 1
                 },
                 {
-                    "name": "all:81",
+                    "name": "all:84",
                     "desc": "ews_vorabklaeren",
                     "rootName": "results",
                     "nodeName": "attributes",
@@ -805,7 +805,7 @@
                     "summand": 2
                 },
                 {
-                    "name": "all:51",
+                    "name": "all:53",
                     "desc": "ews_zulaessig_auflagen",
                     "rootName": "results",
                     "nodeName": "attributes",
@@ -813,7 +813,7 @@
                     "summand": 10
                 },
                 {
-                    "name": "all:82",
+                    "name": "all:85",
                     "desc": "ews_nicht_zulaessig",
                     "rootName": "results",
                     "nodeName": "attributes",
