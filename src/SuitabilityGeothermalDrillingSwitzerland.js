@@ -1,16 +1,14 @@
 //  SuitabilityGeothermalDrillingSwitzerland
 //
-//  TODO:   - testing functions
-//
 /**
  * @module SuitabilityGeothermalDrillingSwitzerland
  * @typicalname BfeLib 
 */
 'use strict';
 
-import fetch from 'cross-fetch';      //node js only
-import jsdom from "jsdom";      //node js only
-import fs from 'fs';            //node js only
+import fetch from 'cross-fetch';    //node js only
+import jsdom from "jsdom";          //node js only
+import fs from 'fs';                //node js only
 
 import _ from 'underscore';
 import ImageWMS from 'ol/source/ImageWMS.js';
@@ -328,7 +326,7 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                     //fetch wms url
                     url = proxyServer + url;
                     if (verbose && wmsItem.infoFormat !== 'arcgis/json') console.log(url);
-                    let response = await fetch(url);        //TODO: not needed for wmsItem.infoFormat === 'arcgis/json'
+                    let response = await fetch(url);        //Remark: not needed for wmsItem.infoFormat === 'arcgis/json'
                     let dataraw = await response.text();
 
                     if (verbose && wmsItem.infoFormat !== 'arcgis/json') console.log(dataraw);
@@ -355,6 +353,13 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                             if (wmsItem.infoFormat !== 'arcgis/json') {
                                 rootName = 'features';
                                 nodeName = 'properties';
+
+                                if (layer.rootName) {
+                                    rootName = layer.rootName;
+                                }
+                                if (layer.nodeName) {
+                                    nodeName = layer.nodeName;
+                                }
                             }
                             else {
 

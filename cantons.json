@@ -591,7 +591,6 @@
                             "summand": 3
                         }
                     ]
-
                 }
             ],
             "harmonyMap": [
@@ -752,6 +751,74 @@
                 {
                     "sum": 3,
                     "value": 3
+                }
+            ]
+        },
+        {
+            "name": "OW",
+            "exampleLocation": [
+                [
+                    2665235,
+                    1201437,
+                    0,
+                    "0"
+                ]
+            ],
+            "wmsUrl": "https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service",
+            "infoFormat": "application/json",
+            "layers": [
+                {
+                    "name": "ch.ow.ews_zulaessigkeit",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Zulaessigkeit",
+                    "propertyValues": [
+                        {
+                            "name": "Auflage_GewaesserschutzbereichAu",
+                            "desc": "work in progress",
+                            "summand": 5
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 5,
+                    "value": 5
+                }
+            ]
+        },
+        {
+            "name": "NW",
+            "exampleLocation": [
+                [
+                    2671245,
+                    1201969,
+                    0,
+                    "0"
+                ]
+            ],
+            "wmsUrl": "https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service",
+            "infoFormat": "application/json",
+            "layers": [
+                {
+                    "name": "ch.nw.waermenutzungsbereiche",
+                    "rootName": "results",
+                    "nodeName": "attributes",
+                    "propertyName": "Art",
+                    "propertyValues": [
+                        {
+                            "name": "nutzbare_Grundwassergebiete",
+                            "desc": "work in progress",
+                            "summand": 5
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 5,
+                    "value": 5
                 }
             ]
         },
