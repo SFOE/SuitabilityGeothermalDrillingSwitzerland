@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/02/10 4:17:7
+Run on 2022/02/10 8:38:21
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -17,8 +17,8 @@ Run on 2022/02/10 4:17:7
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:green;'>true</span>|true|none|undefined|true|
 |NE|<span style='color:grey;'>undefined</span>|false||||
-|NW|<span style='color:grey;'>undefined</span>|false||||
-|OW|<span style='color:grey;'>undefined</span>|false||||
+|NW|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|false|false|
+|OW|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|false|false|
 |SG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
@@ -35,4 +35,4 @@ Run on 2022/02/10 4:17:7
 
 ## Overall results
 
-<span style='color:green;font-weight:bold;'>All services up and running</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): NW, OW</span>
