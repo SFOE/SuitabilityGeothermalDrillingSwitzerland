@@ -755,13 +755,44 @@
             ]
         },
         {
-            "name": "OW",
+            "name": "OW_WorkInProgress",
+            "desc:": "Mapping is still being worked out",
             "exampleLocation": [
                 [
-                    2665235,
-                    1201437,
-                    0,
-                    "0"
+                    2664351,
+                    1193538,
+                    1,
+                    "zulaessig"
+                ],
+                [
+                    2660898,
+                    1191688,
+                    2,
+                    "Auflage_GewaesserschutzbereichAu"
+                ],
+                [
+                    2660281,
+                    1190191,
+                    2,
+                    "!! doppelte Antwort: Ziel: Auflage_NutzungsgebietGrundwasser"
+                ],
+                [
+                    2661431,
+                    1192803,
+                    2,
+                    "!! vierfache Antwort: Ziel: Auflage_bedingtzulaessig"
+                ],
+                [
+                    2661534,
+                    1193397,
+                    3,
+                    "!! 6-fache Antwort: Ziel: nichtzulaessig"
+                ],
+                [
+                    2657375.6,
+                    1180366.4,
+                    3,
+                    "!! 2-fache Antwort: Ziel: Gebiete_mit_potentieller_Verkarstung"
                 ]
             ],
             "wmsUrl": "https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service",
@@ -774,14 +805,55 @@
                     "propertyName": "Zulaessigkeit",
                     "propertyValues": [
                         {
+                            "name": "zulaessig",
+                            "desc": "Wärmenutzung zulässig (Bewilligungspflicht)",
+                            "summand": 1
+                        },
+                        {
                             "name": "Auflage_GewaesserschutzbereichAu",
-                            "desc": "work in progress",
-                            "summand": 5
+                            "desc": "Wärmenutzung zulässig (Bewilligungspflicht)",
+                            "summand": 2
+                        },
+                        {
+                            "name": "Auflage_NutzungsgebietGrundwasser",
+                            "desc": "Wärmenutzung zulässig (Bewilligungspflicht); Geologische Begleitung während der Bohrung erforderlich",
+                            "summand": 2
+                        },
+                        {
+                            "name": "Auflage_bedingtzulaessig",
+                            "desc": "Wärmenutzung bedingt zulässig (Bewilligungspflicht); vorgängiges geologisches Gutachten erforderlich als Grundlage zur Prüfung der Bewilligungsfähigkeit",
+                            "summand": 2
+                        },
+                        {
+                            "name": "nichtzulaessig",
+                            "desc": "Wärmenutzung nicht zulässig",
+                            "summand": 3
+                        },
+                        {
+                            "name": "Gebiete_mit_potentieller_Verkarstung",
+                            "desc": "Wärmenutzung nicht zulässig",
+                            "summand": 3
                         }
                     ]
                 }
             ],
             "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 5
+                },
+                {
+                    "sum": 2,
+                    "value": 5
+                },
+                {
+                    "sum": 3,
+                    "value": 5
+                },
+                {
+                    "sum": 4,
+                    "value": 5
+                },
                 {
                     "sum": 5,
                     "value": 5
@@ -789,13 +861,56 @@
             ]
         },
         {
-            "name": "NW",
+            "name": "NW_WorkInProgress",
+            "desc:": "Mapping is still being worked out",
             "exampleLocation": [
                 [
-                    2671245,
-                    1201969,
-                    0,
-                    "0"
+                    2671744,
+                    1196809,
+                    3,
+                    "bautechnisch_bauverbot"
+                ],
+                [
+                    2675123,
+                    1198890,
+                    3,
+                    "Trinkwasserschutzgebiet"
+                ],
+                [
+                    2672327,
+                    1202452,
+                    3,
+                    "nutzbare_Grundwassergebiete"
+                ],
+                [
+                    2668633,
+                    1202922,
+                    2,
+                    "bebaubares_Grundwassergebiet"
+                ],
+                [
+                    2668267,
+                    1201091,
+                    2,
+                    "vermutlich_unproblematisch"
+                ],
+                [
+                    2668945,
+                    1200200,
+                    2,
+                    "problematisch"
+                ],
+                [
+                    2668854,
+                    1199481,
+                    2,
+                    "bautechnisch_problematisch"
+                ],
+                [
+                    2669798,
+                    1200979,
+                    1,
+                    "unproblematisch"
                 ]
             ],
             "wmsUrl": "https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service",
@@ -808,110 +923,67 @@
                     "propertyName": "Art",
                     "propertyValues": [
                         {
+                            "name": "bautechnisch_bauverbot",
+                            "desc": "Wärmenutzung aus dem Untergrund verboten",
+                            "summand": 3
+                        },
+                        {
+                            "name": "Trinkwasserschutzgebiet",
+                            "summand": 3
+                        },
+                        {
                             "name": "nutzbare_Grundwassergebiete",
-                            "desc": "work in progress",
-                            "summand": 5
+                            "desc": "Grundwassergebiet mit Erdsondenverbot",
+                            "summand": 3
+                        },
+                        {
+                            "name": "bebaubares_Grundwassergebiet",
+                            "desc": "Grundwassergebiet ohne Erdsondenverbot",
+                            "summand": 2
+                        },
+                        {
+                            "name": "vermutlich_unproblematisch",
+                            "desc": "Vermutlich unproblematische Untergrundverhältnisse",
+                            "summand": 2
+                        },
+                        {
+                            "name": "problematisch",
+                            "desc": "Unsichere Untergrundverhältnisse",
+                            "summand": 2
+                        },
+                        {
+                            "name": "bautechnisch_problematisch",
+                            "desc": "Bautechnisch problematische Untergrundverhältnisse",
+                            "summand": 2
+                        },
+                        {
+                            "name": "unproblematisch",
+                            "desc": "Unproblematische Untergrundverhältnisse",
+                            "summand": 1
                         }
                     ]
                 }
             ],
             "harmonyMap": [
                 {
-                    "sum": 5,
-                    "value": 5
-                }
-            ]
-        },
-        {
-            "name": "LU",
-            "exampleLocation": [
-                [
-                    2665393,
-                    1217714,
-                    1,
-                    "ews_zulaessig"
-                ],
-                [
-                    2652462,
-                    1196901,
-                    2,
-                    "ews_zulaessig & ews_zulaessig_auflagen"
-                ],
-                [
-                    2645371,
-                    1200735,
-                    2,
-                    "ews_vorabklaeren"
-                ],
-                [
-                    2645598,
-                    1202446,
-                    3,
-                    "ews_nicht_zulaessig"
-                ]
-            ],
-            "wmsUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer/identify",
-            "mapServerUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer",
-            "mapServerUrlLegendUrl": "https://svc.geo.lu.ch/main/rest/services/uwe/uwe_div/MapServer/legend",
-            "infoFormat": "arcgis/json",
-            "layers": [
-                {
-                    "name": "all:86",
-                    "desc": "ews_zulaessig",
-                    "rootName": "results",
-                    "nodeName": "attributes",
-                    "propertyName": "Bewertungskriterium",
-                    "summand": 1
-                },
-                {
-                    "name": "all:84",
-                    "desc": "ews_vorabklaeren",
-                    "rootName": "results",
-                    "nodeName": "attributes",
-                    "propertyName": "Bewertungskriterium",
-                    "summand": 2
-                },
-                {
-                    "name": "all:53",
-                    "desc": "ews_zulaessig_auflagen",
-                    "rootName": "results",
-                    "nodeName": "attributes",
-                    "propertyName": "Bewertungskriterium",
-                    "summand": 10
-                },
-                {
-                    "name": "all:85",
-                    "desc": "ews_nicht_zulaessig",
-                    "rootName": "results",
-                    "nodeName": "attributes",
-                    "propertyName": "Bewertungskriterium",
-                    "summand": 3
-                }
-            ],
-            "harmonyMap": [
-                {
                     "sum": 1,
-                    "value": 1
+                    "value": 5
                 },
                 {
                     "sum": 2,
-                    "value": 2
-                },
-                {
-                    "sum": 11,
-                    "value": 2
-                },
-                {
-                    "sum": 12,
-                    "value": 2
-                },
-                {
-                    "sum": 13,
-                    "value": 3
+                    "value": 5
                 },
                 {
                     "sum": 3,
-                    "value": 3
+                    "value": 5
+                },
+                {
+                    "sum": 4,
+                    "value": 5
+                },
+                {
+                    "sum": 5,
+                    "value": 5
                 }
             ]
         },
