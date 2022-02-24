@@ -212,11 +212,20 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false, verbose = fa
             imageWmsList.push(imageWms);
         }
         else {                                          //Esri ArcGIS REST 
-            // const url = await esriRestFeatureFactory(wmsItem, easting, northing);
-            // imageWmsList.push(url);
-            // throw new Error('Esri ArcGIS REST not implemented yet');
 
-            if (verbose) console.log('Esri ArcGIS REST not implemented yet for canton ', cantonAbbrev);
+            if (canton.wmsUrlEsri && canton.wmsUrlEsriLayer) {  //if esri wmsserver defined
+                let esriItem = {
+                    wmsUrl: canton.wmsUrlEsri,
+                    mapServerUrlLegendUrl: undefined,
+                    infoFormat: canton.infoFormat,
+                    layers: [{ name: canton.wmsUrlEsriLayer }]
+                };
+                const imageWms = await imageWMSFactory(esriItem, withProxy);
+                imageWmsList.push(imageWms);
+            }
+            else {
+                if (verbose) console.log('Esri ArcGIS REST not implemented yet for canton ', cantonAbbrev);
+            }
         }
     }
 
@@ -376,6 +385,13 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
 
                             let data = JSON.parse(dataraw)
                             if (_.has(data, rootName) && data[rootName].length > 0) {
+
+                                if (layer.priorityMax && data[rootName].length > 1) {
+                                    //sort by 'priorityMax' descending
+                                    data[rootName] = _.sortBy(data[rootName], function (o) { return -o.attributes[layer.priorityMax]; });
+                                }
+
+                                //take the first elmement
                                 value = data[rootName][0][nodeName][layer.propertyName];
                             }
                             else {
@@ -513,7 +529,7 @@ export async function TestAllCantons(verbose = true) {
         if (!isOnline) console.log("Proxy or Admin not working...");
     }
     catch (e) {
-        console.err("Proxy or Admin not working...");
+        console.log("Proxy or Admin not working...");
     }
 
     // let cantonAbbrevList = ['LU'];
