@@ -213,9 +213,9 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false, verbose = fa
         }
         else {                                          //Esri ArcGIS REST 
 
-            if (canton.wmsUrlEsri && canton.wmsUrlEsriLayer) {  //if esri wmsserver defined
+            if (canton.mapServerUrl && canton.wmsUrlEsriLayer) {  //if esri wmsserver defined
                 let esriItem = {
-                    wmsUrl: canton.wmsUrlEsri,
+                    wmsUrl: canton.mapServerUrl,
                     mapServerUrlLegendUrl: undefined,
                     infoFormat: canton.infoFormat,
                     layers: [{ name: canton.wmsUrlEsriLayer }]

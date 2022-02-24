@@ -1105,9 +1105,8 @@
                 ]
             ],
             "wmsUrl": "https://ge.ch/sitgags1/rest/services/VECTOR/SITG_OPENDATA_02/MapServer/6883",
-            "wmsUrlEsri": "https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer",
+            "mapServerUrl": "https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer",
             "wmsUrlEsriLayer": "21",
-            "mapServerUrl": "",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
             "layers": [
