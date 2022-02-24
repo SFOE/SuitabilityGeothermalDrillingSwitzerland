@@ -755,7 +755,7 @@
             ]
         },
         {
-            "name": "OW_WorkInProgress",
+            "name": "OW",
             "desc:": "Mapping is still being worked out",
             "exampleLocation": [
                 [
@@ -774,25 +774,25 @@
                     2660281,
                     1190191,
                     2,
-                    "!! doppelte Antwort: Ziel: Auflage_NutzungsgebietGrundwasser"
+                    "Auflage_NutzungsgebietGrundwasser"
                 ],
                 [
                     2661431,
                     1192803,
                     2,
-                    "!! vierfache Antwort: Ziel: Auflage_bedingtzulaessig"
+                    "Auflage_bedingtzulaessig"
                 ],
                 [
                     2661534,
                     1193397,
                     3,
-                    "!! 6-fache Antwort: Ziel: nichtzulaessig"
+                    "nichtzulaessig"
                 ],
                 [
                     2657375.6,
                     1180366.4,
                     3,
-                    "!! 2-fache Antwort: Ziel: Gebiete_mit_potentieller_Verkarstung"
+                    "Gebiete_mit_potentieller_Verkarstung"
                 ]
             ],
             "wmsUrl": "https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service",
@@ -803,6 +803,7 @@
                     "rootName": "results",
                     "nodeName": "attributes",
                     "propertyName": "Zulaessigkeit",
+                    "priorityMax": "Zulaessigkeit_Nr",
                     "propertyValues": [
                         {
                             "name": "zulaessig",
@@ -812,7 +813,7 @@
                         {
                             "name": "Auflage_GewaesserschutzbereichAu",
                             "desc": "Wärmenutzung zulässig (Bewilligungspflicht)",
-                            "summand": 2
+                            "summand": 1
                         },
                         {
                             "name": "Auflage_NutzungsgebietGrundwasser",
@@ -840,28 +841,20 @@
             "harmonyMap": [
                 {
                     "sum": 1,
-                    "value": 5
+                    "value": 1
                 },
                 {
                     "sum": 2,
-                    "value": 5
+                    "value": 2
                 },
                 {
                     "sum": 3,
-                    "value": 5
-                },
-                {
-                    "sum": 4,
-                    "value": 5
-                },
-                {
-                    "sum": 5,
-                    "value": 5
+                    "value": 3
                 }
             ]
         },
         {
-            "name": "NW_WorkInProgress",
+            "name": "NW",
             "desc:": "Mapping is still being worked out",
             "exampleLocation": [
                 [
@@ -967,23 +960,15 @@
             "harmonyMap": [
                 {
                     "sum": 1,
-                    "value": 5
+                    "value": 1
                 },
                 {
                     "sum": 2,
-                    "value": 5
+                    "value": 2
                 },
                 {
                     "sum": 3,
-                    "value": 5
-                },
-                {
-                    "sum": 4,
-                    "value": 5
-                },
-                {
-                    "sum": 5,
-                    "value": 5
+                    "value": 3
                 }
             ]
         },
@@ -1120,6 +1105,8 @@
                 ]
             ],
             "wmsUrl": "https://ge.ch/sitgags1/rest/services/VECTOR/SITG_OPENDATA_02/MapServer/6883",
+            "wmsUrlEsri": "https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer",
+            "wmsUrlEsriLayer": "21",
             "mapServerUrl": "",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
