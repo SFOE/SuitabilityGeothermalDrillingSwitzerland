@@ -756,7 +756,6 @@
         },
         {
             "name": "OW",
-            "desc:": "Mapping is still being worked out",
             "exampleLocation": [
                 [
                     2664351,
@@ -767,7 +766,7 @@
                 [
                     2660898,
                     1191688,
-                    2,
+                    1,
                     "Auflage_GewaesserschutzbereichAu"
                 ],
                 [
@@ -855,7 +854,6 @@
         },
         {
             "name": "NW",
-            "desc:": "Mapping is still being worked out",
             "exampleLocation": [
                 [
                     2671744,
