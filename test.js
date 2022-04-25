@@ -8,8 +8,8 @@
 
 import { CheckSuitabilityCanton, GetWMSCanton, GetWMSLegendCanton, error, proxyServer, SetProxyServer, TestAllCantons } from './src/SuitabilityGeothermalDrillingSwitzerland.js';
 
-import fs from 'fs'; 
-import fetch from 'cross-fetch';  
+import fs from 'fs';
+import fetch from 'cross-fetch';
 SetProxyServer('https://bfe-cors.geotest.ch/');
 let result = await TestAllCantons();
 console.log(result);
@@ -40,27 +40,26 @@ let problemsWithCantons = "";
 // Ouput Result to cantons_test.md
 
 var file = fs.createWriteStream('./cantons_test.md');
-file.on('error', function(err) { /* error handling */ });
-file.write("# Cantons Test Output\nRun on "+year+"/"+month+"/"+ date + " " + hours+ ":" + minutes + ":" + seconds+"\n## Results\n\n|Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|\n|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|\n")
-result.forEach(function(v) { 
+file.on('error', function (err) { /* error handling */ });
+file.write("# Cantons Test Output\nRun on " + year + "/" + month + "/" + date + " " + hours + ":" + minutes + ":" + seconds + "\n## Results\n\n|Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|\n|----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|\n")
+result.forEach(function (v) {
     let outputline = "";
     let header = "|" + v.canton;
 
-    v.wmsAlive.forEach(function(alive) {
-        if (alive.expectedResult==true) {
-            outputline = header + "|<span style='color:green;'>"+  alive.expectedResult +"</span>|" + v.configured + "|" +  alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
+    v.wmsAlive.forEach(function (alive) {
+        if (alive.expectedResult == true) {
+            outputline = header + "|<span style='color:green;'>" + alive.expectedResult + "</span>|" + v.configured + "|" + alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
         }
-        else if (v.configured==false) {
-            outputline += header + "|<span style='color:grey;'>"+  alive.expectedResult +"</span>|" + v.configured + "||||";
+        else if (v.configured == false) {
+            outputline += header + "|<span style='color:grey;'>" + alive.expectedResult + "</span>|" + v.configured + "||||";
         }
-        else if (alive.expectedResult=="undefinde")
-        {
-            outputline += header + "|<span style='color:grey;'>"+  alive.expectedResult +"</span>|" + v.configured + "|" + alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
+        else if (alive.expectedResult == "undefined") {
+            outputline += header + "|<span style='color:grey;'>" + alive.expectedResult + "</span>|" + v.configured + "|" + alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
         }
         else {
             everythingWorking = false;
-            problemsWithCantons += v.canton +", ";
-            outputline += header + "|<span style='color:red;'>"+  alive.expectedResult +"</span>|" + v.configured + "|" + alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
+            problemsWithCantons += v.canton + ", ";
+            outputline += header + "|<span style='color:red;'>" + alive.expectedResult + "</span>|" + v.configured + "|" + alive.wms + "|" + alive.aliveGetCap + "|" + alive.aliveGetFeat + "|";
         }
 
         file.write(outputline);
