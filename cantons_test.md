@@ -1,10 +1,10 @@
 # Cantons Test Output
-Run on 2022/05/03 3:51:25
+Run on 2022/05/03 4:30:46
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
 |----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
-|AG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|false|false|
+|AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|true|
 |AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
 |AR|<span style='color:grey;'>undefined</span>|false||||
 |BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer|true|true|
@@ -27,7 +27,7 @@ Run on 2022/05/03 3:51:25
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte|true|true|
 |TI|<span style='color:grey;'>undefined</span>|false||||
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/overlay/wms|true|true|
-|VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
+|VD|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|false|
 |VS|<span style='color:green;'>true</span>|true|none|undefined|true|
 |ZG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.zg.ch/ows/Erdwaermenutzung|true|true|
 |ZH|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/http://wms.zh.ch/AwelGSWaermewwwZHWMS|false|true|
@@ -35,4 +35,4 @@ Run on 2022/05/03 3:51:25
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): AG, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): VD, ZH</span>
