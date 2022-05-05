@@ -452,6 +452,55 @@
             ]
         },
         {
+            "name": "TI",
+            "exampleLocation": [
+                [
+                    2715738,
+                    1125797,
+                    3
+                ],
+                [
+                    2713214,
+                    1131638,
+                    2
+                ]
+            ],
+            "wmsUrl": "https://wms.geo.ti.ch/service",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
+                {
+                    "name": "ac_059_1_v1_0_aree_geotermiche",
+                    "propertyName": "idoneita",
+                    "propertyValues": [
+                        {
+                            "name": "0",
+                            "desc": "nicht zulässig",
+                            "summand": 3
+                        },
+                        {
+                            "name": "1",
+                            "desc": "bedingt zulässig",
+                            "summand": 2
+                        }
+                    ]
+                }
+            ],
+            "harmonyMap": [
+                {
+                    "sum": 1,
+                    "value": 1
+                },
+                {
+                    "sum": 2,
+                    "value": 2
+                },
+                {
+                    "sum": 3,
+                    "value": 3
+                }
+            ]
+        },
+        {
             "name": "TG",
             "exampleLocation": [
                 [
