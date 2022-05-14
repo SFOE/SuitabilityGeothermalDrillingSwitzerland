@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/05/13 4:5:9
+Run on 2022/05/14 4:31:5
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -12,7 +12,7 @@ Run on 2022/05/13 4:5:9
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|true|true|
-|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
+|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|false|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:grey;'>undefined</span>|false||||
@@ -29,10 +29,10 @@ Run on 2022/05/13 4:5:9
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/overlay/wms|true|true|
 |VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
 |VS|<span style='color:green;'>true</span>|true|none|undefined|true|
-|ZG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.zg.ch/ows/Erdwaermenutzung|true|true|
+|ZG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://services.geo.zg.ch/ows/Erdwaermenutzung|true|true|
 |ZH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/http://wms.zh.ch/AwelGSWaermewwwZHWMS|true|true|
 
 
 ## Overall results
 
-<span style='color:green;font-weight:bold;'>All services up and running</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): ZG</span>
