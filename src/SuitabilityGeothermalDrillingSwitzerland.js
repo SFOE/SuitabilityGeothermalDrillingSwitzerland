@@ -335,7 +335,12 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                     //fetch wms url
                     url = proxyServer + url;
                     if (verbose && wmsItem.infoFormat !== 'arcgis/json') console.log(url);
+
                     let response = await fetch(url);        //Remark: not needed for wmsItem.infoFormat === 'arcgis/json'
+                    // if (response.status !== 200) {
+                    //     throw 'response status = ' + response.status;
+                    // }
+
                     let dataraw = await response.text();
 
                     if (verbose && wmsItem.infoFormat !== 'arcgis/json') console.log(dataraw);

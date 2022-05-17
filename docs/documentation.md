@@ -32,11 +32,11 @@ Setter for proxyServer
 
 | Param | Type | Description |
 | --- | --- | --- |
-| url | <code>string</code> | proxy server url, e.g. 'https://bfe-cors-anywhere.herokuapp.com/' |
+| url | <code>string</code> | proxy server url, e.g. 'https://bfe-cors.geotest.ch/' |
 
 **Example**  
 ```js
-SetProxyServer('https://bfe-cors-anywhere.herokuapp.com/');
+SetProxyServer('https://bfe-cors.geotest.ch/');
 ```
 <a name="module_SuitabilityGeothermalDrillingSwitzerland.GetWMSCanton"></a>
 
