@@ -462,7 +462,7 @@
                 [
                     2713214,
                     1131638,
-                    2
+                    1
                 ]
             ],
             "wmsUrl": "https://wms.geo.ti.ch/service",
@@ -480,7 +480,7 @@
                         {
                             "name": "1",
                             "desc": "bedingt zulässig",
-                            "summand": 2
+                            "summand": 1
                         }
                     ]
                 }
