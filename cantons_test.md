@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/06/10 4:23:33
+Run on 2022/06/11 3:43:41
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -25,7 +25,7 @@ Run on 2022/06/10 4:23:33
 |SZ|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://map.geo.sz.ch/mapserv_proxy|true|true|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte|true|true|
-|TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
+|TI|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/overlay/wms|true|true|
 |VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
 |VS|<span style='color:green;'>true</span>|true|none|undefined|true|
@@ -35,4 +35,4 @@ Run on 2022/06/10 4:23:33
 
 ## Overall results
 
-<span style='color:green;font-weight:bold;'>All services up and running</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): TI</span>
