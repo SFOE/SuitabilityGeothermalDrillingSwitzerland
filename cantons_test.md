@@ -1,10 +1,10 @@
 # Cantons Test Output
-Run on 2022/07/08 4:45:25
+Run on 2022/07/09 3:45:12
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
 |----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
-|AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|true|
+|AG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|false|false|
 |AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
 |AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|true|
 |BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer|true|true|
@@ -12,7 +12,7 @@ Run on 2022/07/08 4:45:25
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|true|true|
-|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|false|true|
+|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:grey;'>undefined</span>|false||||
@@ -35,4 +35,4 @@ Run on 2022/07/08 4:45:25
 
 ## Overall results
 
-<span style='color:green;font-weight:bold;'>All services up and running</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): AG</span>
