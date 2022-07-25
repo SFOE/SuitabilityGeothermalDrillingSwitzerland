@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/07/24 4:32:20
+Run on 2022/07/25 4:5:6
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -12,7 +12,7 @@ Run on 2022/07/24 4:32:20
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|true|true|
-|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|false|true|
+|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:grey;'>undefined</span>|false||||
