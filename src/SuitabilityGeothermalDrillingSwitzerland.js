@@ -208,7 +208,17 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false, verbose = fa
     //multiple wms possible
     for (const wmsItem of wmsList) {
         if (wmsItem.infoFormat !== 'arcgis/json') {     //openlayers WMS
-            const imageWms = await imageWMSFactory(wmsItem, withProxy);
+
+            let imageWms, wmsVersion;
+            if (canton.wmsVersion)                          //needed for TI so far
+            {
+                wmsVersion = canton.wmsVersion;
+                imageWms = await imageWMSFactory(wmsItem, withProxy, wmsVersion);
+            }
+            else {
+                imageWms = await imageWMSFactory(wmsItem, withProxy);
+            }
+
             imageWmsList.push(imageWms);
         }
         else {                                          //Esri ArcGIS REST 
@@ -310,10 +320,15 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
             let url;
             if (wmsItem.infoFormat !== 'arcgis/json') {         //openlayers WMS
 
-                // if (canton.wmsVersion)                           //not needed yet
-                //     wmsVersion = canton.wmsVersion;
-
-                const imageWms = await imageWMSFactory(wmsItem);
+                let imageWms, wmsVersion;
+                if (canton.wmsVersion)                          //needed for TI so far
+                {
+                    wmsVersion = canton.wmsVersion;
+                    imageWms = await imageWMSFactory(wmsItem, false, wmsVersion);
+                }
+                else {
+                    imageWms = await imageWMSFactory(wmsItem);
+                }
 
                 url = imageWms.getFeatureInfoUrl(
                     [easting, northing],
@@ -584,7 +599,8 @@ export async function TestAllCantons(verbose = true) {
                     const wmsUrl = imageWmsItem.getUrl();
 
                     // Check GetCapabilities
-                    const wmsGetCapabilitiesUrl = wmsUrl + '?version=1.3.0&request=GetCapabilities&service=WMS';
+                    let wmsVersion = imageWmsItem.params_.VERSION;
+                    const wmsGetCapabilitiesUrl = wmsUrl + '?version=' + wmsVersion + '&request=GetCapabilities&service=WMS';
                     const wmsGetCapabilitiesOk = await checkLinkOk(wmsGetCapabilitiesUrl);
 
                     let wmsGetFeatureInfoOk = false;
