@@ -466,7 +466,6 @@
                 ]
             ],
             "wmsUrl": "https://wms.geo.ti.ch/service",
-            "wmsVersion": "1.1.0",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
