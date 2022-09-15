@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/09/14 7:35:49
+Run on 2022/09/15 4:48:1
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -11,8 +11,8 @@ Run on 2022/09/14 7:35:49
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
-|GE|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|false|false|
-|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
+|GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|true|true|
+|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|false|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:grey;'>undefined</span>|false||||
@@ -35,4 +35,4 @@ Run on 2022/09/14 7:35:49
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GE</span>
+<span style='color:green;font-weight:bold;'>All services up and running</span>
