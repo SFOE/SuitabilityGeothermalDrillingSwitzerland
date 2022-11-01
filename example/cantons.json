@@ -217,92 +217,70 @@
             "name": "VS",
             "exampleLocation": [
                 [
-                    2599214,
-                    1120261,
-                    3,
-                    "4/0"
+                    2578159,
+                    1112802,
+                    1,
+                    "CLASSGV 1"
                 ],
                 [
                     2599307,
                     1125129,
                     1,
-                    "3/100"
-                ],
-                [
-                    2599331,
-                    1123423,
-                    1,
-                    "1/400"
+                    "CLASSGV 2"
                 ],
                 [
                     2599032,
                     1125930,
                     2,
-                    "2/-999"
+                    "CLASSGV 3"
+                ],
+                [
+                    2599214,
+                    1120261,
+                    3,
+                    "CLASSGV 4"
                 ],
                 [
                     2598068.4,
                     1130927.1,
                     4,
-                    "5/-999"
-                ],
-                [
-                    2609841,
-                    1125573,
-                    1,
-                    "3/200"
-                ],
-                [
-                    2609846,
-                    1125808,
-                    1,
-                    "3/50"
+                    "CLASSGV 5"
                 ]
             ],
-            "wmsUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/sonde_geothermique/FeatureServer/0",
+            "wmsUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/arcgis/rest/services/eso_admissibilite_SVG/FeatureServer/3",
             "mapServerUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/Sonde_g%c3%a9othermiques/MapServer/",
             "mapServerUrlLegendUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/Sonde_g%C3%A9othermiques/MapServer/legend",
             "infoFormat": "arcgis/json",
             "layers": [
                 {
-                    "name": "sonde_geothermique",
+                    "name": "SVG_Carte",
                     "rootName": "features",
                     "nodeName": "attributes",
-                    "propertyName": "prof",
+                    "propertyName": "CLASSGV",
                     "propertyValues": [
                         {
-                            "name": "1/400",
-                            "desc": "SGV admises (avec obligations standards)",
+                            "name": 1,
+                            "desc": "Sondes géothermiques admises (max. 200 m sans étude)",
                             "summand": 1
                         },
                         {
-                            "name": "3/50",
-                            "desc": "Limitation de profondeur 50m",
+                            "name": 2,
+                            "desc": "Sondes géothermiques limitées à 100 m de profondeur",
                             "summand": 1
                         },
                         {
-                            "name": "3/100",
-                            "desc": "Limitation de profondeur 100m",
-                            "summand": 1
-                        },
-                        {
-                            "name": "3/200",
-                            "desc": "Limitation de profondeur 200m",
-                            "summand": 1
-                        },
-                        {
-                            "name": "2/-999",
-                            "desc": "Investigations hydrogéologiques nécessaires - Suivi de forage obligatoire",
+                            "name": 3,
+                            "desc": "Au cas par cas - Etude préalable (contacter le SEN)",
                             "summand": 2
                         },
                         {
-                            "name": "4/0",
-                            "desc": "SGV interdites",
+                            "name": 4,
+                            "desc": "Sondes géothermiques interdites",
                             "summand": 3
                         },
                         {
-                            "name": "5/-999",
-                            "desc": "Contacter le SPE",
+                            "name": 5,
+                            "desc": "Hors zone (contacter le SEN)",
                             "summand": 4
                         }
                     ]
