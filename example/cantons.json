@@ -387,7 +387,7 @@
                     "A"
                 ]
             ],
-            "wmsUrl": "https://geo.ur.ch/overlay/wms",
+            "wmsUrl": "https://geo.ur.ch/webmercator/wms",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
