@@ -248,12 +248,13 @@
                 ]
             ],
             "wmsUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/arcgis/rest/services/eso_admissibilite_SVG/FeatureServer/3",
-            "mapServerUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/Sonde_g%c3%a9othermiques/MapServer/",
-            "mapServerUrlLegendUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/ArcGIS/rest/services/Sonde_g%C3%A9othermiques/MapServer/legend",
+            "mapServerUrl": "https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer",
+            "wmsUrlEsriLayer": "3",
+            "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
             "layers": [
                 {
-                    "name": "SVG_Carte",
+                    "name": "SGV_Carte",
                     "rootName": "features",
                     "nodeName": "attributes",
                     "propertyName": "CLASSGV",
@@ -1131,7 +1132,7 @@
             ],
             "wmsUrl": "https://ge.ch/sitgags1/rest/services/VECTOR/SITG_OPENDATA_02/MapServer/6883",
             "mapServerUrl": "https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer",
-            "wmsUrlEsriLayer": "21",
+            "wmsUrlEsriLayer": "22",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
             "layers": [
