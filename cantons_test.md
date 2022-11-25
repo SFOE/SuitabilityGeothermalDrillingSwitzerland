@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2022/11/24 4:19:11
+Run on 2022/11/25 3:35:28
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -17,7 +17,7 @@ Run on 2022/11/24 4:19:11
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:grey;'>undefined</span>|false||||
 |NE|<span style='color:grey;'>undefined</span>|false||||
-|NW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|false|true|
+|NW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
 |OW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
 |SG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
@@ -25,7 +25,7 @@ Run on 2022/11/24 4:19:11
 |SZ|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://map.geo.sz.ch/mapserv_proxy|true|true|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte|true|true|
-|TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
+|TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|false|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/webmercator/wms|true|true|
 |VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
 |VS|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|true|true|
