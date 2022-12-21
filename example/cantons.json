@@ -1466,6 +1466,10 @@
                             "summand": 2
                         },
                         {
+                            "name": "bedingt zulässig aufgrund: Hydrogeologie, problematische Bohrung",
+                            "summand": 2
+                        },
+                        {
                             "name": "nicht zulässig (siehe Erläuterungen)",
                             "summand": 3
                         },

@@ -413,6 +413,15 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
 
                                 //take the first elmement
                                 value = data[rootName][0][nodeName][layer.propertyName];
+
+                                // Is value not defined and do we have more features?
+                                if (!value && data[rootName].length > 1) {
+                                    data[rootName].every(v => {
+                                        value = v[nodeName][layer.propertyName];
+                                        if (!value) return true;
+                                        return false; 
+                                      });
+                                }
                             }
                             else {
                                 value = undefined;
