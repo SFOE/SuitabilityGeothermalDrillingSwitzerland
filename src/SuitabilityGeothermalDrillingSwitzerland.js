@@ -130,26 +130,42 @@ async function getWMSList(canton) {
  * @param {object} wmsItem url and layer definition
  * @param {boolean} withProxy add proxy server to url. default = false
  * @param {string} wmsVersion (optional) default='1.3.0'
+ * @param {boolean} noLayers (optional) ommit layers list. default = false
  * @returns {ImageWMS} ol imageWMS object
  */
-async function imageWMSFactory(wmsItem, withProxy = false, wmsVersion = '1.3.0') {
+async function imageWMSFactory(wmsItem, withProxy = false, wmsVersion = '1.3.0', noLayers = false) {
     let layerNames = _.pluck(wmsItem.layers, 'name');   //get wms layer names
 
     let url = wmsItem.wmsUrl;
     if (withProxy) url = proxyServer + wmsItem.wmsUrl;
 
-    const imageWms = new ImageWMS({
-        url: url,
-        params: {
-            'LAYERS': [...layerNames],
-            'VERSION': wmsVersion,
-            'TRANSPARENT': false
-        },
-        serverType: 'geoserver',
-        crossOrigin: 'anonymous',
-    });
+    if (noLayers) {
+        const imageWms = new ImageWMS({
+            url: url,
+            params: {
+                'VERSION': wmsVersion,
+                'TRANSPARENT': false
+            },
+            serverType: 'geoserver',
+            crossOrigin: 'anonymous',
+        });
 
-    return imageWms;
+        return imageWms;
+    }
+    else {
+        const imageWms = new ImageWMS({
+            url: url,
+            params: {
+                'LAYERS': [...layerNames],
+                'VERSION': wmsVersion,
+                'TRANSPARENT': false
+            },
+            serverType: 'geoserver',
+            crossOrigin: 'anonymous',
+        });
+
+        return imageWms;
+    }
 }
 
 /**
@@ -320,15 +336,11 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
             let url;
             if (wmsItem.infoFormat !== 'arcgis/json') {         //openlayers WMS
 
-                let imageWms, wmsVersion;
-                if (canton.wmsVersion)                          //needed for TI so far
-                {
-                    wmsVersion = canton.wmsVersion;
-                    imageWms = await imageWMSFactory(wmsItem, false, wmsVersion);
-                }
-                else {
-                    imageWms = await imageWMSFactory(wmsItem);
-                }
+                let imageWms;
+
+                // wmsVersion in use for TI so far
+                // loopLayers in use for LU so far
+                imageWms = await imageWMSFactory(wmsItem, false, canton.wmsVersion, canton.loopLayers);
 
                 url = imageWms.getFeatureInfoUrl(
                     [easting, northing],
@@ -358,7 +370,8 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
 
                     let dataraw = await response.text();
 
-                    if (verbose && wmsItem.infoFormat !== 'arcgis/json') console.log(dataraw);
+                    if (verbose && wmsItem.infoFormat !== 'arcgis/json' && canton.loopLayers == false)
+                        console.log(dataraw);
 
                     //handle response
                     for (let layer of wmsItem.layers) {
@@ -377,29 +390,29 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                             wmsItem.infoFormat === 'application/json' ||
                             wmsItem.infoFormat === 'arcgis/json') {
 
-                            let rootName;
-                            let nodeName;
-                            if (wmsItem.infoFormat !== 'arcgis/json') {
-                                rootName = 'features';
-                                nodeName = 'properties';
+                            let rootName = 'features';
+                            let nodeName = 'properties';
+                            if (layer.rootName) {
+                                rootName = layer.rootName;
+                            }
+                            if (layer.nodeName) {
+                                nodeName = layer.nodeName;
+                            }
 
-                                if (layer.rootName) {
-                                    rootName = layer.rootName;
-                                }
-                                if (layer.nodeName) {
-                                    nodeName = layer.nodeName;
-                                }
+                            if (wmsItem.infoFormat !== 'arcgis/json' && canton.loopLayers == false) {
+                                //continue with former request data
                             }
                             else {
 
                                 let urlLayer = url + '&layers=' + layer.name;
+                                if (wmsItem.infoFormat !== 'arcgis/json') {
+                                    urlLayer = urlLayer + '&QUERY_LAYERS=' + layer.name;
+                                }
                                 if (verbose) console.log(urlLayer);
                                 response = await fetch(urlLayer);       // get esri rest response for layer
                                 dataraw = await response.text();
                                 if (verbose) console.log(dataraw);
 
-                                rootName = layer.rootName;
-                                nodeName = layer.nodeName;
                             }
                             if (verbose) console.log('node name: \t', nodeName);
 
@@ -419,8 +432,8 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                                     data[rootName].every(v => {
                                         value = v[nodeName][layer.propertyName];
                                         if (!value) return true;
-                                        return false; 
-                                      });
+                                        return false;
+                                    });
                                 }
                             }
                             else {
