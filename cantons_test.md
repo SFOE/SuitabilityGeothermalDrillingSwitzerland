@@ -1,13 +1,13 @@
 # Cantons Test Output
-Run on 2023/01/17 12:40:27
+Run on 2023/01/17 13:10:26
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
 |----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
-|AG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|false|
+|AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|true|
 |AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
 |AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|true|
-|BE|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer|true|false|
+|BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer|true|true|
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
@@ -17,7 +17,7 @@ Run on 2023/01/17 12:40:27
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer|false|false|
 |NE|<span style='color:grey;'>undefined</span>|false||||
-|NW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
+|NW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|false|true|
 |OW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
 |SG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
@@ -27,7 +27,7 @@ Run on 2023/01/17 12:40:27
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte|true|true|
 |TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/webmercator/wms|true|true|
-|VD|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|false|
+|VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
 |VS|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|true|true|
 |ZG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.zg.ch/ows/Erdwaermenutzung|true|true|
 |ZH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/http://wms.zh.ch/AwelGSWaermewwwZHWMS|true|true|
@@ -35,4 +35,4 @@ Run on 2023/01/17 12:40:27
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): AG, BE, LU, VD</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): LU</span>
