@@ -399,15 +399,14 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
                                 nodeName = layer.nodeName;
                             }
 
-                            if (wmsItem.infoFormat !== 'arcgis/json' && canton.loopLayers == false) {
-                                //continue with former request data
-                            }
-                            else {
+                            // if (wmsItem.infoFormat !== 'arcgis/json') {
+                            //     //continue with former request data
+                            // }
+                            if (wmsItem.infoFormat == 'arcgis/json' || canton.loopLayers == true) {
 
                                 let urlLayer = url + '&layers=' + layer.name;
-                                if (wmsItem.infoFormat !== 'arcgis/json') {
-                                    urlLayer = urlLayer + '&QUERY_LAYERS=' + layer.name;
-                                }
+                                urlLayer = urlLayer + '&QUERY_LAYERS=' + layer.name;
+
                                 if (verbose) console.log(urlLayer);
                                 response = await fetch(urlLayer);       // get esri rest response for layer
                                 dataraw = await response.text();
