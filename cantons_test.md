@@ -1,14 +1,14 @@
 # Cantons Test Output
-Run on 2023/02/06 3:15:26
+Run on 2023/02/06 4:18:2
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
 |----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
-|AG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|false|false|
-|AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
-|AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|true|
-|BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer|true|true|
-|BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
+|AG|<span style='color:red;'>undefined</span>|true|undefined|undefined|undefined|
+|AI|<span style='color:red;'>undefined</span>|true|undefined|undefined|undefined|
+|AR|<span style='color:red;'>undefined</span>|true|undefined|undefined|undefined|
+|BE|<span style='color:red;'>undefined</span>|true|undefined|undefined|undefined|
+|BL|<span style='color:red;'>undefined</span>|true|undefined|undefined|undefined|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|true|true|
@@ -35,4 +35,4 @@ Run on 2023/02/06 3:15:26
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): AG</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): AG, AI, AR, BE, BL</span>
