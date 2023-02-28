@@ -1033,7 +1033,8 @@
                 ]
             ],
             "wmsUrl": "https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer",
-            "mapServerUrlLegendUrl": "https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3",
+            "mapServerUrlLegendUrl_": "https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3",
+            "mapServerUrlLegendUrl": "https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/raw/main/images/legend_lu.png",
             "infoFormat": "application/geo+json",
             "loopLayers": true,
             "layers": [
