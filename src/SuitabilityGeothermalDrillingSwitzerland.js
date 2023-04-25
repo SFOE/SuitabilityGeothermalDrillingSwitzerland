@@ -267,26 +267,29 @@ export async function GetWMSCanton(cantonAbbrev, withProxy = false, verbose = fa
  */
 export async function GetWMSLegendCanton(cantonAbbrev) {
 
-    //TODO: impolement for ESRI case?
-
     const imageWmsList = await GetWMSCanton(cantonAbbrev);
 
+    // get wms legends
     let legendUrlList = [];
     for (const imageWmsItem of imageWmsList) {
         const legendItem = imageWmsItem.getLegendUrl();
         if (legendItem != null) legendUrlList.push(legendItem);
     }
 
-    if (legendUrlList.length == 0) {
-        const canton = await getCantonJson(cantonAbbrev);
-        const wmsList = await getWMSList(canton);
-        for (const wmsInfo of wmsList) {
-            if (wmsInfo.mapServerUrlLegendUrl != null) legendUrlList.push(wmsInfo.mapServerUrlLegendUrl);
-        }
+    // check for manual legend definitions
+    let legendUrlListManual = [];
+    const canton = await getCantonJson(cantonAbbrev);
+    const wmsList = await getWMSList(canton);
+    for (const wmsInfo of wmsList) {
+        if (wmsInfo.mapServerUrlLegendUrl != null) legendUrlListManual.push(wmsInfo.mapServerUrlLegendUrl);
     }
 
-    return legendUrlList;
+    if (legendUrlListManual.length > 0) // manual definitions wins
+        return legendUrlListManual;
+    else
+        return legendUrlList;
 }
+
 
 /**
  * CheckSuitabilityCanton
