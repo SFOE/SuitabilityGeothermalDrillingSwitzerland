@@ -486,69 +486,48 @@
                     2747716.6,
                     1262056.4,
                     3,
-                    "ugszonen3 & verboten"
+                    "EWS grundsätzlich unzulässig"
                 ],
                 [
                     2747720.5,
                     1262436.9,
                     1,
-                    "undefined"
+                    "EWS grundsätzlich zulässig mit Standardauflagen"
                 ],
                 [
-                    2747719.4,
-                    1262269.7,
-                    3,
-                    "verboten"
+                    2709370.0,
+                    1268975.0,
+                    2,
+                    "EWS grundsätzlich zulässig mit zusätzlichen Auflagen"
                 ],
                 [
-                    2740704.4,
-                    1260672.8,
-                    3,
-                    "ugszonen2"
-                ],
-                [
-                    2741036.0,
-                    1260729.5,
-                    3,
-                    "ugszonen1"
+                    2712450.0,
+                    1269125.0,
+                    1,
+                    "EWS grundsätzlich zulässig"
                 ]
             ],
-            "wmsMulti": [
+            "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme",
+            "mapServerUrlLegendUrl": "https://map.geo.tg.ch/services/geofy_chsdi3/static/images/legends/erdwaerme_eignung_de.png",
+            "infoFormat": "application/vnd.ogc.gml",
+            "layers": [
                 {
-                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme",
-                    "mapServerUrlLegendUrl": "https://map.geo.tg.ch/services/geofy_chsdi3/static/images/legends/erdwaerme_verboten_de.png",
-                    "infoFormat": "application/vnd.ogc.gml",
-                    "layers": [
+                    "name": "Eignungszonen",
+                    "propertyName": "zone",
+                    "propertyValues": [
                         {
-                            "name": "verboten",
-                            "propertyName": "objectid",
-                            "summand": 3
+                            "name": "1",
+                            "desc": "EWS grundsätzlich zulässig mit Standardauflagen",
+                            "summand": 1
                         },
                         {
-                            "name": "Gefahrenhinweise",
-                            "propertyName": "grund",
+                            "name": "2",
+                            "desc": "EWS grundsätzlich zulässig mit Standardauflagen",
                             "summand": 2
-                        }
-                    ]
-                },
-                {
-                    "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/gewaesserschutzkarte",
-                    "mapServerUrlLegendUrl": "https://map.geo.tg.ch/services/geofy_chsdi3/static/images/legends/gewaesserschutzkarte-grundwasserschutzzonen_s1_s2_s3_de.png",
-                    "infoFormat": "application/vnd.ogc.gml",
-                    "layers": [
-                        {
-                            "name": "ugszonen1",
-                            "propertyName": "zonen",
-                            "summand": 3
                         },
                         {
-                            "name": "ugszonen2",
-                            "propertyName": "zonen",
-                            "summand": 3
-                        },
-                        {
-                            "name": "ugszonen3",
-                            "propertyName": "zonen",
+                            "name": "3",
+                            "desc": "EWS grundsätzlich unzulässig, Grundwasserschutzzone",
                             "summand": 3
                         }
                     ]
@@ -556,7 +535,7 @@
             ],
             "harmonyMap": [
                 {
-                    "sum": 0,
+                    "sum": 1,
                     "value": 1
                 },
                 {
@@ -565,14 +544,6 @@
                 },
                 {
                     "sum": 3,
-                    "value": 3
-                },
-                {
-                    "sum": 5,
-                    "value": 3
-                },
-                {
-                    "sum": 6,
                     "value": 3
                 }
             ]
