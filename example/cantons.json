@@ -329,7 +329,7 @@
                 ]
             ],
             "wmsUrl": "https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer",
-            "infoFormat": "application/geojson",
+            "infoFormat": "application/geo+json",
             "layers": [
                 {
                     "name": "vd.admissibilite_indicative_sonde_geothermique",
