@@ -571,7 +571,7 @@
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
-                    "name": "ch.sz.a034c.waermenutzung.erdwaerme",
+                    "name": "ch.sz.a034c.waermenutzung.erdwaerme.technisch",
                     "propertyName": "zulaessigkeit_cd",
                     "propertyValues": [
                         {
