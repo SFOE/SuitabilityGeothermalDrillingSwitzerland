@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2023/11/22 3:14:30
+Run on 2023/11/22 4:15:50
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -8,7 +8,7 @@ Run on 2023/11/22 3:14:30
 |AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
 |AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|true|
 |BE|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer|false|false|
-|BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|false|true|
+|BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|true|true|
