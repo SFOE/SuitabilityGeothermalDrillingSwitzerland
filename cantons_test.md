@@ -1,12 +1,12 @@
 # Cantons Test Output
-Run on 2023/12/10 3:14:39
+Run on 2023/12/10 4:15:41
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
 |----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
 |AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|true|
-|AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
-|AR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|false|
+|AI|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|false|false|
+|AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|false|true|
 |BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer|true|true|
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
@@ -34,4 +34,4 @@ Run on 2023/12/10 3:14:39
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): AR, NW</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): AI, NW</span>
