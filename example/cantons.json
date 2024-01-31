@@ -340,7 +340,15 @@
                             "summand": 1
                         },
                         {
+                            "name": "Admissible aux conditions standard, jusqu’à 300 mètres",
+                            "summand": 1
+                        },
+                        {
                             "name": "Limitation",
+                            "summand": 2
+                        },
+                        {
+                            "name": "Limitation, soumis à des conditions spéciales",
                             "summand": 2
                         },
                         {
