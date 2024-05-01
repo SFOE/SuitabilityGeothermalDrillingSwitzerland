@@ -1446,31 +1446,31 @@
                     "im Thunersee"
                 ]
             ],
-            "wmsUrl": "https://www.geoservice.apps.be.ch/geoservice2/services/a42geo/a42geo_versorgungwms_d_fk/MapServer/WmsServer",
-            "infoFormat": "application/geojson",
+            "wmsUrl": "https://www.geoservice.apps.be.ch/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?",
+            "infoFormat": "application/geo+json",
             "layers": [
                 {
-                    "name": "GEODB.ERDSOND_ERDSOND_KMGDM1",
+                    "name": "ERDSOND_ERDSOND_VW_16828",
                     "propertyName": "CODE",
                     "propertyValues": [
                         {
                             "name": "1",
-                            "desc": "EWS erlaubt",
+                            "desc": "Erdwärmesonden erlaubt",
                             "summand": 1
                         },
                         {
                             "name": "2",
-                            "desc": "EWS erlaubt mit Tiefenbeschränkung",
+                            "desc": "Erdwärmesonden erlaubt - mit Tiefenbeschränkung",
                             "summand": 1
                         },
                         {
                             "name": "3",
-                            "desc": "Fallweise erlaubt, AWA kontaktieren",
+                            "desc": "Erdwärmesonden erlaubt - mit Auflagen",
                             "summand": 2
                         },
                         {
                             "name": "4",
-                            "desc": "EWS verboten",
+                            "desc": "Erdwärmesonden gem. BAFU-Richtlinie unzulässig (Erstbeurteilung)",
                             "summand": 3
                         }
                     ]
