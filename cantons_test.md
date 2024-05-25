@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2024/05/25 3:16:3
+Run on 2024/05/25 4:15:51
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -26,7 +26,7 @@ Run on 2024/05/25 3:16:3
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
 |TI|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/webmercator/wms|true|true|
-|VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
+|VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|false|true|
 |VS|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|true|true|
 |ZG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://services.geo.zg.ch/ows/Erdwaermenutzung|false|true|
 |ZH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/http://wms.zh.ch/AwelGSWaermewwwZHWMS|true|true|
