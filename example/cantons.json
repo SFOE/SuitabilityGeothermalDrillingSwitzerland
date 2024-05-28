@@ -456,16 +456,16 @@
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
-                    "name": "ac_059_1_v1_0_aree_geotermiche",
-                    "propertyName": "idoneita",
+                    "name": "ac_059_1_v1_0_idoneita_sonde_geotermiche",
+                    "propertyName": "idoneita_desc",
                     "propertyValues": [
                         {
-                            "name": "0",
+                            "name": "In linea di principio non permesso",
                             "desc": "nicht zulässig",
                             "summand": 3
                         },
                         {
-                            "name": "1",
+                            "name": "In linea di principio permesso con condizioni",
                             "desc": "bedingt zulässig",
                             "summand": 1
                         }
