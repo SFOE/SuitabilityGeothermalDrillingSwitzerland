@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2024/06/14 3:16:57
+Run on 2024/06/14 4:18:35
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -13,7 +13,7 @@ Run on 2024/06/14 3:16:57
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer|true|false|
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
-|GR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|false|true|
+|GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer|false|false|
 |NE|<span style='color:grey;'>undefined</span>|false||||
@@ -34,4 +34,4 @@ Run on 2024/06/14 3:16:57
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GE, GR, LU, ZG</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GE, LU, ZG</span>
