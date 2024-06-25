@@ -1201,17 +1201,17 @@
                     "Géothermie sur nappe (système ouvert)"
                 ]
             ],
-            "wmsUrl": "https://ge.ch/sitgags1/rest/services/VECTOR/SITG_OPENDATA_02/MapServer/6883",
-            "mapServerUrl": "https://ge.ch/sitgags1/services/VECTOR/SITG_OPENDATA_02/MapServer/WMSServer",
+            "wmsUrl": "https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/FeatureServer/0",
+            "mapServerUrl": "https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0",
             "wmsUrlEsriLayer": "22",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
             "layers": [
                 {
-                    "name": "sonde_geothermique",
+                    "name": "GOL_EXPLOITATION_GEOTHERMIE",
                     "rootName": "features",
                     "nodeName": "attributes",
-                    "propertyName": "SECTEUR",
+                    "propertyName": "secteur",
                     "propertyValues": [
                         {
                             "name": "Sondes géothermiques verticales (système fermé)",
