@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2024/07/02 4:18:33
+Run on 2024/07/03 3:15:28
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -19,7 +19,7 @@ Run on 2024/07/02 4:18:33
 |NE|<span style='color:grey;'>undefined</span>|false||||
 |NW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
 |OW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
-|SG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|false|
+|SG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
 |SZ|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://map.geo.sz.ch/mapserv_proxy|true|true|
@@ -34,4 +34,4 @@ Run on 2024/07/02 4:18:33
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): SG, ZG</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): ZG</span>
