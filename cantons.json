@@ -22,7 +22,7 @@
                     "waermenutzung-zone-a"
                 ]
             ],
-            "wmsUrl": "wms.zh.ch/AwelGSWaermewwwZHWMS",
+            "wmsUrl": "http://wms.zh.ch/AwelGSWaermewwwZHWMS",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -176,7 +176,7 @@
                     4
                 ]
             ],
-            "wmsUrl": "services.geo.zg.ch:443/ows/Erdwaermenutzung",
+            "wmsUrl": "https://services.geo.zg.ch/ows/Erdwaermenutzung",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -247,8 +247,8 @@
                     "CLASSGV 5"
                 ]
             ],
-            "wmsUrl": "services1.arcgis.com:443/rMlsWo8szOzlrpCq/arcgis/rest/services/eso_admissibilite_SVG/FeatureServer/3",
-            "mapServerUrl": "sit.vs.ch:443/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer",
+            "wmsUrl": "https://services1.arcgis.com/rMlsWo8szOzlrpCq/arcgis/rest/services/eso_admissibilite_SVG/FeatureServer/3",
+            "mapServerUrl": "https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer",
             "wmsUrlEsriLayer": "3",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
@@ -328,7 +328,7 @@
                     "Interdiction"
                 ]
             ],
-            "wmsUrl": "www.ogc.vd.ch:443/public/services/OGC/wmsVD/Mapserver/WMSServer",
+            "wmsUrl": "https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer",
             "infoFormat": "application/geo+json",
             "layers": [
                 {
@@ -395,7 +395,7 @@
                     "A"
                 ]
             ],
-            "wmsUrl": "geo.ur.ch:443/webmercator/wms",
+            "wmsUrl": "https://geo.ur.ch/webmercator/wms",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -452,7 +452,7 @@
                     1
                 ]
             ],
-            "wmsUrl": "wms.geo.ti.ch:443/service",
+            "wmsUrl": "https://wms.geo.ti.ch/service",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -515,8 +515,8 @@
                     "EWS grundsätzlich zulässig"
                 ]
             ],
-            "wmsUrl": "www.ows.geo.tg.ch:443/geofy_access_proxy/erdwaerme",
-            "mapServerUrlLegendUrl": "www.map.geo.tg.ch:443/services/geofy_chsdi3/static/images/legends/erdwaerme_eignung_de.png",
+            "wmsUrl": "https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme",
+            "mapServerUrlLegendUrl": "https://map.geo.tg.ch/services/geofy_chsdi3/static/images/legends/erdwaerme_eignung_de.png",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -575,7 +575,7 @@
                     3
                 ]
             ],
-            "wmsUrl": ":443map.geo.sz.ch:443/mapserv_proxy",
+            "wmsUrl": "https://map.geo.sz.ch/mapserv_proxy",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -649,7 +649,7 @@
                     "42"
                 ]
             ],
-            "wmsUrl": "www.wms.geo.sh.ch:443/wms",
+            "wmsUrl": "https://wms.geo.sh.ch/wms",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -721,7 +721,7 @@
                     "2"
                 ]
             ],
-            "wmsUrl": "www.services.geo.sg.ch:443/wss/service/SG00025_WMS/guest",
+            "wmsUrl": "https://services.geo.sg.ch/wss/service/SG00025_WMS/guest",
             "infoFormat": "application/geojson",
             "layers": [
                 {
@@ -801,7 +801,7 @@
                     "Gebiete_mit_potentieller_Verkarstung"
                 ]
             ],
-            "wmsUrl": "www.gis-daten.ch:443/wms/bfe_kann_ich_bohren/service",
+            "wmsUrl": "https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service",
             "infoFormat": "application/json",
             "layers": [
                 {
@@ -911,7 +911,7 @@
                     "unproblematisch"
                 ]
             ],
-            "wmsUrl": "www.gis-daten.ch:443/wms/bfe_kann_ich_bohren/service",
+            "wmsUrl": "https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service",
             "infoFormat": "application/json",
             "layers": [
                 {
@@ -1011,33 +1011,33 @@
                     "ews_nicht_zulaessig"
                 ]
             ],
-            "wmsUrl": "public.geo.lu.ch:443/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer",
-            "mapServerUrlLegendUrl_": "public.geo.lu.ch:443/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3",
-            "mapServerUrlLegendUrl": "github.com:443/SFOE/SuitabilityGeothermalDrillingSwitzerland/raw/main/images/legend_lu.png",
+            "wmsUrl": "https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer",
+            "mapServerUrlLegendUrl_": "https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3",
+            "mapServerUrlLegendUrl": "https://github.com/SFOE/SuitabilityGeothermalDrillingSwitzerland/raw/main/images/legend_lu.png",
             "infoFormat": "application/geo+json",
             "loopLayers": true,
             "layers": [
                 {
                     "name": "3",
-                    "desc": "Erdwärmesonden (EWS) zulässig",
+                    "desc": "ews_zulaessig",
                     "propertyName": "Bewertungskriterium",
                     "summand": 1
                 },
                 {
                     "name": "1",
-                    "desc": "EWS vorabklären",
+                    "desc": "ews_vorabklaeren",
                     "propertyName": "Bewertungskriterium",
                     "summand": 2
                 },
                 {
                     "name": "2",
-                    "desc": "EWS zulässig mit Auflagen",
+                    "desc": "ews_zulaessig_auflagen",
                     "propertyName": "Bewertungskriterium",
                     "summand": 10
                 },
                 {
                     "name": "0",
-                    "desc": "EWS nicht zulässig",
+                    "desc": "ews_nicht_zulaessig",
                     "propertyName": "Bewertungskriterium",
                     "summand": 3
                 }
@@ -1091,7 +1091,7 @@
                     "nicht zulässig"
                 ]
             ],
-            "wmsUrl": "wms.geo.gr.ch:443/erdwaermenutzung",
+            "wmsUrl": "https://wms.geo.gr.ch/erdwaermenutzung",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -1144,7 +1144,7 @@
                     "undefined"
                 ]
             ],
-            "wmsUrl": "www.wms.geo.gl.ch:443/",
+            "wmsUrl": "https://wms.geo.gl.ch/",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -1201,8 +1201,8 @@
                     "Géothermie sur nappe (système ouvert)"
                 ]
             ],
-            "wmsUrl": "www.app2.ge.ch:443/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/FeatureServer/0",
-            "mapServerUrl": "www.app2.ge.ch:443/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0",
+            "wmsUrl": "https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/FeatureServer/0",
+            "mapServerUrl": "https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0",
             "wmsUrlEsriLayer": "22",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
@@ -1269,8 +1269,8 @@
                     "SGV interdites"
                 ]
             ],
-            "wmsUrl2": "map.geo.fr.ch:443/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/identify",
-            "wmsUrl": "map.geo.fr.ch:443/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/17",
+            "wmsUrl2": "https://map.geo.fr.ch/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/identify",
+            "wmsUrl": "https://map.geo.fr.ch/arcgis/rest/services/PortailCarto/Theme_environnement/MapServer/17",
             "mapServerUrl": "",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
@@ -1356,7 +1356,7 @@
                     "Fall A"
                 ]
             ],
-            "wmsUrl": "www.geowms.bl.ch:443/",
+            "wmsUrl": "https://geowms.bl.ch/",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -1446,7 +1446,7 @@
                     "im Thunersee"
                 ]
             ],
-            "wmsUrl": "www.geoservice.apps.be.ch:443/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?",
+            "wmsUrl": "https://www.geoservice.apps.be.ch/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?",
             "infoFormat": "application/geo+json",
             "layers": [
                 {
@@ -1513,7 +1513,7 @@
                     "nicht zulässig (siehe Erläuterungen)"
                 ]
             ],
-            "wmsUrl": "www.geoportal.ch:443/services/wms/ktar",
+            "wmsUrl": "https://www.geoportal.ch/services/wms/ktar",
             "infoFormat": "application/json",
             "layers": [
                 {
@@ -1588,7 +1588,7 @@
                     "nicht zulässig (siehe Erläuterungen)"
                 ]
             ],
-            "wmsUrl": "www.geoportal.ch:443/services/wms/ktai",
+            "wmsUrl": "https://www.geoportal.ch/services/wms/ktai",
             "infoFormat": "application/json",
             "layers": [
                 {
@@ -1659,7 +1659,7 @@
                     "1"
                 ]
             ],
-            "wmsUrl": "www.ag.ch:443/geoportal/services/afu_erdwaerme/MapServer/WMSServer",
+            "wmsUrl": "https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer",
             "infoFormat": "application/geo+json",
             "layers": [
                 {
