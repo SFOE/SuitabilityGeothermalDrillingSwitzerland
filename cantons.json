@@ -1513,7 +1513,7 @@
                     "nicht zulässig (siehe Erläuterungen)"
                 ]
             ],
-            "wmsUrl": "www.geoportal.ch:443/services/wms/ktar",
+            "wmsUrl": "www.geoportal.ch/services/wms/ktar",
             "infoFormat": "application/json",
             "layers": [
                 {
