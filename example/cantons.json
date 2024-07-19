@@ -515,8 +515,8 @@
                     "EWS grundsätzlich zulässig"
                 ]
             ],
-            "wmsUrl": "ows.geo.tg.ch:443/geofy_access_proxy/erdwaerme",
-            "mapServerUrlLegendUrl": "map.geo.tg.ch:443/services/geofy_chsdi3/static/images/legends/erdwaerme_eignung_de.png",
+            "wmsUrl": "www.ows.geo.tg.ch:443/geofy_access_proxy/erdwaerme",
+            "mapServerUrlLegendUrl": "www.map.geo.tg.ch:443/services/geofy_chsdi3/static/images/legends/erdwaerme_eignung_de.png",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -649,7 +649,7 @@
                     "42"
                 ]
             ],
-            "wmsUrl": "wms.geo.sh.ch:443/wms",
+            "wmsUrl": "www.wms.geo.sh.ch:443/wms",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -721,7 +721,7 @@
                     "2"
                 ]
             ],
-            "wmsUrl": "services.geo.sg.ch:443/wss/service/SG00025_WMS/guest",
+            "wmsUrl": "www.services.geo.sg.ch:443/wss/service/SG00025_WMS/guest",
             "infoFormat": "application/geojson",
             "layers": [
                 {
@@ -1144,7 +1144,7 @@
                     "undefined"
                 ]
             ],
-            "wmsUrl": "wms.geo.gl.ch:443/",
+            "wmsUrl": "www.wms.geo.gl.ch:443/",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
@@ -1201,8 +1201,8 @@
                     "Géothermie sur nappe (système ouvert)"
                 ]
             ],
-            "wmsUrl": "app2.ge.ch:443/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/FeatureServer/0",
-            "mapServerUrl": "app2.ge.ch:443/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0",
+            "wmsUrl": "www.app2.ge.ch:443/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/FeatureServer/0",
+            "mapServerUrl": "www.app2.ge.ch:443/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0",
             "wmsUrlEsriLayer": "22",
             "mapServerUrlLegendUrl": "",
             "infoFormat": "arcgis/json",
@@ -1356,7 +1356,7 @@
                     "Fall A"
                 ]
             ],
-            "wmsUrl": "geowms.bl.ch:443/",
+            "wmsUrl": "www.geowms.bl.ch:443/",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
