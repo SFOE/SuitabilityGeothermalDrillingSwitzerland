@@ -515,7 +515,7 @@
                     "EWS grundsätzlich zulässig"
                 ]
             ],
-            "wmsUrl": "ows.geo.tg.ch:443/geofy_access_proxy/erdwaerme",
+            "wmsUrl": "ows.geo.tg.ch/geofy_access_proxy/erdwaerme",
             "mapServerUrlLegendUrl": "/map.geo.tg.ch/services/geofy_chsdi3/static/images/legends/erdwaerme_eignung_de.png",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
