@@ -330,6 +330,10 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
             return 5;        //kategorie weiss=5
         }
 
+        if (cantonAbbrev == "ZG") {
+            proxyServer = "https://bfe-cors-anywhere.azurewebsites.net/";
+        }
+
         // single vs multiple wms sources
         const wmsList = await getWMSList(canton);
 
