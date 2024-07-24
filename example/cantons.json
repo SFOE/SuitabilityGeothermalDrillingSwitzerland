@@ -176,7 +176,7 @@
                     4
                 ]
             ],
-            "wmsUrl": "https://services.geo.zg.ch/ows/Erdwaermenutzung",
+            "wmsUrl": "services.geo.zg.ch:443/ows/Erdwaermenutzung",
             "infoFormat": "application/vnd.ogc.gml",
             "layers": [
                 {
