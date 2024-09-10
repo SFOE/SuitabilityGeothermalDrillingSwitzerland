@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2024/09/09 4:18:5
+Run on 2024/09/10 3:17:12
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -23,7 +23,7 @@ Run on 2024/09/09 4:18:5
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
 |SZ|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://map.geo.sz.ch/mapserv_proxy|true|true|
-|TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
+|TG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
 |TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/webmercator/wms|true|true|
 |VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
@@ -34,4 +34,4 @@ Run on 2024/09/09 4:18:5
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): LU, SG, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): LU, SG, TG, ZH</span>
