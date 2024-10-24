@@ -1,10 +1,10 @@
 # Cantons Test Output
-Run on 2024/10/23 4:19:8
+Run on 2024/10/24 3:21:21
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
 |----------------|-------------------------------|-----------------------------|-----------------------------|-----------------------------|-----------------------------|
-|AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|true|
+|AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|false|true|
 |AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
 |AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|true|
 |BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?|true|true|
