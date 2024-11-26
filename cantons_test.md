@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2024/11/25 4:20:0
+Run on 2024/11/26 3:30:17
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -11,14 +11,14 @@ Run on 2024/11/25 4:20:0
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
-|GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0|true|true|
+|GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0|false|true|
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V2_MP/MapServer/WMSServer|false|false|
 |NE|<span style='color:grey;'>undefined</span>|false||||
-|NW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
-|OW|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
+|NW|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
+|OW|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
 |SG|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|false|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
@@ -34,4 +34,4 @@ Run on 2024/11/25 4:20:0
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): LU, SG, TG, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): LU, NW, OW, SG, TG, ZH</span>
