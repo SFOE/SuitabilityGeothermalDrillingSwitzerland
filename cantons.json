@@ -722,7 +722,7 @@
                 ]
             ],
             "wmsUrl": "https://services.geo.sg.ch/wss/service/SG00025_WMS/guest",
-            "infoFormat": "application/geojson",
+            "infoFormat": "application/geo+json",
             "layers": [
                 {
                     "name": "Zulaessigkeitsbereich",
