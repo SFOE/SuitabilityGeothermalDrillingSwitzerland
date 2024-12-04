@@ -330,6 +330,7 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
             return 5;        //kategorie weiss=5
         }
 
+        // use different proxy for ZG because of geoblocking
         if (cantonAbbrev == "ZG") {
             proxyServer = "https://bfe-cors-anywhere.azurewebsites.net/";
         }
@@ -351,7 +352,7 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
 
                 url = imageWms.getFeatureInfoUrl(
                     [easting, northing],
-                    0.2,                // small bbox extent is crucial, especially for wms with zoom factors
+                    0.1,                // small bbox extent is crucial, especially for wms with zoom factors
                     'EPSG:2056',        // EPSG:2056 = LV95
                     {
                         'INFO_FORMAT': wmsItem.infoFormat
