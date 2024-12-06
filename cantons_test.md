@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2024/12/05 4:20:33
+Run on 2024/12/06 3:33:23
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -15,7 +15,7 @@ Run on 2024/12/05 4:20:33
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
-|LU|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V3_MP/MapServer/WMSServer|false|false|
+|LU|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V3_MP/MapServer/WMSServer|true|true|
 |NE|<span style='color:grey;'>undefined</span>|false||||
 |NW|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
 |OW|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.gis-daten.ch/wms/bfe_kann_ich_bohren/service|true|true|
@@ -34,4 +34,4 @@ Run on 2024/12/05 4:20:33
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, LU, NW, OW, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, NW, OW, ZH</span>
