@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2024/12/10 11:4:32
+Run on 2024/12/10 14:23:25
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -29,9 +29,9 @@ Run on 2024/12/10 11:4:32
 |VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
 |VS|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|true|true|
 |ZG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/services.geo.zg.ch:443/ows/Erdwaermenutzung|false|true|
-|ZH|<span style='color:red;'>false</span>|true|https://bfe-cors-anywhere.azurewebsites.net/http://wms.zh.ch/AwelGSWaermewwwZHWMS|false|true|
+|ZH|<span style='color:green;'>true</span>|true|https://bfe-cors-anywhere.azurewebsites.net/http://wms.zh.ch/AwelGSWaermewwwZHWMS|false|true|
 
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR</span>
