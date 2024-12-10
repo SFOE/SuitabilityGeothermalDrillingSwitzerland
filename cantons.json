@@ -806,10 +806,9 @@
             "layers": [
                 {
                     "name": "ch.ow.ews_zulaessigkeit",
-                    "rootName": "results",
-                    "nodeName": "attributes",
+                    "rootName": "features",
+                    "nodeName": "properties",
                     "propertyName": "Zulaessigkeit",
-                    "priorityMax": "Zulaessigkeit_Nr",
                     "propertyValues": [
                         {
                             "name": "zulaessig",
@@ -916,8 +915,8 @@
             "layers": [
                 {
                     "name": "ch.nw.waermenutzungsbereiche",
-                    "rootName": "results",
-                    "nodeName": "attributes",
+                    "rootName": "features",
+                    "nodeName": "properties",
                     "propertyName": "Art",
                     "propertyValues": [
                         {
