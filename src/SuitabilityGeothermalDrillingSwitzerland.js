@@ -330,6 +330,8 @@ export async function CheckSuitabilityCanton(easting, northing, cantonAbbrev, ve
             return 5;        //kategorie weiss=5
         }
 
+        // make sure proxy is reset after using ZG proxy
+        proxyServer = "https://bfe-cors.geotest.ch/";
         // use different proxy for ZG because of geoblocking
         if (cantonAbbrev == "ZG") {
             proxyServer = "https://bfe-cors-anywhere.azurewebsites.net/";
