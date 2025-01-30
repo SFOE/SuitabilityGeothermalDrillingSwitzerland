@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2025/01/29 4:18:17
+Run on 2025/01/30 3:17:56
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -7,7 +7,7 @@ Run on 2025/01/29 4:18:17
 |AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|true|
 |AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
 |AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|true|
-|BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?|true|true|
+|BE|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?|false|false|
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
@@ -34,4 +34,4 @@ Run on 2025/01/29 4:18:17
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, VS, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): BE, GR, VS, ZH</span>
