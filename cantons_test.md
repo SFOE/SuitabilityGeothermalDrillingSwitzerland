@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2025/02/13 4:18:37
+Run on 2025/02/14 3:20:22
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -13,7 +13,7 @@ Run on 2025/02/13 4:18:37
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0|true|true|
 |GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
-|GR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|false|true|
+|GR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V3_MP/MapServer/WMSServer|true|true|
 |NE|<span style='color:grey;'>undefined</span>|false||||
@@ -27,7 +27,7 @@ Run on 2025/02/13 4:18:37
 |TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/webmercator/wms|true|true|
 |VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
-|VS|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|true|true|
+|VS|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|false|true|
 |ZG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/services.geo.zg.ch:443/ows/Erdwaermenutzung|false|true|
 |ZH|<span style='color:red;'>false</span>|true|https://bfe-cors-anywhere.azurewebsites.net/http://wms.zh.ch/AwelGSWaermewwwZHWMS|false|true|
 
