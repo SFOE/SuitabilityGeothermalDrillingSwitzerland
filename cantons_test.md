@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2025/03/19 4:19:36
+Run on 2025/03/20 3:27:50
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -7,12 +7,12 @@ Run on 2025/03/19 4:19:36
 |AG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ag.ch/geoportal/services/afu_erdwaerme/MapServer/WMSServer|true|true|
 |AI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktai|true|true|
 |AR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoportal.ch/services/wms/ktar|true|true|
-|BE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?|true|true|
+|BE|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.geoservice.apps.be.ch/geoservice3/services/a42geo/of_utilitiescommunication01_de_ms_wms/MapServer/WMSServer?|false|false|
 |BL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geowms.bl.ch/|true|true|
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0|true|true|
-|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
+|GL|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V3_MP/MapServer/WMSServer|true|true|
@@ -34,4 +34,4 @@ Run on 2025/03/19 4:19:36
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, VS, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): BE, GL, GR, VS, ZH</span>
