@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2025/03/24 4:20:13
+Run on 2025/03/25 3:30:55
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -12,7 +12,7 @@ Run on 2025/03/24 4:20:13
 |BS|<span style='color:grey;'>undefined</span>|false||||
 |FR|<span style='color:green;'>true</span>|true|none|undefined|true|
 |GE|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://app2.ge.ch/tergeoservices/rest/services/Hosted/GOL_EXPLOITATION_GEOTHERMIE/MapServer/0|true|true|
-|GL|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
+|GL|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gl.ch/|true|true|
 |GR|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.gr.ch/erdwaermenutzung|true|true|
 |JU|<span style='color:grey;'>undefined</span>|false||||
 |LU|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://public.geo.lu.ch/ogd/services/managed/EWNUTZXX_COL_V3_MP/MapServer/WMSServer|true|true|
@@ -34,4 +34,4 @@ Run on 2025/03/24 4:20:13
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GL, GR, VS, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, VS, ZH</span>
