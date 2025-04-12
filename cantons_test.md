@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2025/04/11 4:21:21
+Run on 2025/04/12 3:29:49
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -26,7 +26,7 @@ Run on 2025/04/11 4:21:21
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
 |TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/webmercator/wms|true|true|
-|VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
+|VD|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|false|false|
 |VS|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|true|true|
 |ZG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/services.geo.zg.ch:443/ows/Erdwaermenutzung|false|true|
 |ZH|<span style='color:red;'>false</span>|true|https://bfe-cors-anywhere.azurewebsites.net/http://wms.zh.ch/AwelGSWaermewwwZHWMS|false|true|
@@ -34,4 +34,4 @@ Run on 2025/04/11 4:21:21
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, VS, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, VD, VS, ZH</span>
