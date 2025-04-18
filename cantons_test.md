@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2025/04/17 4:20:53
+Run on 2025/04/18 3:32:10
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
@@ -22,11 +22,11 @@ Run on 2025/04/17 4:20:53
 |SG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://services.geo.sg.ch/wss/service/SG00025_WMS/guest|true|true|
 |SH|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.sh.ch/wms|true|true|
 |SO|<span style='color:grey;'>undefined</span>|false||||
-|SZ|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://map.geo.sz.ch/mapserv_proxy|true|true|
+|SZ|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://map.geo.sz.ch/mapserv_proxy|false|true|
 |TG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://ows.geo.tg.ch/geofy_access_proxy/erdwaerme|true|true|
 |TI|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://wms.geo.ti.ch/service|true|true|
 |UR|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://geo.ur.ch/webmercator/wms|true|true|
-|VD|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|false|false|
+|VD|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/https://www.ogc.vd.ch/public/services/OGC/wmsVD/Mapserver/WMSServer|true|true|
 |VS|<span style='color:red;'>false</span>|true|https://bfe-cors.geotest.ch/https://sit.vs.ch/arcgis/services/ENVIRONNEMENT/MapServer/WMSServer|true|true|
 |ZG|<span style='color:green;'>true</span>|true|https://bfe-cors.geotest.ch/services.geo.zg.ch:443/ows/Erdwaermenutzung|false|true|
 |ZH|<span style='color:red;'>false</span>|true|https://bfe-cors-anywhere.azurewebsites.net/http://wms.zh.ch/AwelGSWaermewwwZHWMS|false|true|
@@ -34,4 +34,4 @@ Run on 2025/04/17 4:20:53
 
 ## Overall results
 
-<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, VD, VS, ZH</span>
+<span style='color:red;font-weight:bold;'>Problems with following canton(s): GR, SZ, VS, ZH</span>
