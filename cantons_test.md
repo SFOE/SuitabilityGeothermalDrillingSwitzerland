@@ -1,5 +1,5 @@
 # Cantons Test Output
-Run on 2025/04/23 4:20:36
+Run on 2025/04/24 3:36:52
 ## Results
 
 |Canton|Result expected|Configured|WMS|GetCapabilities|GetFeature|
